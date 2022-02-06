@@ -5,44 +5,22 @@ using UnityEngine;
 [System.Serializable]
 public class Stat
 {
-    [SerializeField] private float _maxValue;
-    private float _currentValue;
+    [SerializeField] private float _baseValue;
 
-    public float GetMaxValue()
+    public float GetValue()
     {
-        return _maxValue;
+        return _baseValue;
     }
 
-    public void SetMaxValue(float value)
+    public void SetValue(float value)
     {
-        if (_maxValue + value < 0)
+        if (_baseValue + value >= 0)
         {
-            _maxValue = 0;
+            _baseValue += value;
         }
         else
         {
-            _maxValue += value;
-        }
-    }
-
-    public float GetCurrentValue()
-    {
-        return _currentValue;
-    }
-
-    public void SetCurrentValue(float value)
-    {
-        if (_currentValue + value <= _maxValue && _currentValue + value >= 0)
-        {
-            _currentValue += value;
-        }
-        else if (_currentValue + value > _maxValue)
-        {
-            _currentValue = _maxValue;
-        }
-        else
-        {
-            _currentValue = 0;
+            _baseValue = 0;
         }
     }
 }

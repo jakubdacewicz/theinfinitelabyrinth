@@ -1,25 +1,95 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 
 public class CharacterStats : MonoBehaviour
 {
-    private float _maxHealth;
-    public float _currentHealth;
+    public float _maxHealth;
+    public float _maxStamine;
+    private float _currentHealth;
+    private float _currentStamine;
 
-    public Stat stamine;
+    public Stat stamineRegenerationValuePart;
+    public Stat stamineRegenerationTime;
+    public Stat attackDamage;
+    public Stat money;
 
-    public void Awake()
+    //TODO zrobic aby obiekty byly ladowane automatycznie i private
+    public Text textStamine;
+    public Text textHealth;
+    public Text textAttackDamage;
+    public Text textMoney;
+
+    private void Start()
     {
-        stamine.SetMaxValue(100);
-        stamine.SetCurrentValue(100);
+        _currentHealth = _maxHealth;
+        _currentStamine = _maxStamine;
+        InvokeRepeating("RegenerateStamine", 0f , 1/stamineRegenerationTime.GetValue());
+    }
+
+    private void Update()
+    {
+        //Test staminy i zycia
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            AdjustCurrentStamine(-10);         
+        }      
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            TakeDamage(10);
+        }
+
+        //¯ycie, stamina, atak i waluta tekstowa. Pozniej trzeba dodac grafiki
+        textStamine.text = _currentStamine + "/" + _maxStamine;
+        textHealth.text = _currentHealth + "/" + _maxHealth;
+        textAttackDamage.text = attackDamage.GetValue().ToString();
+        textMoney.text = money.GetValue().ToString();
     }
 
     public void SetMaxHealth(float value)
     {
-        _maxHealth += value;    
+        if (_maxHealth + value >= 0)
+        {
+            _maxHealth += value;
+        }
+        else
+        {
+            _maxHealth = 0;
+        }
+          
+    }
+
+    public void SetMaxStamine(float value)
+    {
+        if (_maxStamine + value >= 0)
+        {
+            _maxStamine += value;
+        }
+        else
+        {
+            _maxStamine = 0;
+        }
+    }
+
+    public void AdjustCurrentStamine(float value)
+    {
+        if (_currentStamine + value <= _maxStamine && _currentStamine + value > 0)
+        {
+            _currentStamine += value;
+        }
+        else if (_currentStamine + value > _maxStamine)
+        {
+            _currentStamine = _maxStamine;
+        }
+        else
+        {
+            _currentStamine = 0;           
+        }
     }
 
     public void Heal(float value)
     {
+        value = Mathf.Abs(value);
         if (_currentHealth + value > _maxHealth)
         {
             value = _maxHealth - _currentHealth;
@@ -29,8 +99,8 @@ public class CharacterStats : MonoBehaviour
 
     public void TakeDamage(float value)
     {
+        value = Mathf.Abs(value);
         _currentHealth -= value;
-        Debug.Log(transform.name + "took " + value + " damage.");
 
         if (_currentHealth <= 0)
         {
@@ -40,6 +110,16 @@ public class CharacterStats : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("Player died!");
+        Debug.LogWarning("Player died!");
+        //Wylaczanie skryptu po smierci. Mozna w przyslosci rozwazyc inne rozwiazanie.
+        this.enabled = false;
+    }
+
+    private void RegenerateStamine()
+    {
+        if (_currentStamine < _maxStamine)
+        {
+            AdjustCurrentStamine(_maxStamine/stamineRegenerationValuePart.GetValue());
+        }
     }
 }
