@@ -13,6 +13,10 @@ public class CharacterStats : MonoBehaviour
     public Stat stamineRegenerationTime;
     public Stat attackDamage;
     public Stat money;
+    public Stat movementSpeed;
+    public Stat rotationSpeed;
+    public Stat parringLoseStamineDelay;
+    public Stat parringLoseStamineValue;
 
     //TODO zrobic aby obiekty byly ladowane automatycznie i private
     public Text textStamine;
