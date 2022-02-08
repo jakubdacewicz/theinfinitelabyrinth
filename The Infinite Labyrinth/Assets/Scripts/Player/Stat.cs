@@ -26,13 +26,6 @@ public class Stat
 
     public void SetValue(float value)
     {
-        if ( value >= 0)
-        {
-            _baseValue = value;
-        }
-        else
-        {
-            _baseValue = 0;
-        }
+        _baseValue = value;
     }
 }
