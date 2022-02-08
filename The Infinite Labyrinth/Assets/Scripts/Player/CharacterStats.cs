@@ -8,15 +8,21 @@ public class CharacterStats : MonoBehaviour
     public float _maxStamine;
     private float _currentHealth;
     private float _currentStamine;
+    private bool _isStamineRegenerationActive = true;
 
     public Stat stamineRegenerationValuePart;
     public Stat stamineRegenerationTime;
+    public Stat stamine0ActionDelay;
     public Stat attackDamage;
     public Stat money;
     public Stat movementSpeed;
     public Stat rotationSpeed;
     public Stat parringLoseStamineDelay;
     public Stat parringLoseStamineValue;
+    public Stat dashForce;
+    //Ewentualnie zmienic na czas animacji
+    public Stat dashAnimationTime;
+    public Stat dashStamineCost;
 
     //TODO zrobic aby obiekty byly ladowane automatycznie i private
     public Text textStamine;
@@ -28,7 +34,7 @@ public class CharacterStats : MonoBehaviour
     {
         _currentHealth = _maxHealth;
         _currentStamine = _maxStamine;
-        InvokeRepeating("RegenerateStamine", 0f , 1/stamineRegenerationTime.GetValue());
+        InvokeRepeating("RegenerateStamine", 0f , stamineRegenerationTime.GetValue());
     }
 
     private void Update()
@@ -48,6 +54,16 @@ public class CharacterStats : MonoBehaviour
         textHealth.text = _currentHealth + "/" + _maxHealth;
         textAttackDamage.text = attackDamage.GetValue().ToString();
         textMoney.text = money.GetValue().ToString();
+    }
+
+    public float GetCurrentHealth()
+    {
+        return _currentHealth;
+    }
+
+    public float GetCurrentStamine()
+    {
+        return _currentStamine;
     }
 
     public void SetMaxHealth(float value)
@@ -121,9 +137,14 @@ public class CharacterStats : MonoBehaviour
 
     private void RegenerateStamine()
     {
-        if (_currentStamine < _maxStamine)
+        if (_currentStamine < _maxStamine && _isStamineRegenerationActive)
         {
             AdjustCurrentStamine(_maxStamine/stamineRegenerationValuePart.GetValue());
         }
+    }
+
+    public void RegenerationStamineSwitchMode(bool active)
+    {
+        _isStamineRegenerationActive = active;
     }
 }
