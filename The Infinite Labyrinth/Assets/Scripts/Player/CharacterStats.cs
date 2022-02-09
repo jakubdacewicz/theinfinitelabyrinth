@@ -9,6 +9,7 @@ public class CharacterStats : MonoBehaviour
     private float _currentHealth;
     private float _currentStamine;
     private bool _isStamineRegenerationActive = true;
+    private bool _isPlayerInvulnerable = false;
 
     public Stat stamineRegenerationValuePart;
     public Stat stamineRegenerationTime;
@@ -23,6 +24,7 @@ public class CharacterStats : MonoBehaviour
     //Ewentualnie zmienic na czas animacji
     public Stat dashAnimationTime;
     public Stat dashStamineCost;
+    public Stat dashInvulnerableTime;
 
     //TODO zrobic aby obiekty byly ladowane automatycznie i private
     public Text textStamine;
@@ -110,11 +112,14 @@ public class CharacterStats : MonoBehaviour
     public void Heal(float value)
     {
         value = Mathf.Abs(value);
-        if (_currentHealth + value > _maxHealth)
+        if (_isPlayerInvulnerable == false)
         {
-            value = _maxHealth - _currentHealth;
-        }
-        _currentHealth += value;
+            if (_currentHealth + value > _maxHealth)
+            {
+                value = _maxHealth - _currentHealth;
+            }
+            _currentHealth += value;
+        }      
     }
 
     public void TakeDamage(float value)
@@ -146,5 +151,12 @@ public class CharacterStats : MonoBehaviour
     public void RegenerationStamineSwitchMode(bool active)
     {
         _isStamineRegenerationActive = active;
+    }
+
+    public IEnumerator MakePlayerInvulnerable(float time)
+    {
+        _isPlayerInvulnerable = true;
+        yield return new WaitForSeconds(time);
+        _isPlayerInvulnerable = false;
     }
 }

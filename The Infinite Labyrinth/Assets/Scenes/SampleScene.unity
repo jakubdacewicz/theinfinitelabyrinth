@@ -156,12 +156,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 100
   _maxStamine: 100
+  _isPlayerInvulnerable: 0
   stamineRegenerationValuePart:
     _baseValue: 20
   stamineRegenerationTime:
     _baseValue: 1
   stamine0ActionDelay:
-    _baseValue: 0
+    _baseValue: 5
   attackDamage:
     _baseValue: 5
   money:
@@ -180,6 +181,8 @@ MonoBehaviour:
     _baseValue: 0.6
   dashStamineCost:
     _baseValue: -40
+  dashInvulnerableTime:
+    _baseValue: 0.8
   textStamine: {fileID: 1188802808}
   textHealth: {fileID: 226000115}
   textAttackDamage: {fileID: 1418660891}

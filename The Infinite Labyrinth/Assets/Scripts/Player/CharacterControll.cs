@@ -9,8 +9,6 @@ public class CharacterControll : MonoBehaviour
     private CharacterStats characterStats;
     private Rigidbody m_Rigidbody;
 
-    private bool _isParring = false;
-    //    private bool _isSlowed = false;
     private float _nextLoseStamineTime = 0;
     private float _nextStamineActionTime = 0;
     private float _actionAfterDashTime = 0;
@@ -26,7 +24,6 @@ public class CharacterControll : MonoBehaviour
     private void FixedUpdate()
     {
         //##PLAYER MOVMENT##
-        //zoptymalizowac ify
         if (Time.time > _actionAfterDashTime)
         {
             Vector3 inputAxis = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -45,11 +42,9 @@ public class CharacterControll : MonoBehaviour
 
         //##RIGHT CLICK - BLOCK##
         //dodac animacje blokowania
-        //zoptymalizowac ify
+        //rozpatrzyc czy mozliwa optymalizacja ifa
         if (Input.GetMouseButton(1) && Time.time > _nextStamineActionTime && Time.time > _actionAfterDashTime)
         {          
-            _isParring = true;
-//            _isSlowed = true;
             characterStats.RegenerationStamineSwitchMode(false);
             if (Time.time > _nextLoseStamineTime)
             {
@@ -66,25 +61,19 @@ public class CharacterControll : MonoBehaviour
             if (characterStats.GetCurrentStamine() >= Mathf.Abs(characterStats.dashStamineCost.GetValue()))
             {
                 _actionAfterDashTime = Time.time + characterStats.dashAnimationTime.GetValue();
-                characterStats.AdjustCurrentStamine(characterStats.dashStamineCost.GetValue());
+                characterStats.AdjustCurrentStamine(characterStats.dashStamineCost.GetValue());             
                 m_Rigidbody.AddForce(transform.forward * characterStats.dashForce.GetValue());
+                StartCoroutine(characterStats.MakePlayerInvulnerable(characterStats.dashInvulnerableTime.GetValue()));
             }
             
         }
         else
         {
-            _isParring = false;
- //           _isSlowed = false;
             characterStats.movementSpeed.SetValue(_currentMovmentSpeed);
             characterStats.RegenerationStamineSwitchMode(true);
         }
 
         
-    }
-
-    public bool IsPlayerCurrParring()
-    {
-        return _isParring;
     }
 
     public void UpdateCurrentMovementSpeedVariable()
