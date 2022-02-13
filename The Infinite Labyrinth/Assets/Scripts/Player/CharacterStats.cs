@@ -4,12 +4,9 @@ using System.Collections;
 
 public class CharacterStats : MonoBehaviour
 {
+    //public
     public float _maxHealth;
     public float _maxStamine;
-    private float _currentHealth;
-    private float _currentStamine;
-    private bool _isStamineRegenerationActive = true;
-    private bool _isPlayerInvulnerable = false;
 
     public Stat stamineRegenerationValuePart;
     public Stat stamineRegenerationTime;
@@ -20,9 +17,8 @@ public class CharacterStats : MonoBehaviour
     public Stat rotationSpeed;
     public Stat parringLoseStamineDelay;
     public Stat parringLoseStamineValue;
-    public Stat dashForce;
-    //Ewentualnie zmienic na czas animacji
-    public Stat dashAnimationTime;
+    public Stat dashTime;
+    public Stat dashSpeed;
     public Stat dashStamineCost;
     public Stat dashInvulnerableTime;
 
@@ -32,25 +28,22 @@ public class CharacterStats : MonoBehaviour
     public Text textAttackDamage;
     public Text textMoney;
 
+    //private
+    private float _currentHealth;
+    private float _currentStamine;
+
+    private bool _isStamineRegenerationActive = true;
+    private bool _isPlayerInvulnerable = false;
+
     private void Start()
     {
         _currentHealth = _maxHealth;
         _currentStamine = _maxStamine;
-        InvokeRepeating("RegenerateStamine", 0f , stamineRegenerationTime.GetValue());
+        InvokeRepeating(nameof(RegenerateStamine), 0f , stamineRegenerationTime.GetValue());
     }
 
     private void Update()
     {
-        //Test staminy i zycia
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            AdjustCurrentStamine(-10);         
-        }      
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            TakeDamage(10);
-        }
-
         //¯ycie, stamina, atak i waluta tekstowa. Pozniej trzeba dodac grafiki
         textStamine.text = _currentStamine + "/" + _maxStamine;
         textHealth.text = _currentHealth + "/" + _maxHealth;
@@ -112,25 +105,25 @@ public class CharacterStats : MonoBehaviour
     public void Heal(float value)
     {
         value = Mathf.Abs(value);
-        if (_isPlayerInvulnerable == false)
+        if (_currentHealth + value > _maxHealth)
         {
-            if (_currentHealth + value > _maxHealth)
-            {
-                value = _maxHealth - _currentHealth;
-            }
-            _currentHealth += value;
-        }      
+            value = _maxHealth - _currentHealth;
+        }
+        _currentHealth += value;     
     }
 
     public void TakeDamage(float value)
     {
-        value = Mathf.Abs(value);
-        _currentHealth -= value;
-
-        if (_currentHealth <= 0)
+        if (_isPlayerInvulnerable == false)
         {
-            Die();
-        }
+            value = Mathf.Abs(value);
+            _currentHealth -= value;
+
+            if (_currentHealth <= 0)
+            {
+                Die();
+            }
+        }     
     }
 
     public void Die()
@@ -153,10 +146,15 @@ public class CharacterStats : MonoBehaviour
         _isStamineRegenerationActive = active;
     }
 
-    public IEnumerator MakePlayerInvulnerable(float time)
+    public IEnumerator MakePlayerInvulnerableForTime(float time)
     {
         _isPlayerInvulnerable = true;
         yield return new WaitForSeconds(time);
         _isPlayerInvulnerable = false;
+    }
+
+    public void MakePlayerInvulnerableTimeless(bool action)
+    {
+        _isPlayerInvulnerable = action;
     }
 }
