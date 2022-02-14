@@ -48,11 +48,6 @@ public class Block : MonoBehaviour
                 this.enabled = false;
                 GetComponent<Attack>().enabled = true;
             }
-            else if (Input.GetKeyDown(KeyCode.F))
-            {
-                this.enabled = false;
-                GetComponent<Interact>().enabled = true;
-            }
             else if (Input.GetMouseButton(1))
             {
                 if (Time.time > _nextStamineLoseTime)

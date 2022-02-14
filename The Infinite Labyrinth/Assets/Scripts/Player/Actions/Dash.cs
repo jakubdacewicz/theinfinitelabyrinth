@@ -53,12 +53,7 @@ public class Dash : MonoBehaviour
             {
                 this.enabled = false;
                 GetComponent<Block>().enabled = true;
-            }
-            else if (Input.GetKeyDown(KeyCode.F))
-            {
-                this.enabled = false;
-                GetComponent<Interact>().enabled = true;
-            }
+            }            
             else if (Input.GetKeyDown(KeyCode.Space))
             {
                 this.enabled = false;

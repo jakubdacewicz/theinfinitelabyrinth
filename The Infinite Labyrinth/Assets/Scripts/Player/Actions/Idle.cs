@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Idle : MonoBehaviour
@@ -29,11 +27,6 @@ public class Idle : MonoBehaviour
         {
             this.enabled = false;
             GetComponent<Attack>().enabled = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.F))
-        {
-            this.enabled = false;
-            GetComponent<Interact>().enabled = true;
         }
         else if (Input.GetMouseButton(1))
         {

@@ -1,9 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterControll : MonoBehaviour
 {
+    //public
+    public float _interactSphereRadius;
+
     //private
     private CharacterStats characterStats;
 
@@ -24,12 +25,35 @@ public class CharacterControll : MonoBehaviour
         if (!_isMovementBlocked)
         {
             Vector3 inputAxis = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            m_Rigidbody.MovePosition(Time.deltaTime * characterStats.movementSpeed.GetValue() * transform.position + inputAxis);
-        }             
+            m_Rigidbody.MovePosition(transform.position + inputAxis * Time.deltaTime * characterStats.movementSpeed.GetValue());
+        }              
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))        
+            CheckInteraction();       
     }
 
     public void BlockPlayerMovement(bool action)
     {
         _isMovementBlocked = action;
+    }
+    
+    private void CheckInteraction()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, _interactSphereRadius);
+
+        if (colliders.Length > 0)
+        {
+            foreach(var collider in colliders)
+            {
+                if (collider.transform.GetComponent<Interactable>())
+                {
+                    collider.transform.GetComponent<Interactable>().Interact();
+                    return;
+                }
+            }
+        }
     }
 }
