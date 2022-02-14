@@ -7,9 +7,7 @@ public class CharacterControll : MonoBehaviour
 
     //private
     private CharacterStats characterStats;
-
     private Rigidbody m_Rigidbody;
-
     private bool _isMovementBlocked = false;
 
     private void Start()
@@ -56,4 +54,16 @@ public class CharacterControll : MonoBehaviour
             }
         }
     }
+
+    /*
+    void OnDrawGizmosSelected()
+    {
+        // Draw a yellow sphere at the transform's position
+        characterStats = GameObject.Find("Player").GetComponent<CharacterStats>();
+        Gizmos.color = Color.yellow;
+        float value = characterStats.attackRange.GetValue();
+        Gizmos.DrawWireSphere(transform.position + transform.forward + attackRangePosition, value);
+    }
+    */
 }
+

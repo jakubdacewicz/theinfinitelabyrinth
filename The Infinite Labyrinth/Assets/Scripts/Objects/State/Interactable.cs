@@ -10,8 +10,12 @@ public abstract class Interactable : MonoBehaviour
         GetComponent<BoxCollider>().isTrigger = true;
     }
 
+    //public
     public abstract void Interact();
+
+    //private
     private Transform interactModel;
+    private bool _isAnimationActivated = true;
 
     private void Start()
     {
@@ -22,7 +26,7 @@ public abstract class Interactable : MonoBehaviour
     {
         //dodac animacje poruszania siê
         //dodac animacje przejscia
-        if(collider.CompareTag("Player"))
+        if(collider.CompareTag("Player") && _isAnimationActivated)
             interactModel.gameObject.SetActive(true);
     }
 
@@ -30,7 +34,13 @@ public abstract class Interactable : MonoBehaviour
     {
         //dodac animacje poruszania siê
         //dodac animacje przejscia
-        if (collider.CompareTag("Player"))
+        if (collider.CompareTag("Player") && _isAnimationActivated)
             interactModel.gameObject.SetActive(false);
+    }
+
+    public void AnimationTurnMode(bool action)
+    {
+        interactModel.gameObject.SetActive(action);
+        _isAnimationActivated = action;
     }
 }

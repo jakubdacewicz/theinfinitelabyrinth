@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Openable : Interactable
 {
-    private bool _IsOpen;
+    public bool _isOpened;
     public override void Interact()
     {
-        if (!_IsOpen)
+        //dodac animacje
+        //system przedmiotow
+        if (!_isOpened)
         {
-            //dodac animacje
-            //system przedmiotow
             Debug.Log(gameObject.name + " has been opened!");
-            _IsOpen = true;
-        }
+            AnimationTurnMode(false);
+            _isOpened = true;
+            this.enabled = false;
+        }       
     }
 }
