@@ -12,14 +12,13 @@ public class CharacterStats : MonoBehaviour
     public Stat stamineRegenerationTime;
     public Stat stamine0ActionDelay;
     public Stat attackDamage;
-    public Stat attackDelay;
     public Stat attackSpeed;
     public Stat attackRange;
     public Stat money;
     public Stat movementSpeed;
     public Stat rotationSpeed;
-    public Stat parringLoseStamineDelay;
-    public Stat parringLoseStamineValue;
+    public Stat parringDelay;
+    public Stat parringStamineCost;
     public Stat dashTime;
     public Stat dashSpeed;
     public Stat dashStamineCost;

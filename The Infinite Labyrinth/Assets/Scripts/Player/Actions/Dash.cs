@@ -26,17 +26,11 @@ public class Dash : MonoBehaviour
             characterStats.RegenerationStamineSwitchMode(false);            
             characterStats.MakePlayerInvulnerableTimeless(true);
             characterControll.BlockPlayerMovement(true);
+            characterControll.BlockPlayerRotation(true);
 
             characterStats.AdjustCurrentStamine(characterStats.dashStamineCost.GetValue());
             _startTime = Time.time;
-            StartCoroutine(DashCourtine());
-            if (characterStats.GetCurrentStamine() <= 0)
-            {
-                _nextStamineActionTime = Time.time + characterStats.stamine0ActionDelay.GetValue();
-                characterStats.RegenerationStamineSwitchMode(true);
-                characterStats.MakePlayerInvulnerableTimeless(false);
-                characterControll.BlockPlayerMovement(false);
-            }
+            StartCoroutine(DashCourtine());            
         }      
     }
 
@@ -44,12 +38,13 @@ public class Dash : MonoBehaviour
     {
         if (Time.time >= _startTime + characterStats.dashTime.GetValue() && Time.time >= _nextStamineActionTime)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) ||
+                Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
                 this.enabled = false;
                 GetComponent<Attack>().enabled = true;
             }
-            else if (Input.GetMouseButton(1))
+            else if (Input.GetKey(KeyCode.LeftShift))
             {
                 this.enabled = false;
                 GetComponent<Block>().enabled = true;
@@ -71,8 +66,17 @@ public class Dash : MonoBehaviour
     {
         while (Time.time < _startTime + characterStats.dashTime.GetValue())
         {
-            transform.Translate(Time.deltaTime * characterStats.dashSpeed.GetValue() * transform.forward);
+            transform.position += Time.deltaTime * characterStats.movementSpeed.GetValue() * transform.forward;
             yield return null;
+        }
+
+        if (characterStats.GetCurrentStamine() <= 0)
+        {
+            _nextStamineActionTime = Time.time + characterStats.stamine0ActionDelay.GetValue();
+            characterStats.RegenerationStamineSwitchMode(true);
+            characterStats.MakePlayerInvulnerableTimeless(false);
+            characterControll.BlockPlayerMovement(false);
+            characterControll.BlockPlayerRotation(false);
         }
     }
 }

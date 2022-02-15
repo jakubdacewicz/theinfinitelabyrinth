@@ -169,10 +169,8 @@ MonoBehaviour:
     _baseValue: 5
   attackDamage:
     _baseValue: 5
-  attackDelay:
-    _baseValue: 1
   attackSpeed:
-    _baseValue: 1
+    _baseValue: 0.5
   attackRange:
     _baseValue: 1.3
   money:
@@ -181,9 +179,9 @@ MonoBehaviour:
     _baseValue: 10
   rotationSpeed:
     _baseValue: 5
-  parringLoseStamineDelay:
-    _baseValue: 0.2
-  parringLoseStamineValue:
+  parringDelay:
+    _baseValue: 0.5
+  parringStamineCost:
     _baseValue: -5
   dashTime:
     _baseValue: 0.3
@@ -225,7 +223,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactSphereRadius: 0.8
-  attackRangePosition: {x: 0, y: 0, z: 0.84}
 --- !u!54 &191434329
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -304,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29fc22b61c6f7924e835b8ac2dd91232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRangePosition: {x: 0, y: 0, z: 0.84}
+  attackRangePosition: 1.8
 --- !u!1 &226000113
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,37 +7,70 @@ public class CharacterControll : MonoBehaviour
 
     //private
     private CharacterStats characterStats;
-    private Rigidbody m_Rigidbody;
     private bool _isMovementBlocked = false;
+    private bool _isRotationBlocked = false;
 
     private void Start()
     {       
-        characterStats = GameObject.Find("Player").GetComponent<CharacterStats>();
-        m_Rigidbody = GameObject.Find("Player").GetComponent<Rigidbody>();  
-    }
-
-    private void FixedUpdate()
-    {
-         //TODO rotacja. na ten moment wydaje sie byc niewykonywalna jesli nie ma zrobionej mapy.
-
-        if (!_isMovementBlocked)
-        {
-            Vector3 inputAxis = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            m_Rigidbody.MovePosition(transform.position + inputAxis * Time.deltaTime * characterStats.movementSpeed.GetValue());
-        }              
+        characterStats = GameObject.Find("Player").GetComponent<CharacterStats>();  
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))        
-            CheckInteraction();       
+            CheckInteraction();
+
+        if (!_isMovementBlocked)
+        {
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.position += Time.deltaTime * characterStats.movementSpeed.GetValue() * new Vector3(0, 0, 1);
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                transform.position -= Time.deltaTime * characterStats.movementSpeed.GetValue() * new Vector3(0, 0, 1);
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                transform.position -= Time.deltaTime * characterStats.movementSpeed.GetValue() * new Vector3(1, 0, 0);
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                transform.position += Time.deltaTime * characterStats.movementSpeed.GetValue() * new Vector3(1, 0, 0);
+            }
+        }
+
+        if (!_isRotationBlocked)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                transform.eulerAngles = new Vector3(0, 270, 0);
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                transform.eulerAngles = new Vector3(0, 90, 0);
+            }
+        }
     }
 
     public void BlockPlayerMovement(bool action)
     {
         _isMovementBlocked = action;
     }
-    
+
+    public void BlockPlayerRotation(bool action)
+    {
+        _isRotationBlocked = action;
+    }
+
     private void CheckInteraction()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, _interactSphereRadius);
@@ -62,7 +95,7 @@ public class CharacterControll : MonoBehaviour
         characterStats = GameObject.Find("Player").GetComponent<CharacterStats>();
         Gizmos.color = Color.yellow;
         float value = characterStats.attackRange.GetValue();
-        Gizmos.DrawWireSphere(transform.position + transform.forward + attackRangePosition, value);
+        Gizmos.DrawWireSphere(transform.position + transform.forward * test, value);
     }
     */
 }

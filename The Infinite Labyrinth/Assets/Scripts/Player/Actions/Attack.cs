@@ -3,7 +3,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     //public
-    public Vector3 attackRangePosition;
+    public float attackRangePosition;
 
     //private
     private CharacterStats characterStats;
@@ -24,12 +24,13 @@ public class Attack : MonoBehaviour
                 this.enabled = false;
                 GetComponent<Dash>().enabled = true;
             }
-            else if (Input.GetMouseButton(1))
+            else if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 this.enabled = false;
                 GetComponent<Block>().enabled = true;
             }
-            else if (Input.GetMouseButton(0))
+            else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) ||
+                Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
                 this.enabled = false;
                 GetComponent<Attack>().enabled = true;
@@ -44,8 +45,7 @@ public class Attack : MonoBehaviour
 
     private void DoAttack()
     {   
-        //atak dealy i speed. trzeba to rozpatrzyc czy potrzebne sa obie.
-        Collider[] colliders = Physics.OverlapSphere(transform.position + transform.forward + attackRangePosition, characterStats.attackRange.GetValue());
+        Collider[] colliders = Physics.OverlapSphere(transform.position + transform.forward * attackRangePosition, characterStats.attackRange.GetValue());
 
         if (colliders.Length > 0)
         {
@@ -58,6 +58,6 @@ public class Attack : MonoBehaviour
                 }
             }
         }
-        _nextActionTime = Time.time + characterStats.attackDelay.GetValue();
+        _nextActionTime = Time.time + characterStats.attackSpeed.GetValue();
     }
 }
