@@ -3,13 +3,13 @@ using UnityEngine;
 public class Block : MonoBehaviour
 {
     //public
-    public float _playerSlowValue;
+    public float playerSlowValue;
 
     //private
     private CharacterStats characterStats;
-    private float _currentMovementSpeed;
-    private float _nextStamineActionTime = 0;
-    private float _startTime = 0;
+    private float currentMovementSpeed;
+    private float nextStamineActionTime = 0;
+    private float startTime = 0;
 
     private void OnEnable()
     {
@@ -24,31 +24,31 @@ public class Block : MonoBehaviour
             //dodac animacje blokowania
             characterStats.RegenerationStamineSwitchMode(false);
             characterStats.MakePlayerInvulnerableTimeless(true);
-            _currentMovementSpeed = characterStats.movementSpeed.GetValue();
-            characterStats.movementSpeed.SetValue(_currentMovementSpeed - _playerSlowValue);         
+            currentMovementSpeed = characterStats.movementSpeed.GetValue();
+            characterStats.movementSpeed.SetValue(currentMovementSpeed - playerSlowValue);         
             characterStats.AdjustCurrentStamine(characterStats.parringStamineCost.GetValue());
-            _startTime = Time.time;
+            startTime = Time.time;
 
             if (characterStats.GetCurrentStamine() <= 0)
             {
-                _nextStamineActionTime = Time.time + characterStats.stamine0ActionDelay.GetValue();
+                nextStamineActionTime = Time.time + characterStats.stamine0ActionDelay.GetValue();
                 characterStats.RegenerationStamineSwitchMode(true);
                 characterStats.MakePlayerInvulnerableTimeless(false);
-                characterStats.movementSpeed.SetValue(_currentMovementSpeed);
+                characterStats.movementSpeed.SetValue(currentMovementSpeed);
             }           
         }      
     }
 
     private void OnDisable()
     {
-        characterStats.movementSpeed.SetValue(_currentMovementSpeed);
+        characterStats.movementSpeed.SetValue(currentMovementSpeed);
         characterStats.RegenerationStamineSwitchMode(true);
         characterStats.MakePlayerInvulnerableTimeless(false);
     }
 
     private void Update()
     {
-        if (Time.time >= _startTime + characterStats.parringDelay.GetValue() &&_nextStamineActionTime <= Time.time)
+        if (Time.time >= startTime + characterStats.parringDelay.GetValue() &&nextStamineActionTime <= Time.time)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {

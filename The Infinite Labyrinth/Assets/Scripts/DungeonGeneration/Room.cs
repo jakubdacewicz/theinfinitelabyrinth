@@ -6,8 +6,11 @@ public class Room : MonoBehaviour
 {
     public int width;
     public int height;
+    public int length;
+
     public int x;
     public int y;
+    public int z;
 
     private void Start()
     {
@@ -21,11 +24,11 @@ public class Room : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, new Vector3(width, height, 0));
+        Gizmos.DrawWireCube(transform.position, new Vector3(width, height, length));
     }
 
-    public Vector3 getRoomCentre()
+    public Vector3 GetRoomCentre()
     {
-        return new Vector3(x * width, y * height);
+        return new Vector3(x * width, y * height, z * length);
     }
 }

@@ -5,27 +5,27 @@ using UnityEngine;
 [System.Serializable]
 public class Stat
 {
-    [SerializeField] private float _baseValue;
+    [SerializeField] private float baseValue;
 
     public float GetValue()
     {
-        return _baseValue;
+        return baseValue;
     }
 
     public void AddValue(float value)
     {
-        if (_baseValue + value >= 0)
+        if (baseValue + value >= 0)
         {
-            _baseValue += value;
+            baseValue += value;
         }
         else
         {
-            _baseValue = 0;
+            baseValue = 0;
         }
     }
 
     public void SetValue(float value)
     {
-        _baseValue = value;
+        baseValue = value;
     }
 }

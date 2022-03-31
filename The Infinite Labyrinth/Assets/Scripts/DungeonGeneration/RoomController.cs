@@ -7,27 +7,103 @@ public class RoomInfo
 {
     public string name;
     public int x;
-    public int y;
+    public int z;
 }
 
 public class RoomController : MonoBehaviour
 {
-    public static RoomController instance;  
+    public static RoomController instance;
 
-    string currentWorldName = "Forrest";
-    private RoomInfo currentRoomData;
-    private Queue<RoomInfo> loadRoomQueue = new Queue<RoomInfo>();
     public List<Room> loadedRooms = new List<Room>();
 
-    private bool isLoadinRoom = false;
+    string currentWorldName = "Desert";
+
+    private RoomInfo currentLoadRoomData;
+
+    private Queue<RoomInfo> loadRoomQueue = new Queue<RoomInfo>();
+
+    private bool isLoadingRoom = false;
 
     private void Awake()
     {
         instance = this;
     }
 
-    public bool doesRoomExist( int x, int y)
+    private void Start()
     {
-        return loadedRooms.Find( item => item.x == x && item.y == y) != null;
+        LoadRoom("Start", 0, 0);
+        LoadRoom("Start", 1, 0);
+    }
+
+    private void Update()
+    {
+        UpdateRoomQueue();
+    }
+
+    private void UpdateRoomQueue()
+    {
+        if (isLoadingRoom)
+        {
+            return;
+        }
+
+        if(loadRoomQueue.Count == 0)
+        {
+            return;
+        }
+
+        currentLoadRoomData = loadRoomQueue.Dequeue();
+        isLoadingRoom = true;
+
+        StartCoroutine(LoadRoomRoutine(currentLoadRoomData));
+    }
+
+    public void LoadRoom(string name, int x, int z)
+    {
+        if (DoesRoomExist(x, z))
+        {
+            return;
+        }
+
+        RoomInfo newRoomData = new RoomInfo();
+        newRoomData.name = name;
+        newRoomData.x = x;
+        newRoomData.z = z;
+
+        loadRoomQueue.Enqueue(newRoomData);
+    }
+
+    IEnumerator LoadRoomRoutine(RoomInfo info)
+    {
+        string roomName = currentWorldName + info.name;
+
+        AsyncOperation loadRoom = SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Additive);
+
+        while (loadRoom.isDone == false)
+        {
+            yield return null;
+        }
+    }
+
+    public void RegisterRoom(Room room)
+    {
+        room.transform.position = new Vector3(
+            currentLoadRoomData.x * room.width,
+            0,
+            currentLoadRoomData.z * room.length);
+
+        room.x = currentLoadRoomData.x;
+        room.z = currentLoadRoomData.z;
+        room.name = currentWorldName + "-" + currentLoadRoomData.name + " " + room.x + ", " + room.z;
+        room.transform.parent = transform;
+
+        isLoadingRoom = false;
+
+        loadedRooms.Add(room);
+    }
+
+    public bool DoesRoomExist( int x, int z)
+    {
+        return loadedRooms.Find( item => item.x == x && item.z == z) != null;
     }
 }

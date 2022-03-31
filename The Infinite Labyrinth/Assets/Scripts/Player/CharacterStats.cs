@@ -5,8 +5,8 @@ using System.Collections;
 public class CharacterStats : MonoBehaviour
 {
     //public
-    public float _maxHealth;
-    public float _maxStamine;
+    public float maxHealth;
+    public float maxStamine;
 
     public Stat stamineRegenerationValuePart;
     public Stat stamineRegenerationTime;
@@ -31,97 +31,97 @@ public class CharacterStats : MonoBehaviour
     public Text textMoney;
 
     //private
-    private float _currentHealth;
-    private float _currentStamine;
+    private float currentHealth;
+    private float currentStamine;
 
-    private bool _isStamineRegenerationActive = true;
-    private bool _isPlayerInvulnerable = false;
+    private bool isStamineRegenerationActive = true;
+    private bool isPlayerInvulnerable = false;
 
     private void Start()
     {
-        _currentHealth = _maxHealth;
-        _currentStamine = _maxStamine;
+        currentHealth = maxHealth;
+        currentStamine = maxStamine;
         InvokeRepeating(nameof(RegenerateStamine), 0f , stamineRegenerationTime.GetValue());
     }
 
     private void Update()
     {
         //¯ycie, stamina, atak i waluta tekstowa. Pozniej trzeba dodac grafiki
-        textStamine.text = _currentStamine + "/" + _maxStamine;
-        textHealth.text = _currentHealth + "/" + _maxHealth;
+        textStamine.text = currentStamine + "/" + maxStamine;
+        textHealth.text = currentHealth + "/" + maxHealth;
         textAttackDamage.text = attackDamage.GetValue().ToString();
         textMoney.text = money.GetValue().ToString();
     }
 
     public float GetCurrentHealth()
     {
-        return _currentHealth;
+        return currentHealth;
     }
 
     public float GetCurrentStamine()
     {
-        return _currentStamine;
+        return currentStamine;
     }
 
     public void SetMaxHealth(float value)
     {
-        if (_maxHealth + value >= 0)
+        if (maxHealth + value >= 0)
         {
-            _maxHealth += value;
+            maxHealth += value;
         }
         else
         {
-            _maxHealth = 0;
+            maxHealth = 0;
         }
           
     }
 
     public void SetMaxStamine(float value)
     {
-        if (_maxStamine + value >= 0)
+        if (maxStamine + value >= 0)
         {
-            _maxStamine += value;
+            maxStamine += value;
         }
         else
         {
-            _maxStamine = 0;
+            maxStamine = 0;
         }
     }
 
     public void AdjustCurrentStamine(float value)
     {
-        if (_currentStamine + value <= _maxStamine && _currentStamine + value > 0)
+        if (currentStamine + value <= maxStamine && currentStamine + value > 0)
         {
-            _currentStamine += value;
+            currentStamine += value;
         }
-        else if (_currentStamine + value > _maxStamine)
+        else if (currentStamine + value > maxStamine)
         {
-            _currentStamine = _maxStamine;
+            currentStamine = maxStamine;
         }
         else
         {
-            _currentStamine = 0;           
+            currentStamine = 0;           
         }
     }
 
     public void Heal(float value)
     {
         value = Mathf.Abs(value);
-        if (_currentHealth + value > _maxHealth)
+        if (currentHealth + value > maxHealth)
         {
-            value = _maxHealth - _currentHealth;
+            value = maxHealth - currentHealth;
         }
-        _currentHealth += value;     
+        currentHealth += value;     
     }
 
     public void TakeDamage(float value)
     {
-        if (_isPlayerInvulnerable == false)
+        if (isPlayerInvulnerable == false)
         {
             value = Mathf.Abs(value);
-            _currentHealth -= value;
+            currentHealth -= value;
 
-            if (_currentHealth <= 0)
+            if (currentHealth <= 0)
             {
                 Die();
             }
@@ -137,26 +137,26 @@ public class CharacterStats : MonoBehaviour
 
     private void RegenerateStamine()
     {
-        if (_currentStamine < _maxStamine && _isStamineRegenerationActive)
+        if (currentStamine < maxStamine && isStamineRegenerationActive)
         {
-            AdjustCurrentStamine(_maxStamine/stamineRegenerationValuePart.GetValue());
+            AdjustCurrentStamine(maxStamine/stamineRegenerationValuePart.GetValue());
         }
     }
 
     public void RegenerationStamineSwitchMode(bool active)
     {
-        _isStamineRegenerationActive = active;
+        isStamineRegenerationActive = active;
     }
 
     public IEnumerator MakePlayerInvulnerableForTime(float time)
     {
-        _isPlayerInvulnerable = true;
+        isPlayerInvulnerable = true;
         yield return new WaitForSeconds(time);
-        _isPlayerInvulnerable = false;
+        isPlayerInvulnerable = false;
     }
 
     public void MakePlayerInvulnerableTimeless(bool action)
     {
-        _isPlayerInvulnerable = action;
+        isPlayerInvulnerable = action;
     }
 }

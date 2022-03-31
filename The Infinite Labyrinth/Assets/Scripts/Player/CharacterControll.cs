@@ -7,8 +7,8 @@ public class CharacterControll : MonoBehaviour
 
     //private
     private CharacterStats characterStats;
-    private bool _isMovementBlocked = false;
-    private bool _isRotationBlocked = false;
+    private bool isMovementBlocked = false;
+    private bool isRotationBlocked = false;
 
     private void Start()
     {       
@@ -20,7 +20,7 @@ public class CharacterControll : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))        
             CheckInteraction();
 
-        if (!_isMovementBlocked)
+        if (!isMovementBlocked)
         {
             if (Input.GetKey(KeyCode.W))
             {
@@ -40,7 +40,7 @@ public class CharacterControll : MonoBehaviour
             }
         }
 
-        if (!_isRotationBlocked)
+        if (!isRotationBlocked)
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
@@ -63,12 +63,12 @@ public class CharacterControll : MonoBehaviour
 
     public void BlockPlayerMovement(bool action)
     {
-        _isMovementBlocked = action;
+        isMovementBlocked = action;
     }
 
     public void BlockPlayerRotation(bool action)
     {
-        _isRotationBlocked = action;
+        isRotationBlocked = action;
     }
 
     private void CheckInteraction()

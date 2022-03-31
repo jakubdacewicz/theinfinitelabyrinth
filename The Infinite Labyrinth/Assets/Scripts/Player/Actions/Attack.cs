@@ -7,7 +7,7 @@ public class Attack : MonoBehaviour
 
     //private
     private CharacterStats characterStats;
-    private float _nextActionTime = 0;
+    private float nextActionTime = 0;
 
     private void OnEnable()
     {
@@ -17,7 +17,7 @@ public class Attack : MonoBehaviour
 
     private void Update()
     {
-        if (_nextActionTime <= Time.time)
+        if (nextActionTime <= Time.time)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -58,6 +58,6 @@ public class Attack : MonoBehaviour
                 }
             }
         }
-        _nextActionTime = Time.time + characterStats.attackSpeed.GetValue();
+        nextActionTime = Time.time + characterStats.attackSpeed.GetValue();
     }
 }

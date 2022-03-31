@@ -8,8 +8,8 @@ public class Dash : MonoBehaviour
 
     private CharacterControll characterControll;
 
-    private float _startTime;
-    private float _nextStamineActionTime = 0;
+    private float startTime;
+    private float nextStamineActionTime = 0;
 
     private void OnEnable()
     {
@@ -29,14 +29,14 @@ public class Dash : MonoBehaviour
             characterControll.BlockPlayerRotation(true);
 
             characterStats.AdjustCurrentStamine(characterStats.dashStamineCost.GetValue());
-            _startTime = Time.time;
+            startTime = Time.time;
             StartCoroutine(DashCourtine());            
         }      
     }
 
     private void Update()
     {
-        if (Time.time >= _startTime + characterStats.dashTime.GetValue() && Time.time >= _nextStamineActionTime)
+        if (Time.time >= startTime + characterStats.dashTime.GetValue() && Time.time >= nextStamineActionTime)
         {
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) ||
                 Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
@@ -64,7 +64,7 @@ public class Dash : MonoBehaviour
 
     private IEnumerator DashCourtine()
     {
-        while (Time.time < _startTime + characterStats.dashTime.GetValue())
+        while (Time.time < startTime + characterStats.dashTime.GetValue())
         {
             transform.position += Time.deltaTime * characterStats.movementSpeed.GetValue() * transform.forward;
             yield return null;
@@ -72,7 +72,7 @@ public class Dash : MonoBehaviour
 
         if (characterStats.GetCurrentStamine() <= 0)
         {
-            _nextStamineActionTime = Time.time + characterStats.stamine0ActionDelay.GetValue();
+            nextStamineActionTime = Time.time + characterStats.stamine0ActionDelay.GetValue();
             characterStats.RegenerationStamineSwitchMode(true);
             characterStats.MakePlayerInvulnerableTimeless(false);
             characterControll.BlockPlayerMovement(false);
