@@ -22,6 +22,7 @@ public abstract class Interactable : MonoBehaviour
         interactModel = transform.Find("InteractModel");
     }
 
+    /*
     private void OnTriggerEnter(Collider collider)
     {
         //dodac animacje poruszania siê
@@ -37,6 +38,7 @@ public abstract class Interactable : MonoBehaviour
         if (collider.CompareTag("Player") && _isAnimationActivated)
             interactModel.gameObject.SetActive(false);
     }
+    */
 
     public void AnimationTurnMode(bool action)
     {

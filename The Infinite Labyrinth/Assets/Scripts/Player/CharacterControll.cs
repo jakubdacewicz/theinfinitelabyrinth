@@ -3,7 +3,7 @@ using UnityEngine;
 public class CharacterControll : MonoBehaviour
 {
     //public
-    public float _interactSphereRadius;
+    public float interactSphereRadius;
 
     //private
     private CharacterStats characterStats;
@@ -73,7 +73,7 @@ public class CharacterControll : MonoBehaviour
 
     private void CheckInteraction()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, _interactSphereRadius);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, interactSphereRadius);
 
         if (colliders.Length > 0)
         {
@@ -82,7 +82,7 @@ public class CharacterControll : MonoBehaviour
                 if (collider.transform.GetComponent<Interactable>())
                 {
                     collider.transform.GetComponent<Interactable>().Interact();
-                    return;
+  //                  return;
                 }
             }
         }
