@@ -9,6 +9,7 @@ public class CameraController : MonoBehaviour
     public Room currentRoom;
 
     public float moveSpeedWhenRoomChange;
+    public float cameraAfterMoveHeightShift;
 
     private void Awake()
     {
@@ -29,7 +30,7 @@ public class CameraController : MonoBehaviour
 
         Vector3 targetPosition = GetCameraTargetPosition();
 
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * moveSpeedWhenRoomChange);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * CalculateCameraMoveSpeed());
     }
 
     private Vector3 GetCameraTargetPosition()
@@ -40,9 +41,24 @@ public class CameraController : MonoBehaviour
         }
 
         Vector3 targetPosition = currentRoom.GetRoomCentre() - new Vector3(0, 0 , 0.5f);
-        targetPosition.y = transform.position.y;
+
+        targetPosition.y = CalculateNewCameraHeight();
 
         return targetPosition;
+    }
+
+    private float CalculateCameraMoveSpeed()
+    {
+        //mozna zrobic to lepiej.
+        return currentRoom.width + currentRoom.length * moveSpeedWhenRoomChange;
+    }
+
+    private float CalculateNewCameraHeight()
+    {
+        //poprawic. ten "algorytm" nie jest najlepszy.
+        //https://answers.unity.com/questions/1707551/object-to-appear-in-full-in-camera-view-no-matter-1.html
+        //^wydaje sie byc dobrym rozwiazaniem.
+        return currentRoom.width + currentRoom.length / cameraAfterMoveHeightShift;
     }
 
     public bool IsSwitchingScene()

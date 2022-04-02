@@ -34,10 +34,10 @@ public class RoomController : MonoBehaviour
     private void Start()
     {
         LoadRoom("Start", 0, 0);
-        LoadRoom("Start", 1, 0);
-        LoadRoom("Start", -1, 0);
-        LoadRoom("Start", 0, 1);
-        LoadRoom("Start", 0, -1);
+        LoadRoom("1", 1, 0);
+        LoadRoom("2", -1, 0);
+        LoadRoom("1", 0, 1);
+        LoadRoom("2", 0, -1);
     }
 
     private void Update()

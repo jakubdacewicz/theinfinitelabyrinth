@@ -265,7 +265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentRoom: {fileID: 0}
-  moveSpeedWhenRoomChange: 15
+  moveSpeedWhenRoomChange: 1.5
+  cameraAfterMoveHeightShift: 0.5
 --- !u!114 &117605662
 MonoBehaviour:
   m_ObjectHideFlags: 0

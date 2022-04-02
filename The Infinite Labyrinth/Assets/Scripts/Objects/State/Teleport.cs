@@ -33,16 +33,16 @@ public class Teleport : Interactable
 
                 Vector3 teleportedPosition = hit.transform.position + (hit.transform.forward * -1) * teleportedPositionShift;
 
-                TeleportToCoordinates(GameObject.FindWithTag("Player"), teleportedPosition.x, teleportedPosition.y, teleportedPosition.z);
+                TeleportToCoordinates(GameObject.FindWithTag("Player"), teleportedPosition.x, teleportedPosition.z);
             
             
         }
     }
 
-    public void TeleportToCoordinates(GameObject teleportedObject, float x, float y, float z)
+    public void TeleportToCoordinates(GameObject teleportedObject, float x, float z)
     {
-        teleportedObject.transform.position = new Vector3(x, y, z);
+        teleportedObject.transform.position = new Vector3(x, 0.7f, z);
 
-        Debug.Log("Teleported " + teleportedObject.name + " to coordinates x: " + x + ", y: " + y + ", z: " + z);
+        Debug.Log("Teleported " + teleportedObject.name + " to coordinates x: " + x + ", z: " + z);
     }
 }
