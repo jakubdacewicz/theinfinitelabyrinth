@@ -43,6 +43,6 @@ public class Teleport : Interactable
     {
         teleportedObject.transform.position = new Vector3(x, 0.7f, z);
 
-        Debug.Log("Teleported " + teleportedObject.name + " to coordinates x: " + x + ", z: " + z);
+        //Debug.Log("Teleported " + teleportedObject.name + " to coordinates x: " + x + ", z: " + z);
     }
 }

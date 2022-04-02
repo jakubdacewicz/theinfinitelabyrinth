@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class RoomInfo
 {
     public string name;
-    public int x;
-    public int z;
+    public int X;
+    public int Z;
 }
 
 public class RoomController : MonoBehaviour
@@ -18,13 +18,13 @@ public class RoomController : MonoBehaviour
 
     string currentWorldName = "Desert";
 
-    private RoomInfo currentLoadRoomData;
+    RoomInfo currentLoadRoomData;
 
     private Room currentRoom;
 
-    private Queue<RoomInfo> loadRoomQueue = new Queue<RoomInfo>();
+    Queue<RoomInfo> loadRoomQueue = new Queue<RoomInfo>();
 
-    private bool isLoadingRoom = false;
+    bool isLoadingRoom = false;
 
     private void Awake()
     {
@@ -33,11 +33,13 @@ public class RoomController : MonoBehaviour
 
     private void Start()
     {
+        /*
         LoadRoom("Start", 0, 0);
         LoadRoom("1", 1, 0);
         LoadRoom("2", -1, 0);
         LoadRoom("1", 0, 1);
         LoadRoom("2", 0, -1);
+        */
     }
 
     private void Update()
@@ -58,6 +60,12 @@ public class RoomController : MonoBehaviour
         }
 
         currentLoadRoomData = loadRoomQueue.Dequeue();
+        
+        if (DoesRoomExist(currentLoadRoomData.X, currentLoadRoomData.Z))
+        {
+            return;
+        }
+        
         isLoadingRoom = true;
 
         StartCoroutine(LoadRoomRoutine(currentLoadRoomData));
@@ -65,15 +73,17 @@ public class RoomController : MonoBehaviour
 
     public void LoadRoom(string name, int x, int z)
     {
+        /*
         if (DoesRoomExist(x, z))
         {
             return;
         }
+        */
 
         RoomInfo newRoomData = new RoomInfo();
         newRoomData.name = name;
-        newRoomData.x = x;
-        newRoomData.z = z;
+        newRoomData.X = x;
+        newRoomData.Z = z;
 
         loadRoomQueue.Enqueue(newRoomData);
     }
@@ -93,13 +103,13 @@ public class RoomController : MonoBehaviour
     public void RegisterRoom(Room room)
     {
         room.transform.position = new Vector3(
-            currentLoadRoomData.x * room.width,
+            currentLoadRoomData.X * room.width,
             0,
-            currentLoadRoomData.z * room.length);
+            currentLoadRoomData.Z * room.length);
 
-        room.x = currentLoadRoomData.x;
-        room.z = currentLoadRoomData.z;
-        room.name = currentWorldName + "-" + currentLoadRoomData.name + " " + room.x + ", " + room.z;
+        room.X = currentLoadRoomData.X;
+        room.Z = currentLoadRoomData.Z;
+        room.name = currentWorldName + "-" + currentLoadRoomData.name + " " + room.X + ", " + room.Z;
         room.transform.parent = transform;
 
         isLoadingRoom = false;
@@ -114,7 +124,7 @@ public class RoomController : MonoBehaviour
 
     public bool DoesRoomExist( int x, int z)
     {
-        return loadedRooms.Find( item => item.x == x && item.z == z) != null;
+        return loadedRooms.Find( item => item.X == x && item.Z == z) != null;
     }
 
     public void OnPlayerEnterRoom(Room room)

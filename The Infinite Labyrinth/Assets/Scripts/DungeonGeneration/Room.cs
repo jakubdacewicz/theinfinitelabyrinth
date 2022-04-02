@@ -8,9 +8,8 @@ public class Room : MonoBehaviour
     public float height;
     public float length;
 
-    public int x;
-    public int y;
-    public int z;
+    public int X;
+    public int Z;
 
     private void Start()
     {
@@ -31,7 +30,7 @@ public class Room : MonoBehaviour
 
     public Vector3 GetRoomCentre()
     {
-        return new Vector3(x * width, y * height, z * length);
+        return new Vector3(X * width, 0, Z * length);
     }
 
     private void OnTriggerEnter(Collider other)
