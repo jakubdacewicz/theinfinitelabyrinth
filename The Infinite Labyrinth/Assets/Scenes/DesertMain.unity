@@ -279,8 +279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentRoom: {fileID: 0}
-  moveSpeedWhenRoomChange: 1.5
-  cameraAfterMoveHeightShift: 10
+  cameraMoveSpeed: 0.75
+  tempCameraSpeedBoost: 8
+  cameraAfterMoveHeightShift: -14
 --- !u!114 &117605662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1497,7 +1498,7 @@ MonoBehaviour:
   money:
     baseValue: 2000
   movementSpeed:
-    baseValue: 2
+    baseValue: 1
   rotationSpeed:
     baseValue: 5
   parringDelay:
