@@ -60,15 +60,24 @@ public class Room : MonoBehaviour
 
     private void Update()
     {
-        if (name.Contains("Key") || name.Contains("End") && !updatedDoors)
+        if (!updatedDoors)
         {
-            RemoveUnconectedDoors();
-            updatedDoors = true;
-        }
+            if (name.Contains("Shop") || name.Contains("End"))
+            {
+                StartCoroutine(RemoveUnconectedDoors());
+            }
+            else if (name.Contains("Key"))
+            {
+                StartCoroutine(RemoveUnconectedDoors());
+                updatedDoors = true;
+            }
+        }      
     }
 
-    public void RemoveUnconectedDoors()
+    public IEnumerator RemoveUnconectedDoors()
     {
+        yield return new WaitForSeconds(0.15f);
+
         foreach (Door d in doors)
         {
             switch (d.type)
