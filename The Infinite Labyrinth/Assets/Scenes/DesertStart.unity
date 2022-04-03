@@ -448,6 +448,7 @@ GameObject:
   - component: {fileID: 345369087}
   - component: {fileID: 345369089}
   - component: {fileID: 345369088}
+  - component: {fileID: 345369090}
   m_Layer: 6
   m_Name: TopDoor
   m_TagString: Untagged
@@ -482,7 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac35883ab87470a46a186a14787cfece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceOfNextTeleport: 2
+  distanceOfNextTeleport: 2.5
   teleportedPositionShift: 0.2
 --- !u!65 &345369089
 BoxCollider:
@@ -497,6 +498,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.44, y: 0.52, z: 0.53}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &345369090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345369086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d9d8bcc678b0a49984f693c738be29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1001 &420113421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -957,6 +971,7 @@ GameObject:
   - component: {fileID: 909311412}
   - component: {fileID: 909311414}
   - component: {fileID: 909311413}
+  - component: {fileID: 909311415}
   m_Layer: 9
   m_Name: RightDoor
   m_TagString: Untagged
@@ -991,7 +1006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac35883ab87470a46a186a14787cfece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceOfNextTeleport: 2
+  distanceOfNextTeleport: 2.5
   teleportedPositionShift: 0.2
 --- !u!65 &909311414
 BoxCollider:
@@ -1006,6 +1021,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.44, y: 0.52, z: 0.53}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &909311415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909311411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d9d8bcc678b0a49984f693c738be29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
 --- !u!1 &1092040694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,12 +1084,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b776f32790790f24a96748e1fbfdf6e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 3
+  width: 4
   height: 1
-  length: 3
-  x: 0
-  y: 0
-  z: 0
+  length: 4
+  X: 0
+  Z: 0
+  leftDoor: {fileID: 0}
+  rightDoor: {fileID: 0}
+  topDoor: {fileID: 0}
+  bottomDoor: {fileID: 0}
+  doors: []
 --- !u!65 &1092040697
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1511,6 +1543,7 @@ GameObject:
   - component: {fileID: 1954719911}
   - component: {fileID: 1954719913}
   - component: {fileID: 1954719912}
+  - component: {fileID: 1954719914}
   m_Layer: 7
   m_Name: BottomDoor
   m_TagString: Untagged
@@ -1545,7 +1578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac35883ab87470a46a186a14787cfece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceOfNextTeleport: 2
+  distanceOfNextTeleport: 2.5
   teleportedPositionShift: 0.2
 --- !u!65 &1954719913
 BoxCollider:
@@ -1560,6 +1593,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.44, y: 0.52, z: 0.53}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1954719914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954719910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d9d8bcc678b0a49984f693c738be29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
 --- !u!1 &2077866053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,6 +1617,7 @@ GameObject:
   - component: {fileID: 2077866054}
   - component: {fileID: 2077866056}
   - component: {fileID: 2077866055}
+  - component: {fileID: 2077866057}
   m_Layer: 8
   m_Name: LeftDoor
   m_TagString: Untagged
@@ -1605,7 +1652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac35883ab87470a46a186a14787cfece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceOfNextTeleport: 2
+  distanceOfNextTeleport: 2.5
   teleportedPositionShift: 0.2
 --- !u!65 &2077866056
 BoxCollider:
@@ -1620,3 +1667,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.44, y: 0.52, z: 0.53}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2077866057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077866053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d9d8bcc678b0a49984f693c738be29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
