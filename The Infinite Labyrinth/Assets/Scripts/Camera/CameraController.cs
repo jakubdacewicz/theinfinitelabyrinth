@@ -50,9 +50,6 @@ public class CameraController : MonoBehaviour
 
     private float CalculateNewCameraHeight()
     {
-        //poprawic. ten "algorytm" nie jest najlepszy.
-        //https://answers.unity.com/questions/1707551/object-to-appear-in-full-in-camera-view-no-matter-1.html
-        //^wydaje sie byc dobrym rozwiazaniem.
         return currentRoom.width * currentRoom.length + cameraAfterMoveHeightShift;
     }
 

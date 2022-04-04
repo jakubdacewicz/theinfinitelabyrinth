@@ -24,7 +24,6 @@ public class CharacterStats : MonoBehaviour
     public Stat dashStamineCost;
     public Stat dashInvulnerableTime;
 
-    //TODO zrobic aby obiekty byly ladowane automatycznie i private
     public Text textStamine;
     public Text textHealth;
     public Text textAttackDamage;
