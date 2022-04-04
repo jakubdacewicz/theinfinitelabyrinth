@@ -11,12 +11,14 @@ public class DungeonGenerator : MonoBehaviour
     private void Start()
     {
         dungeonRooms = DungeonCrawlerControler.GenerateDungeon(dungeonGenerationData);
+        RoomController.instance.SetWorldName(dungeonGenerationData.worldName);
         SpawnRooms(dungeonRooms);
     }
 
     private void SpawnRooms(IEnumerable<Vector2Int> rooms)
     {
         RoomController.instance.LoadRoom("Start", 0, 0);
+        GameObject.FindWithTag("Player").transform.position = new Vector3(0, 1, 0);
 
         foreach (Vector2Int roomLocation in rooms)
         {         

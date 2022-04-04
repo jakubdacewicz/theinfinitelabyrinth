@@ -23,4 +23,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: 024ee6445a74c1c459194337033e63cc
+  - enabled: 1
+    path: Assets/Scenes/ForrestMain.unity
+    guid: dac9efd46248e0a488638fb2f0c4c278
+  - enabled: 1
+    path: Assets/Scenes/ForrestStart.unity
+    guid: b06010cca71bae34f8f6e37157d479e7
+  - enabled: 1
+    path: Assets/Scenes/ForrestEnd.unity
+    guid: 41c101748ac92e745971332757855487
+  - enabled: 1
+    path: Assets/Scenes/Forrest1.unity
+    guid: 5a8f1ce247acb5a488a549c9229aa021
+  - enabled: 1
+    path: Assets/Scenes/Forrest2.unity
+    guid: a6b58cf11f79c8844a13eec1d989c192
+  - enabled: 1
+    path: Assets/Scenes/ForrestKey.unity
+    guid: e4b76aad5ca427445b30f94a7efba4ac
+  - enabled: 1
+    path: Assets/Scenes/DesertMain.unity
+    guid: 8fd6613395ed5b446a611a3351e681ef
   m_configObjects: {}

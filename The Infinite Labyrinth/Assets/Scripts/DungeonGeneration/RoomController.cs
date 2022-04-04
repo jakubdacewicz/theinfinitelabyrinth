@@ -17,7 +17,7 @@ public class RoomController : MonoBehaviour
 
     public List<Room> loadedRooms = new List<Room>();
 
-    string currentWorldName = "Desert";
+    string currentWorldName = "Forrest";
 
     RoomInfo currentLoadRoomData;
 
@@ -32,17 +32,6 @@ public class RoomController : MonoBehaviour
     private void Awake()
     {
         instance = this;
-    }
-
-    private void Start()
-    {
-        /*
-        LoadRoom("Start", 0, 0);
-        LoadRoom("1", 1, 0);
-        LoadRoom("2", -1, 0);
-        LoadRoom("1", 0, 1);
-        LoadRoom("2", 0, -1);
-        */
     }
 
     private void Update()
@@ -79,6 +68,11 @@ public class RoomController : MonoBehaviour
         isLoadingRoom = true;
 
         StartCoroutine(LoadRoomRoutine(currentLoadRoomData));
+    }
+
+    public void SetWorldName(string name)
+    {
+        currentWorldName = name;
     }
 
     IEnumerator SpawnBossRoom()
