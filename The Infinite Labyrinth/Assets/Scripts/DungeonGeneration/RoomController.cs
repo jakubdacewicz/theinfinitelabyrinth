@@ -82,7 +82,12 @@ public class RoomController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (loadRoomQueue.Count == 0)
         {
-            LoadSpecialRoom((loadedRooms.Count - 1) / 6, "Shop");
+            int shopRoomSpawn = (loadedRooms.Count - 1) / 6;
+            if (shopRoomSpawn == 0)
+            {
+                shopRoomSpawn++;
+            }
+            LoadSpecialRoom(shopRoomSpawn, "Shop");
             LoadSpecialRoom((loadedRooms.Count - 1) / 3, "End");
             LoadSpecialRoom(loadedRooms.Count - 1, "Key");
         }

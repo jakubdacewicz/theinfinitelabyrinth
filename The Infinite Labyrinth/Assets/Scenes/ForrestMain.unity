@@ -529,7 +529,6 @@ GameObject:
   - component: {fileID: 903807044}
   - component: {fileID: 903807043}
   - component: {fileID: 903807042}
-  - component: {fileID: 903807041}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -537,19 +536,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &903807041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903807040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 861fb88792377e5429fdc32b94390142, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dontDestroyObjectTag: 
 --- !u!114 &903807042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,7 +691,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952666250}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d939edc51ed46ca4da9e9afd32201153, type: 3}
   m_Name: 
@@ -726,8 +712,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentRoom: {fileID: 0}
   cameraMoveSpeed: 0.75
-  tempCameraSpeedBoost: 8
-  cameraAfterMoveHeightShift: -14
+  tempCameraSpeedBoost: 12
+  cameraAfterMoveHeightShift: -23
 --- !u!81 &952666253
 AudioListener:
   m_ObjectHideFlags: 0

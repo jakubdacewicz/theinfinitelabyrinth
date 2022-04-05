@@ -36,7 +36,12 @@ public class CameraController : MonoBehaviour
 
     private Vector3 GetCameraTargetPosition()
     {
-        if(currentRoom == null)
+        //if(currentRoom == null)
+        //{
+        //    return Vector3.zero;
+        //}
+
+        if (GameObject.FindWithTag("Player") == null)
         {
             return Vector3.zero;
         }

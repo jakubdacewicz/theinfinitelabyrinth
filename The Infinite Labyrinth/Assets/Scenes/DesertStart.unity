@@ -464,7 +464,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345369086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.034, y: 0.126, z: 0.855}
+  m_LocalPosition: {x: 0, y: 0.126, z: 0.855}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 753530974}
@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac35883ab87470a46a186a14787cfece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceOfNextTeleport: 2.5
+  distanceOfNextTeleport: 3.5
   teleportedPositionShift: 0.2
 --- !u!65 &345369089
 BoxCollider:
@@ -987,7 +987,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909311411}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.863, y: 0.126, z: -0.032}
+  m_LocalPosition: {x: 0.863, y: 0.126, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 723254588}
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac35883ab87470a46a186a14787cfece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceOfNextTeleport: 2.5
+  distanceOfNextTeleport: 3.5
   teleportedPositionShift: 0.2
 --- !u!65 &909311414
 BoxCollider:
@@ -1084,9 +1084,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b776f32790790f24a96748e1fbfdf6e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 4
+  width: 5
   height: 1
-  length: 4
+  length: 5
   X: 0
   Z: 0
   leftDoor: {fileID: 0}
@@ -1105,7 +1105,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 0.8, z: 2}
+  m_Size: {x: 4.8, y: 0.8, z: 4.8}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1145766766
 PrefabInstance:
@@ -1559,7 +1559,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954719910}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.034, y: 0.126, z: -0.837}
+  m_LocalPosition: {x: 0, y: 0.126, z: -0.837}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 510597933}
@@ -1578,7 +1578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac35883ab87470a46a186a14787cfece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceOfNextTeleport: 2.5
+  distanceOfNextTeleport: 3.5
   teleportedPositionShift: 0.2
 --- !u!65 &1954719913
 BoxCollider:
@@ -1633,7 +1633,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077866053}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.72, y: 0.126, z: -0.032}
+  m_LocalPosition: {x: -0.72, y: 0.126, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1481608342}
@@ -1652,7 +1652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac35883ab87470a46a186a14787cfece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceOfNextTeleport: 2.5
+  distanceOfNextTeleport: 3.5
   teleportedPositionShift: 0.2
 --- !u!65 &2077866056
 BoxCollider:

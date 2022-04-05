@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 17523b4a899566a439c59d1c6aa67329
+  - enabled: 1
+    path: Assets/Scenes/ForrestMain.unity
+    guid: dac9efd46248e0a488638fb2f0c4c278
+  - enabled: 1
+    path: Assets/Scenes/DesertMain.unity
+    guid: 8fd6613395ed5b446a611a3351e681ef
+  - enabled: 1
     path: Assets/Scenes/DesertStart.unity
     guid: 53563eebd68aefa4fadcad70834eba06
   - enabled: 1
@@ -24,9 +33,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Shop.unity
     guid: 024ee6445a74c1c459194337033e63cc
   - enabled: 1
-    path: Assets/Scenes/ForrestMain.unity
-    guid: dac9efd46248e0a488638fb2f0c4c278
-  - enabled: 1
     path: Assets/Scenes/ForrestStart.unity
     guid: b06010cca71bae34f8f6e37157d479e7
   - enabled: 1
@@ -42,6 +48,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ForrestKey.unity
     guid: e4b76aad5ca427445b30f94a7efba4ac
   - enabled: 1
-    path: Assets/Scenes/DesertMain.unity
-    guid: 8fd6613395ed5b446a611a3351e681ef
+    path: Assets/Scenes/Desert3.unity
+    guid: aff6dd3ca12629f499847f268eb71de6
+  - enabled: 1
+    path: Assets/Scenes/Forrest3.unity
+    guid: c0f0ce7e71c19a547b5b881b764c0683
   m_configObjects: {}
