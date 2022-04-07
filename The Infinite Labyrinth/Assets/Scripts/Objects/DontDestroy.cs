@@ -15,7 +15,7 @@ public class DontDestroy : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        Debug.Log("Object " + gameObject.name + " destroyed.");
+//        Debug.Log("Object " + gameObject.name + " destroyed.");
         DontDestroyOnLoad(this.gameObject);
     }
 }

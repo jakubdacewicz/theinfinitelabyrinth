@@ -16,6 +16,7 @@ public class LevelComplete : Interactable
     {
         //jakies warunki ukonczenia
         Debug.Log("Loading next world: " + dungeonGenerationData.nextWorldName);
+
         SceneManager.LoadScene(dungeonGenerationData.nextWorldName + "Main");
     }
 }

@@ -31,11 +31,9 @@ public class Teleport : Interactable
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit , distanceOfNextTeleport, layerMask))
         {
             Vector3 teleportedPosition = hit.transform.position + (hit.transform.forward * -1) * teleportedPositionShift;
-
             TeleportToCoordinates(GameObject.FindWithTag("Player"), teleportedPosition.x, teleportedPosition.z);
 
             CameraController cameraControll = GameObject.FindWithTag("MainCamera").GetComponent<CameraController>();
-
             StartCoroutine(cameraControll.SpeedUpCameraForTime(0.3f));           
         }
     }

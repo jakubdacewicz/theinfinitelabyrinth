@@ -11,8 +11,8 @@ public class CharacterControll : MonoBehaviour
     private bool isRotationBlocked = false;
 
     private void Start()
-    {       
-        characterStats = GameObject.Find("Player").GetComponent<CharacterStats>();  
+    {
+        characterStats = GameObject.Find("Player").GetComponent<CharacterStats>();
     }
 
     private void Update()

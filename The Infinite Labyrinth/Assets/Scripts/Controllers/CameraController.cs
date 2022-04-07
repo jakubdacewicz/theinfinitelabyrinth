@@ -12,6 +12,8 @@ public class CameraController : MonoBehaviour
     public float tempCameraSpeedBoost;
     public float cameraAfterMoveHeightShift;
 
+    private bool isMovementEnabled = false;
+
     private void Awake()
     {
         instance = this;
@@ -29,9 +31,19 @@ public class CameraController : MonoBehaviour
             return;
         }
 
+        if (isMovementEnabled == false)
+        {
+            return;
+        }
+
         Vector3 targetPosition = GetCameraTargetPosition();
 
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * cameraMoveSpeed);
+    }
+
+    public void LockCamera(bool action)
+    {
+        isMovementEnabled = !action;
     }
 
     private Vector3 GetCameraTargetPosition()
