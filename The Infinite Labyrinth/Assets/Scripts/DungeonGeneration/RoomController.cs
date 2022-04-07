@@ -96,13 +96,15 @@ public class RoomController : MonoBehaviour
     private void LoadSpecialRoom(int replacedRoomNumber, string name)
     {
         Room bossRoom = loadedRooms[replacedRoomNumber];
-        Room tempRoom = new Room(bossRoom.X, bossRoom.Z);
+        Room tempRoom = gameObject.AddComponent<Room>();
+        tempRoom.SetXandZ(bossRoom.X, bossRoom.Z);
         Destroy(bossRoom.gameObject);
 
         var roomToRemove = loadedRooms.Single(r => r.X == tempRoom.X && r.Z == tempRoom.Z);
         loadedRooms.Remove(roomToRemove);
 
         LoadRoom(name, tempRoom.X, tempRoom.Z);
+        Destroy(tempRoom);
     }
 
     public void LoadRoom(string name, int x, int z)

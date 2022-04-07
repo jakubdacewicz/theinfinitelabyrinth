@@ -13,18 +13,31 @@ public class Room : MonoBehaviour
 
     private bool updatedDoors;
 
+    /*
     public Room(int X, int Z)
     {
         this.X = X;
         this.Z = Z;
     }
+    */
 
     public Door leftDoor;
     public Door rightDoor;
     public Door topDoor;
     public Door bottomDoor;
 
-    public List<Door> doors = new List<Door>();
+    public List<Door> doors;
+
+    private void Awake()
+    {
+        doors = new List<Door>();    
+    }
+
+    public void SetXandZ(int X, int Z)
+    {
+        this.X = X;
+        this.Z = Z;
+    }
 
     private void Start()
     {

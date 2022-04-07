@@ -400,7 +400,6 @@ GameObject:
   - component: {fileID: 2064007878}
   - component: {fileID: 2064007877}
   - component: {fileID: 2064007876}
-  - component: {fileID: 2064007875}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -408,19 +407,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2064007875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2064007874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 861fb88792377e5429fdc32b94390142, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dontDestroyObjectTag: 
 --- !u!114 &2064007876
 MonoBehaviour:
   m_ObjectHideFlags: 0
