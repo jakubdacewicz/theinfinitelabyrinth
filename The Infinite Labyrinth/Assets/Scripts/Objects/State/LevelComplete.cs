@@ -17,6 +17,7 @@ public class LevelComplete : Interactable
         //jakies warunki ukonczenia
         Debug.Log("Loading next world: " + dungeonGenerationData.nextWorldName);
 
+        GameObject.FindWithTag("GameController").GetComponent<GameController>().isSceneChanged = true;
         SceneManager.LoadScene(dungeonGenerationData.nextWorldName + "Main");
     }
 }

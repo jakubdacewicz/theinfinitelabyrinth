@@ -88,6 +88,12 @@ public class CharacterControll : MonoBehaviour
         }
     }
 
+    public void ResetPlayerPosition()
+    {
+        gameObject.GetComponent<Rigidbody>().MovePosition(new Vector3(0,2,0));
+        Debug.Log("Player position reseted.");
+    }
+
     /*
     void OnDrawGizmosSelected()
     {

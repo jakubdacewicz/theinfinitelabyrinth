@@ -6,21 +6,39 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public GameObject player;
-    void Start()
+
+    public bool isSceneChanged = false;
+
+    private void Start()
     {
         StartCoroutine(ActivatePlayerAndCamera());
     }
 
-    private IEnumerator ActivatePlayerAndCamera()
+    private void Update()
     {
-        yield return new WaitForSeconds(1f);
-
-        player.SetActive(true);
-        Debug.Log("Player activated.");
-
-        GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().LockCamera(false);
-        Debug.Log("Camera unlocked.");
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    
+    private IEnumerator ActivatePlayerAndCamera()
+    {
+        yield return new WaitForSeconds(0.8f);
+
+        player.GetComponent<CharacterControll>().ResetPlayerPosition();
+
+        player.SetActive(true);
+//        Debug.Log("Player activated.");
+
+        GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().LockCamera(false);
+//       Debug.Log("Camera unlocked.");
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name.Contains("Main") && isSceneChanged == true)
+        {
+           StartCoroutine(ActivatePlayerAndCamera());
+           isSceneChanged = false;
+        }
+    }
+
 }
