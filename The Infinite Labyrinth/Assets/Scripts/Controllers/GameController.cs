@@ -23,7 +23,10 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.8f);
 
-        player.GetComponent<CharacterControll>().ResetPlayerPosition();
+
+        CharacterControll characterControll = player.GetComponent<CharacterControll>();
+        characterControll.ResetPlayerPosition();
+        characterControll.BlockPlayerMovement(true);
 
         player.SetActive(true);
 //        Debug.Log("Player activated.");

@@ -770,9 +770,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentRoom: {fileID: 0}
-  cameraMoveSpeed: 0.75
+  cameraMoveSpeed: 1
   tempCameraSpeedBoost: 12
-  cameraAfterMoveHeightShift: -23
+  smoothing: 0.02
+  isMovementEnabled: 0
 --- !u!81 &952666253
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1550,7 +1551,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.1, z: 0.2}
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2087955005
 MonoBehaviour:

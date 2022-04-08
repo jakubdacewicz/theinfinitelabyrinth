@@ -11,7 +11,9 @@ public class CameraController : MonoBehaviour
     public float cameraMoveSpeed;
     public float tempCameraSpeedBoost;
 
-    private bool isMovementEnabled = false;
+    public float smoothing;
+
+    public bool isMovementEnabled = false;    
 
     private void Awake()
     {
@@ -54,19 +56,15 @@ public class CameraController : MonoBehaviour
 
         if (GameObject.FindWithTag("Player") == null)
         {
-            return Vector3.zero;
+            return new Vector3(0, 1.5f, 0);
         }
 
-        Vector3 targetPosition = GameObject.FindWithTag("Player").transform.position - new Vector3(0, 0, 0.5f);
+        Vector3 targetPosition = Vector3.Lerp(transform.position, GameObject.FindWithTag("Player").transform.position - new Vector3(0, 0, 0.21f), smoothing);
         targetPosition.y = 1.5f;
 
         return targetPosition;
     }
 
-    public bool IsSwitchingScene()
-    {
-        return transform.position.Equals(GetCameraTargetPosition()) == false;
-    }
 
     public IEnumerator SpeedUpCameraForTime(float secounds)
     {

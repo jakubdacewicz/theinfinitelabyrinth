@@ -50,6 +50,11 @@ public class CharacterStats : MonoBehaviour
         textHealth.text = currentHealth + "/" + maxHealth;
         textAttackDamage.text = attackDamage.GetValue().ToString();
         textMoney.text = money.GetValue().ToString();
+
+        if (transform.position.y <= -5)
+        {
+            TakeDamage(maxHealth);
+        }
     }
 
     public float GetCurrentHealth()
@@ -131,7 +136,9 @@ public class CharacterStats : MonoBehaviour
     {
         Debug.LogWarning("Player died!");
         //Wylaczanie skryptu po smierci. Mozna w przyslosci rozwazyc inne rozwiazanie.
-        this.enabled = false;
+
+        GameObject.FindWithTag("Player").SetActive(false);
+//        this.enabled = false;
     }
 
     private void RegenerateStamine()

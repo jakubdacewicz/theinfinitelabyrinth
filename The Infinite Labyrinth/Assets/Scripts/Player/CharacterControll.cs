@@ -7,7 +7,7 @@ public class CharacterControll : MonoBehaviour
 
     //private
     private CharacterStats characterStats;
-    private bool isMovementBlocked = false;
+    private bool isMovementBlocked = true;
     private bool isRotationBlocked = false;
 
     private void Start()
@@ -90,7 +90,7 @@ public class CharacterControll : MonoBehaviour
 
     public void ResetPlayerPosition()
     {
-        gameObject.GetComponent<Rigidbody>().MovePosition(new Vector3(0,2,0));
+        gameObject.GetComponent<Rigidbody>().MovePosition(new Vector3(0, 0.5f, 0));
         Debug.Log("Player position reseted.");
     }
 

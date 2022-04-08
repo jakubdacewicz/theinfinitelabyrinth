@@ -34,6 +34,7 @@ public class Teleport : Interactable
             TeleportToCoordinates(GameObject.FindWithTag("Player"), teleportedPosition.x, teleportedPosition.z);
 
             CameraController cameraControll = GameObject.FindWithTag("MainCamera").GetComponent<CameraController>();
+            cameraControll.LockCamera(false);
             StartCoroutine(cameraControll.SpeedUpCameraForTime(0.3f));           
         }
     }
