@@ -10,7 +10,6 @@ public class CameraController : MonoBehaviour
 
     public float cameraMoveSpeed;
     public float tempCameraSpeedBoost;
-    public float cameraAfterMoveHeightShift;
 
     private bool isMovementEnabled = false;
 
@@ -59,15 +58,9 @@ public class CameraController : MonoBehaviour
         }
 
         Vector3 targetPosition = GameObject.FindWithTag("Player").transform.position - new Vector3(0, 0, 0.5f);
-
-        targetPosition.y = CalculateNewCameraHeight();
+        targetPosition.y = 1.5f;
 
         return targetPosition;
-    }
-
-    private float CalculateNewCameraHeight()
-    {
-        return currentRoom.width * currentRoom.length + cameraAfterMoveHeightShift;
     }
 
     public bool IsSwitchingScene()
