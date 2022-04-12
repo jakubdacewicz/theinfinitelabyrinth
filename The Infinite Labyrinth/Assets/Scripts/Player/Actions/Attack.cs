@@ -53,11 +53,19 @@ public class Attack : MonoBehaviour
             {
                 if (collider.CompareTag("Enemy"))
                 {
-                    //tu wstawic ze enemy traci hp.
+                    collider.GetComponent<EnemyStats>().TakeDamage(characterStats.attackDamage.GetValue());
                     Debug.Log(collider.name + " took damage.");
                 }
             }
         }
         nextActionTime = Time.time + characterStats.attackSpeed.GetValue();
+    }
+
+    private void OnDrawGizmos()
+    {
+        characterStats = GameObject.Find("Player").GetComponent<CharacterStats>();
+        Gizmos.color = Color.yellow;
+        float value = characterStats.attackRange.GetValue();
+        Gizmos.DrawWireSphere(transform.position + transform.forward * attackRangePosition, value);
     }
 }

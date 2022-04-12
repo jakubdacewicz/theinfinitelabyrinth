@@ -321,9 +321,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentRoom: {fileID: 0}
-  cameraMoveSpeed: 0.75
+  cameraMoveSpeed: 1
   tempCameraSpeedBoost: 12
-  cameraAfterMoveHeightShift: -23
+  smoothing: 0.02
+  isMovementEnabled: 0
 --- !u!81 &1180715242
 AudioListener:
   m_ObjectHideFlags: 0

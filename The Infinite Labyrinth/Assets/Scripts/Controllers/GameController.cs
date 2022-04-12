@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
 
         CharacterControll characterControll = player.GetComponent<CharacterControll>();
         characterControll.ResetPlayerPosition();
-        characterControll.BlockPlayerMovement(true);
+        characterControll.BlockPlayerMovement(false);
 
         player.SetActive(true);
 //        Debug.Log("Player activated.");
