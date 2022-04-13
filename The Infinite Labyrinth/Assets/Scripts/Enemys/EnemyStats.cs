@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
-{
-    //public  
+{ 
     public Stat maxHealth;
     public Stat movementSpeed;
     public Stat attackRange;
     public Stat attackDamage;
     public Stat attackCooldown;
 
-    //private
     private float currentHealth;
 
     private void Start()

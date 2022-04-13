@@ -54,7 +54,7 @@ public class Attack : MonoBehaviour
                 if (collider.CompareTag("Enemy"))
                 {
                     collider.GetComponent<EnemyStats>().TakeDamage(characterStats.attackDamage.GetValue());
-                    Debug.Log(collider.name + " took damage.");
+                    //Debug.Log(collider.name + " took damage.");
                 }
             }
         }
