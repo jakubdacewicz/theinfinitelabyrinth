@@ -137,8 +137,13 @@ public class CharacterStats : MonoBehaviour
         Debug.LogWarning("Player died!");
         //Wylaczanie skryptu po smierci. Mozna w przyslosci rozwazyc inne rozwiazanie.
 
+        GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemys)
+        {
+            enemy.GetComponent<EnemyController>().enabled = false;
+        }
+
         GameObject.FindWithTag("Player").SetActive(false);
-//        this.enabled = false;
     }
 
     private void RegenerateStamine()

@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class RangedEnemyController : EnemyController
 {
+    public Rigidbody bullet;
+    public float projectileSpeed;
+
     public override void Follow()
     {
-        if (Vector3.Distance(player.transform.position, gameObject.transform.position) <= stopRange)
+        if (Vector3.Distance(player.transform.position, gameObject.transform.position) <= stats.attackRange.GetValue())
         {
             isFollowing = false;
             isAttacking = true;
@@ -14,8 +17,9 @@ public class RangedEnemyController : EnemyController
             return;
         }
 
-        transform.LookAt(player.transform.position);
-        gameObject.transform.position = Vector3.MoveTowards(transform.position, player.transform.position, stats.movementSpeed.GetValue() * Time.deltaTime);
+        //transform.LookAt(player.transform.position);
+        //gameObject.transform.position = Vector3.MoveTowards(transform.position, player.transform.position, stats.movementSpeed.GetValue() * Time.deltaTime);
+        agent.destination = player.transform.position;
     }
 
     public override void Wait()
@@ -31,22 +35,29 @@ public class RangedEnemyController : EnemyController
 
     public override void RunAway()
     {
-        transform.LookAt(FindClosestPoint());
-        gameObject.transform.position = Vector3.MoveTowards(transform.position, FindClosestPoint(), stats.movementSpeed.GetValue() * movementSpeedBoost * Time.deltaTime);
+        //transform.LookAt(FindClosestPoint());
+        //gameObject.transform.position = Vector3.MoveTowards(transform.position, FindClosestPoint(), stats.movementSpeed.GetValue() * movementSpeedBoost * Time.deltaTime);
+
+        agent.stoppingDistance = 0;
+        agent.destination = FindClosestPoint();
+        agent.speed = startMovementSpeed + movementSpeedBoost;
 
         if (IsEnemyAtPositionOfPoint())
-        {
-            isWaiting = true;
-            isRunningAway = false;
+        {            
+            agent.stoppingDistance = stats.attackRange.GetValue();
+            agent.speed -= movementSpeedBoost;
 
             currentWaitTime = Time.time + waitTime;
+
+            isWaiting = true;
+            isRunningAway = false;
         }
     }
 
     public override void Attack()
     {
-        //lookat dodac
-        
+        transform.LookAt(player.transform.position);
+
         if (stats.GetCurrentHealth() <= stats.maxHealth.GetValue() / 4)
         {           
             isFollowing = false;
@@ -61,20 +72,16 @@ public class RangedEnemyController : EnemyController
             return;
         }
 
-        Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, stats.attackRange.GetValue());
+        var shoot = Instantiate(bullet, transform.position, transform.rotation);
+        shoot.SendMessage("SetAttackDamage", stats.attackDamage.GetValue());
 
-        foreach (Collider collider in colliders)
-        {
-            if (collider.CompareTag("Player"))
-            {
-                player.GetComponent<CharacterStats>().TakeDamage(stats.attackDamage.GetValue());
-                currentAttackWaitTime = Time.time + stats.attackCooldown.GetValue();
+        shoot.AddForce(transform.forward * projectileSpeed);
 
-                break;
-            }
-        }
+        currentAttackWaitTime = Time.time + stats.attackCooldown.GetValue();
 
         isFollowing = true;
         isAttacking = false;
+
+        Destroy(shoot.gameObject, stats.attackCooldown.GetValue());
     }
 }

@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public abstract class EnemyController : MonoBehaviour
 {
     public GameObject player;
 
     public EnemyStats stats;
+
+    public NavMeshAgent agent;
 
     public bool isFollowing = false;
     public bool isAttacking = false;
@@ -16,8 +19,8 @@ public abstract class EnemyController : MonoBehaviour
     public List<Transform> waitPoints;
 
     public float waitTime;
-    public float stopRange;
     public float movementSpeedBoost;
+    public float startMovementSpeed;
 
     public float currentWaitTime;
     public float currentAttackWaitTime;
@@ -25,6 +28,11 @@ public abstract class EnemyController : MonoBehaviour
     private void Start()
     {
         stats = gameObject.GetComponent<EnemyStats>();
+        agent = gameObject.GetComponent<NavMeshAgent>();
+        agent.speed = stats.movementSpeed.GetValue();
+        agent.stoppingDistance = stats.attackRange.GetValue();
+        startMovementSpeed = stats.movementSpeed.GetValue();
+
         StartCoroutine(LoadPlayerData());
     }
 

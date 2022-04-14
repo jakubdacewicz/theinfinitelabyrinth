@@ -6,7 +6,7 @@ public class TankEnemyController : EnemyController
 {
     public override void Follow()
     {
-        if (Vector3.Distance(player.transform.position, gameObject.transform.position) <= stopRange)
+        if (Vector3.Distance(player.transform.position, gameObject.transform.position) <= stats.attackRange.GetValue())
         {
             isFollowing = false;
             isAttacking = true;

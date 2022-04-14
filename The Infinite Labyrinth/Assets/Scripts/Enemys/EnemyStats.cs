@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyStats : MonoBehaviour
 { 
@@ -35,7 +36,8 @@ public class EnemyStats : MonoBehaviour
 
     private void Die()
     {
-        gameObject.GetComponentInChildren<Collider>().enabled = false;
-        gameObject.GetComponent<EnemyController>().enabled = false;
+        GetComponentInChildren<Collider>().enabled = false;
+        GetComponent<NavMeshAgent>().enabled = false;
+        GetComponent<EnemyController>().enabled = false;
     }
 }
