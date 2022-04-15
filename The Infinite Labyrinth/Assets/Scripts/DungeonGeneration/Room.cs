@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.AI;
 
 public class Room : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Room : MonoBehaviour
 
     public int X;
     public int Z;
+
+    public NavMeshBuilder builder;
 
     private bool updatedDoors;
 
@@ -167,6 +170,28 @@ public class Room : MonoBehaviour
         if(other.tag == "Player")
         {
             RoomController.instance.OnPlayerEnterRoom(this);
+            
+            foreach(Transform child in transform)
+            {
+                if (child.CompareTag("Enemy"))
+                {
+                    child.gameObject.SetActive(true);
+                }
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            foreach (Transform child in transform)
+            {
+                if (child.CompareTag("Enemy"))
+                {
+                    child.gameObject.SetActive(false);
+                }
+            }
         }
     }
 }

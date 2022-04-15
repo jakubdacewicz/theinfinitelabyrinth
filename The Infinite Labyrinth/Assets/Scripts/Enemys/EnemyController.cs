@@ -41,6 +41,8 @@ public abstract class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         player = GameObject.FindWithTag("Player");
+
+        currentWaitTime = Time.time + waitTime;
         isWaiting = true;
     }
 
