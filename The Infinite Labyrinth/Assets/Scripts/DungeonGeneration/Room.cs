@@ -12,8 +12,6 @@ public class Room : MonoBehaviour
     public int X;
     public int Z;
 
-    public NavMeshBuilder builder;
-
     private bool updatedDoors;
 
     /*
