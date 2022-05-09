@@ -13,14 +13,14 @@ public class BulletController : MonoBehaviour
         playerStats = GameObject.FindWithTag("Player").GetComponent<CharacterStats>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             playerStats.TakeDamage(attackDamage);
 
             Destroy(gameObject);
-        }      
+        }
     }
 
     private void SetAttackDamage(float damage)

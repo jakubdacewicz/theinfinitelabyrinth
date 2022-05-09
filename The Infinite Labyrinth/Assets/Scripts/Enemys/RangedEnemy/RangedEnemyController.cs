@@ -8,6 +8,7 @@ public class RangedEnemyController : EnemyController
     public Rigidbody bullet;
 
     public float projectileSpeed;
+    public float projectileDisapiranceTime;
 
     public Transform shooter;
 
@@ -81,6 +82,6 @@ public class RangedEnemyController : EnemyController
         isAttacking = false;
         isFollowing = true;
 
-        Destroy(shoot.gameObject, stats.attackCooldown.GetValue());
+        Destroy(shoot.gameObject, stats.attackCooldown.GetValue() + projectileDisapiranceTime);
     }
 }

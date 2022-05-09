@@ -3229,7 +3229,7 @@ MonoBehaviour:
   currentAttackWaitTime: 0
   bullet: {fileID: 2576038489624178430, guid: a3770c57a96bf2048b7cd9ab1369046f, type: 3}
   projectileSpeed: 150
-  shooter: {fileID: 1823425831}
+  shooter: {fileID: 1896186517}
 --- !u!65 &1605001441
 BoxCollider:
   m_ObjectHideFlags: 0
