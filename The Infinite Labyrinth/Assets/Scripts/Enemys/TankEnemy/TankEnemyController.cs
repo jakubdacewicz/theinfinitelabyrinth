@@ -14,33 +14,24 @@ public class TankEnemyController : EnemyController
             return;
         }
 
-        transform.LookAt(player.transform.position);
-        gameObject.transform.position = Vector3.MoveTowards(transform.position, player.transform.position, stats.movementSpeed.GetValue() * Time.deltaTime);
+        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+        agent.destination = player.transform.position;
     }
 
     public override void Wait()
     {
-        transform.LookAt(player.transform.position);
+        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
 
         if (currentWaitTime <= Time.time)
-        {
-            isAttacking = true;
+        {           
             isWaiting = false;
+            isFollowing = true;
         }
     }
 
     public override void Attack()
     {
-        //lookat dodac
-        /*
-        if (stats.GetCurrentHealth() <= stats.maxHealth.GetValue() / 4)
-        {           
-            isFollowing = false;
-            isWaiting = false;
-            isRunningAway = true;
-            isAttacking = false;
-        }
-        */
+        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
 
         if (currentAttackWaitTime > Time.time)
         {
@@ -59,8 +50,8 @@ public class TankEnemyController : EnemyController
                 break;
             }
         }
-
-        isFollowing = true;
+       
         isAttacking = false;
+        isFollowing = true;
     }
 }
