@@ -9,6 +9,7 @@ public class NavMeshGenerator : MonoBehaviour
     [SerializeField] private GameObject navMeshRoot = null;
 
     private List<GameObject> navMeshElements = new List<GameObject>();
+
     public void SetNavMeshElements(List<GameObject> values)
     {
         navMeshComponents.Clear();
@@ -39,4 +40,5 @@ public class NavMeshGenerator : MonoBehaviour
 
     }
     */
+
 }

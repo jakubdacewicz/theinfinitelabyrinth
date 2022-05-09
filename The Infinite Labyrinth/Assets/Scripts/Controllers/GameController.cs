@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using Unity.AI.Navigation;
 
 public class GameController : MonoBehaviour
 {
@@ -9,14 +10,24 @@ public class GameController : MonoBehaviour
 
     public bool isSceneChanged = false;
 
+    private NavMeshSurface navMeshSurface;
+
     private void Start()
     {
+        navMeshSurface = gameObject.GetComponent<NavMeshSurface>();
+        Invoke("BuildEnemyArea", 1.5f);
         StartCoroutine(ActivatePlayerAndCamera());
     }
 
     private void Update()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void BuildEnemyArea()
+    {
+        navMeshSurface.enabled = true;
+        navMeshSurface.BuildNavMesh();
     }
 
     private IEnumerator ActivatePlayerAndCamera()
