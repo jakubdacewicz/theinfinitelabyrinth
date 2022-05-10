@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankEnemyController : EnemyController
+public class RougeEnemy : EnemyController
 {
     public override void Follow()
     {
@@ -14,7 +14,6 @@ public class TankEnemyController : EnemyController
             return;
         }
 
-        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
         agent.destination = player.transform.position;
     }
 
@@ -23,20 +22,38 @@ public class TankEnemyController : EnemyController
         transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
 
         if (currentWaitTime <= Time.time)
-        {           
+        {
             isWaiting = false;
             isFollowing = true;
         }
     }
 
+    public override void RunAway()
+    {
+        agent.stoppingDistance = 0;
+        agent.destination = FindClosestPoint();
+        agent.speed = startMovementSpeed + movementSpeedBoost;
+
+        if (IsEnemyAtPositionOfPoint())
+        {
+            agent.stoppingDistance = stats.attackRange.GetValue();
+            agent.speed -= movementSpeedBoost;
+
+            currentWaitTime = Time.time + waitTime;
+
+            isRunningAway = false;
+            isWaiting = true;
+        }
+    }
+
     public override void Attack()
     {
-        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
-
         if (currentAttackWaitTime > Time.time)
         {
             return;
         }
+
+        transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
 
         Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, stats.attackRange.GetValue());
 
@@ -50,8 +67,8 @@ public class TankEnemyController : EnemyController
                 break;
             }
         }
-       
+
         isAttacking = false;
-        isFollowing = true;
+        isRunningAway = true;
     }
 }

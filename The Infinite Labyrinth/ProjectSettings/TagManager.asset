@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Canvas
   - Room
+  - Trap
   layers:
   - Default
   - TransparentFX

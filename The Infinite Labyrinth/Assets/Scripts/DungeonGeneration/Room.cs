@@ -171,7 +171,7 @@ public class Room : MonoBehaviour
             
             foreach(Transform child in transform)
             {
-                if (child.CompareTag("Enemy"))
+                if (child.CompareTag("Enemy") || child.CompareTag("Trap"))
                 {
                     child.gameObject.SetActive(true);
                 }
@@ -185,7 +185,7 @@ public class Room : MonoBehaviour
         {
             foreach (Transform child in transform)
             {
-                if (child.CompareTag("Enemy"))
+                if (child.CompareTag("Enemy") || child.CompareTag("Trap"))
                 {
                     child.gameObject.SetActive(false);
                 }
