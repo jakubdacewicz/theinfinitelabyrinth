@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using Unity.AI.Navigation;
+using UnityEngine.UI;
+using System;
 
 public class GameController : MonoBehaviour
 {
@@ -10,7 +12,11 @@ public class GameController : MonoBehaviour
 
     public bool isSceneChanged = false;
 
+    public Text gameTime;
+
     private NavMeshSurface navMeshSurface;
+
+    private float timer = 0f;
 
     private void Start()
     {
@@ -22,6 +28,9 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        timer += Time.deltaTime;
+
+        gameTime.text = String.Format("{0:00}", (int)timer / 60) + ":" + String.Format("{0:00}", (int)timer % 60);
     }
 
     private void BuildEnemyArea()

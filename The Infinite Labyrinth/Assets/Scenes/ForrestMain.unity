@@ -721,6 +721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2087955002}
   isSceneChanged: 1
+  gameTime: {fileID: 76546959}
 --- !u!114 &936264004
 MonoBehaviour:
   m_ObjectHideFlags: 0
