@@ -29,7 +29,7 @@ public class EnemyStats : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Debug.LogWarning("Enemy killed.");
+            Debug.LogWarning(gameObject.name +  " killed.");
             Die();           
         }
     }
@@ -39,5 +39,6 @@ public class EnemyStats : MonoBehaviour
         GetComponentInChildren<Collider>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<EnemyController>().enabled = false;
+        GetComponentInParent<Room>().DecreaseEnemyAmmount();    
     }
 }

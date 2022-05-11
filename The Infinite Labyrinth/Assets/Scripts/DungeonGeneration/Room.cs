@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.AI;
+using System.Linq;
 
 public class Room : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Room : MonoBehaviour
 
     public int X;
     public int Z;
+
+    public int enemysAmmount = 0;
 
     private bool updatedDoors;
 
@@ -31,7 +34,7 @@ public class Room : MonoBehaviour
 
     private void Awake()
     {
-        doors = new List<Door>();    
+        doors = new List<Door>();
     }
 
     public void SetXandZ(int X, int Z)
@@ -85,7 +88,16 @@ public class Room : MonoBehaviour
                 StartCoroutine(RemoveUnconectedDoors());
                 updatedDoors = true;
             }
-        }      
+        }
+
+        if (enemysAmmount > 0)
+        {
+            SetDoorsActive(false);
+        }
+        else
+        {
+            SetDoorsActive(true);
+        }
     }
 
     public IEnumerator RemoveUnconectedDoors()
@@ -97,7 +109,7 @@ public class Room : MonoBehaviour
             switch (d.type)
             {
                 case Door.DoorType.right:
-                    if(GetRight() == null)
+                    if (GetRight() == null)
                         d.gameObject.SetActive(false);
                     break;
                 case Door.DoorType.left:
@@ -165,13 +177,19 @@ public class Room : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             RoomController.instance.OnPlayerEnterRoom(this);
-            
-            foreach(Transform child in transform)
+
+            foreach (Transform child in transform)
             {
-                if (child.CompareTag("Enemy") || child.CompareTag("Trap"))
+                if (child.CompareTag("Enemy") && child.GetComponent<EnemyController>().enabled == true)
+                {
+                    child.gameObject.SetActive(true);
+                    enemysAmmount++;
+                }
+
+                if (child.CompareTag("Trap"))
                 {
                     child.gameObject.SetActive(true);
                 }
@@ -191,5 +209,26 @@ public class Room : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SetDoorsActive(bool active)
+    {
+        BoxCollider[] boxColliders = GetComponentsInChildren<BoxCollider>();
+        boxColliders = boxColliders.Where(child => child.tag == "Portal").ToArray();
+
+        foreach (BoxCollider boxCollider in boxColliders)
+        {
+            boxCollider.enabled = active;
+        }
+    }
+
+     public void DecreaseEnemyAmmount()
+    {
+        enemysAmmount--;
+    }
+
+    public int GetEnemysAmmount()
+    {
+        return enemysAmmount;
     }
 }

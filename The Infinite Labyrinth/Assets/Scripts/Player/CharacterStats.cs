@@ -138,10 +138,19 @@ public class CharacterStats : MonoBehaviour
         //Wylaczanie skryptu po smierci. Mozna w przyslosci rozwazyc inne rozwiazanie.
 
         GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] traps = GameObject.FindGameObjectsWithTag("Trap");
+
         foreach (GameObject enemy in enemys)
-        {
+        {          
             enemy.GetComponent<EnemyController>().enabled = false;
         }
+
+        foreach (GameObject trap in traps)
+        {
+            trap.GetComponent<ShootingTrapController>().enabled = false;
+        }
+
+        textHealth.text = currentHealth + "/" + maxHealth;
 
         GameObject.FindWithTag("Player").SetActive(false);
     }

@@ -5,15 +5,23 @@ using UnityEngine;
 public class Teleport : Interactable
 {
     public float distanceOfNextTeleport;
-    public float teleportedPositionShift = 0.2f;  
+    public float teleportedPositionShift = 0.2f;
+
+    private RoomController roomController;
 
     private void Update()
     {
+        roomController = GetComponentInParent<RoomController>();
         Debug.DrawRay(transform.position, transform.forward * distanceOfNextTeleport, Color.green);
     }
 
     public override void Interact()
     {
+        if (roomController.currentRoom.GetEnemysAmmount() > 0)
+        {
+            return;
+        }
+
         RaycastHit hit;
 
         var directionOfTeleportCheck = new Dictionary<string, string>

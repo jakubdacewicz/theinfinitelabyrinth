@@ -531,7 +531,7 @@ GameObject:
   - component: {fileID: 197726142}
   m_Layer: 6
   m_Name: TopDoor
-  m_TagString: Untagged
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1310,6 +1310,7 @@ MonoBehaviour:
   length: 5
   X: 0
   Z: 0
+  enemysAmmount: 0
   leftDoor: {fileID: 0}
   rightDoor: {fileID: 0}
   topDoor: {fileID: 0}
@@ -1974,13 +1975,14 @@ MonoBehaviour:
   - {fileID: 180578000}
   - {fileID: 2042906787}
   - {fileID: 1118599968}
-  waitTime: 1.5
+  waitTime: 0.6
   movementSpeedBoost: 5
   startMovementSpeed: 0
   currentWaitTime: 0
   currentAttackWaitTime: 0
   bullet: {fileID: 2576038489624178430, guid: a3770c57a96bf2048b7cd9ab1369046f, type: 3}
   projectileSpeed: 150
+  projectileDisapiranceTime: 0
   shooter: {fileID: 1823425831}
 --- !u!65 &1037892021
 BoxCollider:
@@ -2994,7 +2996,7 @@ GameObject:
   - component: {fileID: 1589817036}
   m_Layer: 8
   m_Name: LeftDoor
-  m_TagString: Untagged
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3222,13 +3224,14 @@ MonoBehaviour:
   - {fileID: 180578000}
   - {fileID: 2042906787}
   - {fileID: 1118599968}
-  waitTime: 1.5
+  waitTime: 0.6
   movementSpeedBoost: 5
   startMovementSpeed: 0
   currentWaitTime: 0
   currentAttackWaitTime: 0
   bullet: {fileID: 2576038489624178430, guid: a3770c57a96bf2048b7cd9ab1369046f, type: 3}
   projectileSpeed: 150
+  projectileDisapiranceTime: 0
   shooter: {fileID: 1896186517}
 --- !u!65 &1605001441
 BoxCollider:
@@ -3279,7 +3282,7 @@ GameObject:
   - component: {fileID: 1607737649}
   m_Layer: 9
   m_Name: RightDoor
-  m_TagString: Untagged
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4174,7 +4177,7 @@ GameObject:
   - component: {fileID: 2099404007}
   m_Layer: 7
   m_Name: BottomDoor
-  m_TagString: Untagged
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

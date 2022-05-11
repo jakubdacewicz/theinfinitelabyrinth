@@ -8,6 +8,7 @@ TagManager:
   - Canvas
   - Room
   - Trap
+  - Portal
   layers:
   - Default
   - TransparentFX
