@@ -12,6 +12,8 @@ public class RangedEnemyController : EnemyController
 
     public Transform shooter;
 
+    private bool isRunAwayActionDone = false;
+
     public override void Follow()
     {
         if (Vector3.Distance(player.transform.position, gameObject.transform.position) <= stats.attackRange.GetValue())
@@ -30,25 +32,24 @@ public class RangedEnemyController : EnemyController
         transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
 
         if (currentWaitTime <= Time.time)
-        {           
+        {     
             isWaiting = false;
             isAttacking = true;
         }
     }
 
     public override void RunAway()
-    {
-        agent.stoppingDistance = 0;
-        agent.destination = FindClosestPoint();
+    {             
+        agent.destination = currentDestination.GetPointPosition;
         agent.speed = startMovementSpeed + movementSpeedBoost;
 
         if (IsEnemyAtPositionOfPoint())
         {            
-            agent.stoppingDistance = stats.attackRange.GetValue();
             agent.speed -= movementSpeedBoost;
 
             currentWaitTime = Time.time + waitTime;
-          
+
+            isRunAwayActionDone = true;
             isRunningAway = false;
             isWaiting = true;
         }
@@ -58,12 +59,15 @@ public class RangedEnemyController : EnemyController
     {
         transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
 
-        if (stats.GetCurrentHealth() <= stats.maxHealth.GetValue() / 4)
+        if (stats.GetCurrentHealth() <= stats.maxHealth.GetValue() / 4 && !isRunAwayActionDone)
         {           
             isFollowing = false;
             isWaiting = false;           
             isAttacking = false;
+            currentDestination = FindPoint();
             isRunningAway = true;
+
+            return;
         }
         
 

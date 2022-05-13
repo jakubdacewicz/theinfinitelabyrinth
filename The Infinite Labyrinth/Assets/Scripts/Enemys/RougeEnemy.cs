@@ -23,6 +23,8 @@ public class RougeEnemy : EnemyController
 
         if (currentWaitTime <= Time.time)
         {
+            currentDestination = FindPoint();
+
             isWaiting = false;
             isFollowing = true;
         }
@@ -31,7 +33,7 @@ public class RougeEnemy : EnemyController
     public override void RunAway()
     {
         agent.stoppingDistance = 0;
-        agent.destination = FindClosestPoint();
+        agent.destination = currentDestination.GetPointPosition;
         agent.speed = startMovementSpeed + movementSpeedBoost;
 
         if (IsEnemyAtPositionOfPoint())

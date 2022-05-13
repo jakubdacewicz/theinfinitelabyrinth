@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 30927034}
+  - component: {fileID: 30927035}
   m_Layer: 0
   m_Name: Point 2
   m_TagString: Untagged
@@ -154,6 +155,18 @@ Transform:
   m_Father: {fileID: 981928820}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &30927035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30927033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccad0d48bbdf0b4499afb684cf168d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &83535074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -331,6 +344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 180578000}
+  - component: {fileID: 180578001}
   m_Layer: 0
   m_Name: Point 4
   m_TagString: Untagged
@@ -353,6 +367,18 @@ Transform:
   m_Father: {fileID: 981928820}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &180578001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180577999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccad0d48bbdf0b4499afb684cf168d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &189890869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -601,6 +627,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 203153892}
+  - component: {fileID: 203153893}
   m_Layer: 0
   m_Name: Point
   m_TagString: Untagged
@@ -623,6 +650,18 @@ Transform:
   m_Father: {fileID: 981928820}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &203153893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203153891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccad0d48bbdf0b4499afb684cf168d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &261864224
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,6 +671,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 261864225}
+  - component: {fileID: 261864226}
   m_Layer: 0
   m_Name: Point 3
   m_TagString: Untagged
@@ -654,6 +694,18 @@ Transform:
   m_Father: {fileID: 981928820}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &261864226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261864224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccad0d48bbdf0b4499afb684cf168d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &264839407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1936,12 +1988,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 1037892017}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1
+  m_StoppingDistance: 0.1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
@@ -1964,22 +2016,23 @@ MonoBehaviour:
   player: {fileID: 0}
   stats: {fileID: 0}
   agent: {fileID: 0}
-  isFollowing: 0
+  isFollowing: 1
   isAttacking: 0
   isRunningAway: 0
   isWaiting: 0
   waitPoints:
-  - {fileID: 203153892}
-  - {fileID: 30927034}
-  - {fileID: 261864225}
-  - {fileID: 180578000}
-  - {fileID: 2042906787}
-  - {fileID: 1118599968}
-  waitTime: 0.6
+  - {fileID: 203153893}
+  - {fileID: 30927035}
+  - {fileID: 261864226}
+  - {fileID: 180578001}
+  - {fileID: 2042906788}
+  - {fileID: 1118599969}
+  waitTime: 1.1
   movementSpeedBoost: 5
   startMovementSpeed: 0
   currentWaitTime: 0
   currentAttackWaitTime: 0
+  currentDestination: {fileID: 0}
   bullet: {fileID: 2576038489624178430, guid: a3770c57a96bf2048b7cd9ab1369046f, type: 3}
   projectileSpeed: 150
   projectileDisapiranceTime: 0
@@ -2192,6 +2245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1118599968}
+  - component: {fileID: 1118599969}
   m_Layer: 0
   m_Name: Point 6
   m_TagString: Untagged
@@ -2214,6 +2268,18 @@ Transform:
   m_Father: {fileID: 981928820}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1118599969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118599967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccad0d48bbdf0b4499afb684cf168d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1127818414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3185,12 +3251,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 1605001437}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1
+  m_StoppingDistance: 0.1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
@@ -3213,22 +3279,23 @@ MonoBehaviour:
   player: {fileID: 0}
   stats: {fileID: 0}
   agent: {fileID: 0}
-  isFollowing: 0
+  isFollowing: 1
   isAttacking: 0
   isRunningAway: 0
   isWaiting: 0
   waitPoints:
-  - {fileID: 203153892}
-  - {fileID: 30927034}
-  - {fileID: 261864225}
-  - {fileID: 180578000}
-  - {fileID: 2042906787}
-  - {fileID: 1118599968}
-  waitTime: 0.6
+  - {fileID: 203153893}
+  - {fileID: 30927035}
+  - {fileID: 261864226}
+  - {fileID: 180578001}
+  - {fileID: 2042906788}
+  - {fileID: 1118599969}
+  waitTime: 1.1
   movementSpeedBoost: 5
   startMovementSpeed: 0
   currentWaitTime: 0
   currentAttackWaitTime: 0
+  currentDestination: {fileID: 0}
   bullet: {fileID: 2576038489624178430, guid: a3770c57a96bf2048b7cd9ab1369046f, type: 3}
   projectileSpeed: 150
   projectileDisapiranceTime: 0
@@ -4141,6 +4208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2042906787}
+  - component: {fileID: 2042906788}
   m_Layer: 0
   m_Name: Point 5
   m_TagString: Untagged
@@ -4163,6 +4231,18 @@ Transform:
   m_Father: {fileID: 981928820}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2042906788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042906786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccad0d48bbdf0b4499afb684cf168d62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2099404005
 GameObject:
   m_ObjectHideFlags: 0

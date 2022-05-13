@@ -16,7 +16,7 @@ public abstract class EnemyController : MonoBehaviour
     public bool isRunningAway = false;
     public bool isWaiting = false;
 
-    public List<Transform> waitPoints;
+    public List<WaitPoint> waitPoints;
 
     public float waitTime;
     public float movementSpeedBoost;
@@ -24,6 +24,9 @@ public abstract class EnemyController : MonoBehaviour
 
     public float currentWaitTime;
     public float currentAttackWaitTime;
+
+    public WaitPoint currentDestination;
+    private WaitPoint point;
 
     private void Start()
     {
@@ -75,27 +78,40 @@ public abstract class EnemyController : MonoBehaviour
         isRunningAway = false;
     }
 
-    public Vector3 FindClosestPoint()
+    public WaitPoint FindPoint()
     {
-        Vector3 closestPoint = Vector3.zero;
-        float distance = 9999;
+        float distance = 0;
 
-        foreach (Transform point in waitPoints)
+        foreach (WaitPoint waitPoint in waitPoints)
         {
-            if (Vector3.Distance(point.position, gameObject.transform.position) < distance)
+            if (Vector3.Distance(waitPoint.GetPointPosition, gameObject.transform.position) >= distance 
+                && !waitPoint.IsPointUsed)
             {
-                closestPoint = point.position;
-                distance = Vector3.Distance(point.position, gameObject.transform.position);
+                point = waitPoint;
+                distance = Vector3.Distance(waitPoint.GetPointPosition, gameObject.transform.position);
             }
         }
 
-        return closestPoint;
+        point.UsePoint(true);
+
+        return point;
     }
 
     public abstract void Attack();
 
     public bool IsEnemyAtPositionOfPoint()
     {
-        return Vector3.Distance(gameObject.transform.position, FindClosestPoint()) < 0.2f;
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+
+        float dist = Vector3.Distance(transform.position, 
+            new Vector3(currentDestination.GetPointPosition.x, transform.position.y, currentDestination.GetPointPosition.z));
+
+        Debug.Log(dist);
+        if(dist < 1)
+        {
+            currentDestination.UsePoint(false);
+            return true;
+        }
+        return false;
     }
 }
