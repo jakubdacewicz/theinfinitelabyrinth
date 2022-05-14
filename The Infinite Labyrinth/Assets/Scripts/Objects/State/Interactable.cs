@@ -19,7 +19,7 @@ public abstract class Interactable : MonoBehaviour
 
     private void Start()
     {
-        interactModel = transform.Find("InteractModel");
+        //interactModel = transform.Find("InteractModel");
     }
 
     /*
@@ -42,7 +42,7 @@ public abstract class Interactable : MonoBehaviour
 
     public void AnimationTurnMode(bool action)
     {
-        interactModel.gameObject.SetActive(action);
+        //interactModel.gameObject.SetActive(action);
         _isAnimationActivated = action;
     }
 }

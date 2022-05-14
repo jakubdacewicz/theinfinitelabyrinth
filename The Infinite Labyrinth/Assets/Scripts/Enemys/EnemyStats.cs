@@ -10,6 +10,7 @@ public class EnemyStats : MonoBehaviour
     public Stat attackRange;
     public Stat attackDamage;
     public Stat attackCooldown;
+    public Stat goldDroped;
 
     private float currentHealth;
 
@@ -36,6 +37,8 @@ public class EnemyStats : MonoBehaviour
 
     private void Die()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>().money.AddValue(goldDroped.GetValue());
+
         GetComponentInChildren<Collider>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
         GetComponent<EnemyController>().enabled = false;

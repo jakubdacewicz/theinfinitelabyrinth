@@ -12,6 +12,8 @@ public class Openable : Interactable
         if (!_isOpened)
         {
             Debug.Log(gameObject.name + " has been opened!");
+            GetComponent<SpawnItem>().enabled = true;
+
             AnimationTurnMode(false);
             _isOpened = true;
             this.enabled = false;

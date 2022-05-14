@@ -14,6 +14,9 @@ public class GameController : MonoBehaviour
 
     public Text gameTime;
 
+    public List<GameObject> items;
+    public List<bool> isItemSpawned;
+
     private NavMeshSurface navMeshSurface;
 
     private float timer = 0f;
@@ -23,6 +26,11 @@ public class GameController : MonoBehaviour
         navMeshSurface = gameObject.GetComponent<NavMeshSurface>();
         Invoke("BuildEnemyArea", 1.5f);
         StartCoroutine(ActivatePlayerAndCamera());
+
+        for (int i  = 0; i < items.Count; i++)
+        {
+            isItemSpawned.Add(false);
+        }
     }
 
     private void Update()

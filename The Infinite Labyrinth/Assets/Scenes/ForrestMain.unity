@@ -722,6 +722,11 @@ MonoBehaviour:
   player: {fileID: 2087955002}
   isSceneChanged: 1
   gameTime: {fileID: 76546959}
+  items:
+  - {fileID: 5156852541630084664, guid: f4fbd2d2a41eb6d46804034c90d7726b, type: 3}
+  - {fileID: 5054849278888293044, guid: d0b0ce6f80e11d047a3f46c9ba2b51e8, type: 3}
+  - {fileID: 5156852541630084664, guid: 96ee942ec5fb67a4db9abfdf550f47da, type: 3}
+  isItemSpawned: 
 --- !u!114 &936264004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1617,6 +1622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadedRooms: []
+  currentRoom: {fileID: 0}
 --- !u!4 &1463759906
 Transform:
   m_ObjectHideFlags: 0
