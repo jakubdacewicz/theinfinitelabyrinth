@@ -9,15 +9,24 @@ public class CameraController : MonoBehaviour
     public Room currentRoom;
 
     public float cameraMoveSpeed;
+    private float tempCameraMoveSpeed;
     public float tempCameraSpeedBoost;
 
     public float smoothing;
 
-    public bool isMovementEnabled = false;    
+    public float acceptedDistBetweenPlayerNCamera;
+
+    private GameObject player;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    private void OnEnable()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        tempCameraMoveSpeed = cameraMoveSpeed;
     }
 
     private void Update()
@@ -27,14 +36,19 @@ public class CameraController : MonoBehaviour
 
     private void UpdatePosition()
     {
-        if(currentRoom == null)
+        if (currentRoom == null)
         {
             return;
         }
 
-        if (isMovementEnabled == false)
+        if (Vector3.Distance(new Vector3(instance.transform.position.x, 0, instance.transform.position.z),
+            new Vector3(player.transform.position.x, 0, player.transform.position.z)) < acceptedDistBetweenPlayerNCamera)
         {
-            return;
+            cameraMoveSpeed = tempCameraMoveSpeed;
+        }
+        else
+        {
+            cameraMoveSpeed = tempCameraMoveSpeed + tempCameraSpeedBoost;
         }
 
         Vector3 targetPosition = GetCameraTargetPosition();
@@ -42,36 +56,16 @@ public class CameraController : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * cameraMoveSpeed);
     }
 
-    public void LockCamera(bool action)
-    {
-        isMovementEnabled = !action;
-    }
-
     private Vector3 GetCameraTargetPosition()
     {
-        //if(currentRoom == null)
-        //{
-        //    return Vector3.zero;
-        //}
-
         if (GameObject.FindWithTag("Player") == null)
         {
-            return new Vector3(0, 1.5f, 0);
+            return instance.transform.position;
         }
 
         Vector3 targetPosition = Vector3.Lerp(transform.position, GameObject.FindWithTag("Player").transform.position - new Vector3(0, 0, 0.21f), smoothing);
         targetPosition.y = 1.5f;
 
         return targetPosition;
-    }
-
-
-    public IEnumerator SpeedUpCameraForTime(float secounds)
-    {
-        cameraMoveSpeed += tempCameraSpeedBoost;
-
-        yield return new WaitForSeconds(secounds);
-
-        cameraMoveSpeed -= tempCameraSpeedBoost;
     }
 }

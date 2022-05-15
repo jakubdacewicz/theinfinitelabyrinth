@@ -2332,10 +2332,12 @@ MonoBehaviour:
   isRunningAway: 0
   isWaiting: 0
   waitPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 203153893}
+  - {fileID: 30927035}
+  - {fileID: 261864226}
+  - {fileID: 180578001}
+  - {fileID: 2042906788}
+  - {fileID: 1118599969}
   waitTime: 0.6
   movementSpeedBoost: 5
   startMovementSpeed: 0
@@ -3305,10 +3307,12 @@ MonoBehaviour:
   isRunningAway: 0
   isWaiting: 0
   waitPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 203153893}
+  - {fileID: 30927035}
+  - {fileID: 261864226}
+  - {fileID: 180578001}
+  - {fileID: 2042906788}
+  - {fileID: 1118599969}
   waitTime: 0.6
   movementSpeedBoost: 5
   startMovementSpeed: 0

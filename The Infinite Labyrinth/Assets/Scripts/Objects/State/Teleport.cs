@@ -41,9 +41,7 @@ public class Teleport : Interactable
             Vector3 teleportedPosition = hit.transform.position + (hit.transform.forward * -1) * teleportedPositionShift;
             TeleportToCoordinates(GameObject.FindWithTag("Player"), teleportedPosition.x, teleportedPosition.z);
 
-            CameraController cameraControll = GameObject.FindWithTag("MainCamera").GetComponent<CameraController>();
-            cameraControll.LockCamera(false);
-            StartCoroutine(cameraControll.SpeedUpCameraForTime(0.3f));           
+            CameraController cameraControll = GameObject.FindWithTag("MainCamera").GetComponent<CameraController>();         
         }
     }
 
