@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using Unity.AI.Navigation;
 using UnityEngine.UI;
 using System;
 
@@ -17,14 +16,10 @@ public class GameController : MonoBehaviour
     public List<GameObject> items;
     public List<bool> isItemSpawned;
 
-    private NavMeshSurface navMeshSurface;
-
     private float timer = 0f;
 
     private void Start()
     {
-        navMeshSurface = gameObject.GetComponent<NavMeshSurface>();
-        Invoke("BuildEnemyArea", 1.5f);
         StartCoroutine(ActivatePlayerAndCamera());
 
         for (int i  = 0; i < items.Count; i++)
@@ -46,12 +41,6 @@ public class GameController : MonoBehaviour
         gameTime.text = String.Format("{0:00}", (int)timer / 60) + ":" + String.Format("{0:00}", (int)timer % 60);
     }
 
-    private void BuildEnemyArea()
-    {
-        navMeshSurface.enabled = true;
-        navMeshSurface.BuildNavMesh();
-    }
-
     private IEnumerator ActivatePlayerAndCamera()
     {
         yield return new WaitForSeconds(0.8f);
@@ -61,10 +50,10 @@ public class GameController : MonoBehaviour
         characterControll.BlockPlayerMovement(false);
 
         player.SetActive(true);
-//        Debug.Log("Player activated.");
+        Debug.Log("Player activated.");
 
         GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().enabled = true;
-//       Debug.Log("Camera unlocked.");
+        Debug.Log("Camera unlocked.");
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

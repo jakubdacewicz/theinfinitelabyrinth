@@ -33,6 +33,7 @@ public abstract class EnemyController : MonoBehaviour
         stats = gameObject.GetComponent<EnemyStats>();
         agent = gameObject.GetComponent<NavMeshAgent>();
         agent.speed = stats.movementSpeed.GetValue();
+        agent.stoppingDistance = stats.attackRange.GetValue();
         startMovementSpeed = stats.movementSpeed.GetValue();
 
         StartCoroutine(LoadPlayerData());

@@ -18,6 +18,9 @@ public class LevelComplete : Interactable
         Debug.Log("Loading next world: " + dungeonGenerationData.nextWorldName);
 
         GameObject.FindWithTag("GameController").GetComponent<GameController>().isSceneChanged = true;
+
         SceneManager.LoadScene(dungeonGenerationData.nextWorldName + "Main");
+
+        GameObject.FindWithTag("Player").gameObject.SetActive(false);
     }
 }

@@ -90,8 +90,7 @@ public class CharacterControll : MonoBehaviour
 
     public void ResetPlayerPosition()
     {
-        gameObject.GetComponent<Rigidbody>().MovePosition(new Vector3(0, 0.5f, 0));
-        Debug.Log("Player position reseted.");
+        gameObject.transform.position = new Vector3(0, 1, 0);
     }
 
     /*
