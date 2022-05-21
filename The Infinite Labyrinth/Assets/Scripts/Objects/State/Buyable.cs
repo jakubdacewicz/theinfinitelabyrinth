@@ -8,6 +8,15 @@ public class Buyable : Interactable
 
     public bool isBought;
 
+    private Collider childColldier;
+
+    private void Start()
+    {
+        childColldier = gameObject.transform.GetChild(0).GetComponent<Collider>();
+
+        childColldier.enabled = false;
+    }
+
     public override void Interact()
     {
         CharacterStats characterStats = GameObject.FindWithTag("Player").GetComponent<CharacterStats>();
@@ -16,7 +25,7 @@ public class Buyable : Interactable
         {
             characterStats.money.AddValue(-price);
 
-            GetComponent<SpawnItem>().enabled = true;
+            childColldier.enabled = true;
 
             isBought = true;
         }       
