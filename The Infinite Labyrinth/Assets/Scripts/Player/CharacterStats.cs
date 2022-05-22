@@ -27,6 +27,9 @@ public class CharacterStats : MonoBehaviour
     public Text textStamine;
     public Text textHealth;
     public Text textAttackDamage;
+    public Text textAttackSpeed;
+    public Text textAttackRange;
+    public Text textMovementSpeed;
     public Text textMoney;
 
     //private
@@ -45,10 +48,12 @@ public class CharacterStats : MonoBehaviour
 
     private void Update()
     {
-        //¯ycie, stamina, atak i waluta tekstowa. Pozniej trzeba dodac grafiki
-        textStamine.text = currentStamine + "/" + maxStamine;
-        textHealth.text = currentHealth + "/" + maxHealth;
-        textAttackDamage.text = attackDamage.GetValue().ToString();
+        textStamine.text = currentStamine + " / " + maxStamine;
+        textHealth.text = currentHealth + " / " + maxHealth;
+        textAttackDamage.text = attackDamage.GetValue().ToString("F2");
+        textAttackSpeed.text = attackSpeed.GetValue().ToString("F2");
+        textAttackRange.text = attackRange.GetValue().ToString("F2");
+        textMovementSpeed.text = movementSpeed.GetValue().ToString("F2");
         textMoney.text = money.GetValue().ToString();
 
         if (transform.position.y <= -5)

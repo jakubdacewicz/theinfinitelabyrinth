@@ -36,9 +36,11 @@ public class GameController : MonoBehaviour
         {
             return;
         }
+        /*
         timer += Time.deltaTime;
 
         gameTime.text = String.Format("{0:00}", (int)timer / 60) + ":" + String.Format("{0:00}", (int)timer % 60);
+        */
     }
 
     private IEnumerator ActivatePlayerAndCamera()

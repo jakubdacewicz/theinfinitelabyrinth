@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 30166c9dc88e7d24a801824a7e5615de
+guid: e017f84de2536794f90e574085f13474
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Alumni Sans Inline One
+  - Rubik
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
