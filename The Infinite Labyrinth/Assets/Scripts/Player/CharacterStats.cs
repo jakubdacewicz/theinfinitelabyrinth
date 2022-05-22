@@ -32,6 +32,9 @@ public class CharacterStats : MonoBehaviour
     public Text textMovementSpeed;
     public Text textMoney;
 
+    public Slider healhSlider;
+    public Slider stamineSlider;
+
     //private
     private float currentHealth;
     private float currentStamine;
@@ -55,6 +58,13 @@ public class CharacterStats : MonoBehaviour
         textAttackRange.text = attackRange.GetValue().ToString("F2");
         textMovementSpeed.text = movementSpeed.GetValue().ToString("F2");
         textMoney.text = money.GetValue().ToString();
+
+        healhSlider.maxValue = maxHealth;
+        stamineSlider.maxValue = maxStamine;
+
+        //healhSlider.value = currentHealth;
+        healhSlider.value = Mathf.Lerp(healhSlider.value, currentHealth, Time.deltaTime * 10);
+        stamineSlider.value = Mathf.Lerp(stamineSlider.value, currentStamine, Time.deltaTime * 10);
 
         if (transform.position.y <= -5)
         {
@@ -128,7 +138,17 @@ public class CharacterStats : MonoBehaviour
         if (isPlayerInvulnerable == false)
         {
             value = Mathf.Abs(value);
-            currentHealth -= value;
+            //currentHealth -= value;
+
+            float lastAttack = Time.time + 1.5f;
+            float nextAttack = Time.time;
+
+            while (nextAttack <= lastAttack)
+            {
+                currentHealth -= 1;
+
+                nextAttack += (1 / value);
+            }
 
             if (currentHealth <= 0)
             {
