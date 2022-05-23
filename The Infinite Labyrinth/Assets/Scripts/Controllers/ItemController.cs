@@ -37,4 +37,20 @@ public abstract class ItemController : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public IEnumerator PlayAnimation(Animator animator, float value)
+    {
+        if (value > 0)
+        {
+            animator.SetFloat("valueChange", 1);
+        }
+        else if (value < 0)
+        {
+            animator.SetFloat("valueChange", -1);
+        }
+
+        yield return new WaitForSeconds(2);
+
+        animator.SetFloat("valueChange", 0);
+    }
+
 }

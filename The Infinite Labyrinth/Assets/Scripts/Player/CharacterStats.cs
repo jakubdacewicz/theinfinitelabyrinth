@@ -8,6 +8,7 @@ public class CharacterStats : MonoBehaviour
     public float maxHealth;
     public float maxStamine;
 
+    [Header("Stats")]
     public Stat stamineRegenerationValuePart;
     public Stat stamineRegenerationTime;
     public Stat stamine0ActionDelay;
@@ -24,6 +25,7 @@ public class CharacterStats : MonoBehaviour
     public Stat dashStamineCost;
     public Stat dashInvulnerableTime;
 
+    [Header("UI text")]
     public Text textStamine;
     public Text textHealth;
     public Text textAttackDamage;
@@ -34,6 +36,17 @@ public class CharacterStats : MonoBehaviour
 
     public Slider healhSlider;
     public Slider stamineSlider;
+
+    [Header("Animators")]
+    public Animator attackDamageAnimator;
+    public Animator attackSpeedAnimator;
+    public Animator attackRangeAnimator;
+    public Animator movementSpeedAnimator;
+
+    private float lastAttackDamage;
+    private float lastAttackSpeed;
+    private float lastAttackRange;
+    private float lastMovementSpeed;
 
     //private
     private float currentHealth;
@@ -47,12 +60,18 @@ public class CharacterStats : MonoBehaviour
         currentHealth = maxHealth;
         currentStamine = maxStamine;
         InvokeRepeating(nameof(RegenerateStamine), 0f , stamineRegenerationTime.GetValue());
+
+        lastAttackDamage = attackDamage.GetValue();
+        lastAttackSpeed = attackSpeed.GetValue();
+        lastAttackRange = attackRange.GetValue();
+        lastMovementSpeed = movementSpeed.GetValue();
     }
 
     private void Update()
     {
         textStamine.text = currentStamine + " / " + maxStamine;
         textHealth.text = currentHealth + " / " + maxHealth;
+
         textAttackDamage.text = attackDamage.GetValue().ToString("F2");
         textAttackSpeed.text = attackSpeed.GetValue().ToString("F2");
         textAttackRange.text = attackRange.GetValue().ToString("F2");
@@ -62,9 +81,11 @@ public class CharacterStats : MonoBehaviour
         healhSlider.maxValue = maxHealth;
         stamineSlider.maxValue = maxStamine;
 
-        //healhSlider.value = currentHealth;
         healhSlider.value = Mathf.Lerp(healhSlider.value, currentHealth, Time.deltaTime * 10);
         stamineSlider.value = Mathf.Lerp(stamineSlider.value, currentStamine, Time.deltaTime * 10);
+
+        PlayAnimationOnChange();
+
 
         if (transform.position.y <= -5)
         {
@@ -160,7 +181,6 @@ public class CharacterStats : MonoBehaviour
     public void Die()
     {
         Debug.LogWarning("Player died!");
-        //Wylaczanie skryptu po smierci. Mozna w przyslosci rozwazyc inne rozwiazanie.
 
         GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject[] traps = GameObject.FindGameObjectsWithTag("Trap");
@@ -203,5 +223,18 @@ public class CharacterStats : MonoBehaviour
     public void MakePlayerInvulnerableTimeless(bool action)
     {
         isPlayerInvulnerable = action;
+    }
+
+    private void PlayAnimationOnChange()
+    {
+        attackDamageAnimator.SetFloat("valueChange", attackDamage.GetValue() - lastAttackDamage);
+        attackSpeedAnimator.SetFloat("valueChange", attackSpeed.GetValue() - lastAttackSpeed);
+        attackRangeAnimator.SetFloat("valueChange", attackRange.GetValue() - lastAttackRange);
+        movementSpeedAnimator.SetFloat("valueChange", movementSpeed.GetValue() - lastMovementSpeed);
+
+        lastAttackDamage = attackDamage.GetValue();
+        lastAttackSpeed = attackSpeed.GetValue();
+        lastAttackRange = attackRange.GetValue();
+        lastMovementSpeed = movementSpeed.GetValue();
     }
 }

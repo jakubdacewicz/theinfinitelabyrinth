@@ -52,10 +52,10 @@ MonoBehaviour:
     itemModel: {fileID: 1124642680776367625, guid: f59ec48c9e66fc7469640ba7dea4429d, type: 3}
   characterStats: {fileID: 0}
   health: 0
-  maxHealth: 230
+  maxHealth: 1
   movementSpeed: 0
-  attackDamage: 0
-  attackSpeed: 0
+  attackDamage: -1
+  attackSpeed: 1
   attackRange: 0
   money: 0
 --- !u!65 &5156852541630084667

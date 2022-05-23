@@ -52,11 +52,11 @@ MonoBehaviour:
     itemModel: {fileID: 3851932858927780621, guid: 111d5edbe12098944a802eef56bab0d4, type: 3}
   characterStats: {fileID: 0}
   health: 0
-  maxHealth: 230
-  movementSpeed: 0
-  attackDamage: 0
-  attackSpeed: 0
-  attackRange: 0
+  maxHealth: 1
+  movementSpeed: 0.1
+  attackDamage: 1
+  attackSpeed: -0.1
+  attackRange: -0.1
   money: 0
 --- !u!65 &5156852541630084667
 BoxCollider:

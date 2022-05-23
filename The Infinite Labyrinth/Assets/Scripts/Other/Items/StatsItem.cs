@@ -18,7 +18,8 @@ public class StatsItem : ItemController
         characterStats.SetMaxHealth(maxHealth);
         characterStats.movementSpeed.AddValue(movementSpeed);
         characterStats.attackDamage.AddValue(attackDamage);
+        characterStats.attackSpeed.AddValue(attackSpeed);
         characterStats.attackRange.AddValue(attackRange);
-        characterStats.money.AddValue(money);
+        characterStats.money.AddValue(money);    
     }
 }
