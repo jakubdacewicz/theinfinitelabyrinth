@@ -18,6 +18,8 @@ public class CameraController : MonoBehaviour
 
     private GameObject player;
 
+    private bool isLocked = false;
+
     private void Awake()
     {
         instance = this;
@@ -31,6 +33,11 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
+        if (isLocked)
+        {
+            return;
+        }
+
         UpdatePosition();
     }
 
@@ -67,5 +74,16 @@ public class CameraController : MonoBehaviour
         targetPosition.y = 1.5f;
 
         return targetPosition;
+    }
+
+    public void ShakeCamera()
+    {
+        isLocked = true;
+
+        Vector3 targetPosition = transform.position + new Vector3(Random.Range(-0.1f, 0.1f), 0, Random.Range(-0.1f, 0.1f));
+
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * cameraMoveSpeed);
+
+        isLocked = false;
     }
 }

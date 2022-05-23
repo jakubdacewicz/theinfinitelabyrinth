@@ -159,7 +159,6 @@ public class CharacterStats : MonoBehaviour
         if (isPlayerInvulnerable == false)
         {
             value = Mathf.Abs(value);
-            //currentHealth -= value;
 
             float lastAttack = Time.time + 1.5f;
             float nextAttack = Time.time;
@@ -170,6 +169,8 @@ public class CharacterStats : MonoBehaviour
 
                 nextAttack += (1 / value);
             }
+
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().ShakeCamera();
 
             if (currentHealth <= 0)
             {
