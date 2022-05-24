@@ -43,6 +43,8 @@ public class CharacterStats : MonoBehaviour
     public Animator attackRangeAnimator;
     public Animator movementSpeedAnimator;
 
+    public Animator healthBarAnimator;
+
     private float lastAttackDamage;
     private float lastAttackSpeed;
     private float lastAttackRange;
@@ -85,7 +87,6 @@ public class CharacterStats : MonoBehaviour
         stamineSlider.value = Mathf.Lerp(stamineSlider.value, currentStamine, Time.deltaTime * 10);
 
         PlayAnimationOnChange();
-
 
         if (transform.position.y <= -5)
         {
@@ -151,7 +152,9 @@ public class CharacterStats : MonoBehaviour
         {
             value = maxHealth - currentHealth;
         }
-        currentHealth += value;     
+        currentHealth += value;
+
+        PlayHealthBarAnimation();
     }
 
     public void TakeDamage(float value)
@@ -171,6 +174,8 @@ public class CharacterStats : MonoBehaviour
             }
 
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().ShakeCamera();
+
+            PlayHealthBarAnimation();
 
             if (currentHealth <= 0)
             {
@@ -237,5 +242,17 @@ public class CharacterStats : MonoBehaviour
         lastAttackSpeed = attackSpeed.GetValue();
         lastAttackRange = attackRange.GetValue();
         lastMovementSpeed = movementSpeed.GetValue();
+    }
+
+    private void PlayHealthBarAnimation()
+    {
+        if (currentHealth < maxHealth / 3)
+        {
+            healthBarAnimator.SetBool("hasLowHealth", true);
+        }
+        else
+        {
+            healthBarAnimator.SetBool("hasLowHealth", false);
+        }
     }
 }
