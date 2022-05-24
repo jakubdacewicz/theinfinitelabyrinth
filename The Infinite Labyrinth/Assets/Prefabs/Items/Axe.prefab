@@ -50,6 +50,7 @@ MonoBehaviour:
     name: Topor
     description: +230 maksymalnego zycia.
     itemModel: {fileID: 7057165432438509270, guid: 3c10dae9aff68824e8bc59a2b1e4ffa0, type: 3}
+    itemPrefabUI: {fileID: 638255471025126524, guid: 04143504bf53f34499968f0cc30a4ee2, type: 3}
   characterStats: {fileID: 0}
   health: 0
   maxHealth: 1

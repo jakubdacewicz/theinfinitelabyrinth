@@ -9,6 +9,7 @@ TagManager:
   - Room
   - Trap
   - Portal
+  - PickUpUi
   layers:
   - Default
   - TransparentFX

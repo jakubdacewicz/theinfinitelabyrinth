@@ -50,6 +50,7 @@ MonoBehaviour:
     name: Jablko
     description: +230 maksymalnego zycia.
     itemModel: {fileID: 6894417625818552248, guid: 0c0731f44e11e5047a362857892e6861, type: 3}
+    itemPrefabUI: {fileID: 638255471025126524, guid: 07f35b2a9b830c44085d5f563e0eb20c, type: 3}
   characterStats: {fileID: 0}
   health: 0
   maxHealth: 1

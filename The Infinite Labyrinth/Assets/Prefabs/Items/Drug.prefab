@@ -50,6 +50,7 @@ MonoBehaviour:
     name: Naszyjnik 1
     description: +230 maksymalnego zycia.
     itemModel: {fileID: 1231800519193856740, guid: 3c25935570eff22418e0c630cac93da8, type: 3}
+    itemPrefabUI: {fileID: 638255471025126524, guid: a781149c54debe84b82bd1c078884021, type: 3}
   characterStats: {fileID: 0}
   health: 0
   maxHealth: 1

@@ -11,6 +11,8 @@ public class Item
     public string description;
 
     public GameObject itemModel;
+
+    public GameObject itemPrefabUI;
 }
 
 public abstract class ItemController : MonoBehaviour
@@ -18,6 +20,8 @@ public abstract class ItemController : MonoBehaviour
     public Item item;
 
     public CharacterStats characterStats;
+
+    //public GameObject itemPrefabUI;
 
     private void Start()
     {
@@ -32,6 +36,9 @@ public abstract class ItemController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         AddEffectToPlayer();
+
+        GameObject createImage = Instantiate(item.itemPrefabUI, CalculateUIItemPosition(), item.itemPrefabUI.transform.rotation);
+        createImage.transform.SetParent(GameObject.FindGameObjectWithTag("PickUpUi").transform, false);
 
         Debug.Log("Podniesiono przedmiot: " + gameObject.name);
         Destroy(gameObject);
@@ -51,6 +58,25 @@ public abstract class ItemController : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         animator.SetFloat("valueChange", 0);
+    }
+
+    private Vector3 CalculateUIItemPosition()
+    {
+        Transform pickUpUI = GameObject.FindGameObjectWithTag("PickUpUi").transform;
+
+        float x = -20;
+
+        foreach (Transform child in pickUpUI)
+        {
+            if(child.position.x > x)
+            {
+                x = child.localPosition.x;
+            }
+
+            child.localPosition = child.localPosition - new Vector3(20, 0 ,0);
+        }
+
+        return new Vector3(x + 20 , 0 , 0);
     }
 
 }
