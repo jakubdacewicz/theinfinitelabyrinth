@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 32353
+  controlID: 38278
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 32354
+  controlID: 38279
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 32355
+  controlID: 38280
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,10 +225,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 60}
-      m_SelectedIDs: c84c0000
-      m_LastClickedID: 19656
-      m_ExpandedIDs: 024cfeffdc51fefff051feff0452feff1852feff2c52feff4052feff5452feff6852feff7c52feff9052feffaa5afeffb25afeffba5afeffc25afeffca5afeffd25afeffda5afeffe25afeffea5afefff45afeff462effff38fbfffff4ffffffd04b0000e84b0000ee4b00002a4c00003a4c00003e4c00005e4c00007c4c0000904c0000c04c0000c44c0000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: f020fcfff025fcfffc25fcff0e26fcff1426fcff2626fcff4426fcff024cfeffdc51fefff051feff0452feff1852feff2c52feff4052feff5452feff6852feff7c52feff9052feffaa5afeffb25afeffba5afeffc25afeffca5afeffd25afeffda5afeffe25afeffea5afefff45afeff462effff38fbfffff4ffffffd04b0000e84b0000ee4b00002a4c00003a4c00003e4c00005e4c00007c4c0000904c0000c04c0000c44c0000721a02009e1a0200a81a0200e21a0200f41a02000a1b020036ac02006ef10200f0f10200e2f2020002f3020042f3020076f30200ccf30200d0f30200dcf30200e0f30200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -505,9 +505,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.8207649, y: -0.23696327, z: 1.5036446}
+    m_Target: {x: 0.31071657, y: -0.12327862, z: -0.24211109}
     speed: 2
-    m_Value: {x: -0.8207649, y: -0.23696327, z: 1.5036446}
+    m_Value: {x: 0.31071657, y: -0.12327862, z: -0.24211109}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -554,13 +554,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.57828224, y: 0.092976995, z: -0.066561185, w: -0.8077831}
+    m_Target: {x: -0.69926447, y: -0.094949014, z: 0.09455329, w: -0.7021926}
     speed: 2
-    m_Value: {x: -0.57818204, y: 0.09418861, z: -0.06742857, w: -0.8076431}
+    m_Value: {x: -0.7003167, y: -0.09480704, z: 0.094695576, w: -0.70114267}
   m_Size:
-    m_Target: 2.32642
+    m_Target: 2.6901534
     speed: 2
-    m_Value: 2.32642
+    m_Value: 2.6901534
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -803,21 +803,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/UI
+    - Assets/Fonts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/UI
+  - Assets/Fonts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\GitHub\theinfinitelabyrinth\The Infinite Labyrinth
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b4f60000
-    m_LastClickedID: 63156
+    m_SelectedIDs: b4650000
+    m_LastClickedID: 26036
     m_ExpandedIDs: 00000000a4500000c665000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -871,8 +871,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: c84c0000
-    m_LastClickedInstanceID: 19656
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000ac520000224d0000
     m_RenameOverlay:
@@ -960,7 +960,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -142634
+  m_LastSelectedObjectID: 19656
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52

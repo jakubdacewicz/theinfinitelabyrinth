@@ -21,6 +21,8 @@ public abstract class ItemController : MonoBehaviour
 
     public CharacterStats characterStats;
 
+    private bool isTriggered = false;
+
     //public GameObject itemPrefabUI;
 
     private void Start()
@@ -35,13 +37,18 @@ public abstract class ItemController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        AddEffectToPlayer();
+        if(!isTriggered)
+        {
+            AddEffectToPlayer();
 
-        GameObject createImage = Instantiate(item.itemPrefabUI, CalculateUIItemPosition(), item.itemPrefabUI.transform.rotation);
-        createImage.transform.SetParent(GameObject.FindGameObjectWithTag("PickUpUi").transform, false);
+            GameObject createImage = Instantiate(item.itemPrefabUI, CalculateUIItemPosition(), item.itemPrefabUI.transform.rotation);
+            createImage.transform.SetParent(GameObject.FindGameObjectWithTag("PickUpUi").transform, false);
 
-        Debug.Log("Podniesiono przedmiot: " + gameObject.name);
-        Destroy(gameObject);
+            Debug.Log("Podniesiono przedmiot: " + gameObject.name);
+            Destroy(gameObject);
+
+            isTriggered = true;
+        }      
     }
 
     public IEnumerator PlayAnimation(Animator animator, float value)
