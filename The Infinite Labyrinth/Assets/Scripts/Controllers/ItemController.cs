@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 
@@ -9,6 +10,8 @@ public class Item
     public string name;
 
     public string description;
+
+    public Sprite texture;
 
     public GameObject itemModel;
 
@@ -22,8 +25,6 @@ public abstract class ItemController : MonoBehaviour
     public CharacterStats characterStats;
 
     private bool isTriggered = false;
-
-    //public GameObject itemPrefabUI;
 
     private void Start()
     {
@@ -44,8 +45,33 @@ public abstract class ItemController : MonoBehaviour
             GameObject createImage = Instantiate(item.itemPrefabUI, CalculateUIItemPosition(), item.itemPrefabUI.transform.rotation);
             createImage.transform.SetParent(GameObject.FindGameObjectWithTag("PickUpUi").transform, false);
 
-            Debug.Log("Podniesiono przedmiot: " + gameObject.name);
-            Destroy(gameObject);
+            //Debug.Log("Podniesiono przedmiot: " + gameObject.name);
+
+            GetComponent<BoxCollider>().enabled = false;
+            GetComponent<StatsItem>().enabled = false;
+
+            foreach (Transform child in transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
+
+            Transform background = GameObject.FindWithTag("ItemPickMessageBox").transform;
+
+            foreach (Transform child in background)
+            {
+                if(child.name.Equals("Title"))
+                {
+                    child.GetComponent<Text>().text = item.name;
+                } else if(child.name.Equals("Message"))
+                {
+                    child.GetComponent<Text>().text = item.description;
+                } else if(child.name.Equals("Image"))
+                {
+                    child.GetComponent<Image>().sprite = item.texture;
+                }
+            }
+
+            StartCoroutine(nameof(ShowItemPickUpMessageAndDestroyItem));          
 
             isTriggered = true;
         }      
@@ -80,10 +106,22 @@ public abstract class ItemController : MonoBehaviour
                 x = child.localPosition.x;
             }
 
-            child.localPosition = child.localPosition - new Vector3(20, 0 ,0);
+            child.localPosition -=  new Vector3(20, 0 ,0);
         }
 
         return new Vector3(x + 20 , 0 , 0);
     }
 
+    private IEnumerator ShowItemPickUpMessageAndDestroyItem()
+    {
+        Animator itemMessage = GameObject.FindWithTag("ItemPickMessageBox").GetComponent<Animator>();
+
+        itemMessage.SetBool("playAnimation", true);
+
+        yield return new WaitForSeconds(0.5f);
+
+        itemMessage.SetBool("playAnimation", false);
+
+        Destroy(gameObject);
+    }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5156852541630084664
+--- !u!1 &4473022265204802332
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5156852541630084666}
-  - component: {fileID: 5156852541630084665}
-  - component: {fileID: 5156852541630084667}
-  - component: {fileID: -7204536669217995428}
+  - component: {fileID: 8513355619331351550}
+  - component: {fileID: 2600238205890132898}
+  - component: {fileID: 8870938403999839796}
+  - component: {fileID: 7057077589990344409}
   m_Layer: 0
   m_Name: Shape
   m_TagString: Untagged
@@ -19,13 +19,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5156852541630084666
+--- !u!4 &8513355619331351550
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5156852541630084664}
+  m_GameObject: {fileID: 4473022265204802332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -34,13 +34,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5156852541630084665
+--- !u!114 &2600238205890132898
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5156852541630084664}
+  m_GameObject: {fileID: 4473022265204802332}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1861552fd16d50b48929240d2972ffe1, type: 3}
@@ -49,6 +49,7 @@ MonoBehaviour:
   item:
     name: Naszyjnik 1
     description: +230 maksymalnego zycia.
+    texture: {fileID: 21300000, guid: bdf8a8b2a388350468dffff96adceed4, type: 3}
     itemModel: {fileID: 5009238014634571027, guid: ded7410d19a7a6c409fc5205b76055d5, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: ca4cd398bf4c3b3478b4f2bfb8306958, type: 3}
   characterStats: {fileID: 0}
@@ -59,26 +60,26 @@ MonoBehaviour:
   attackSpeed: -0.1
   attackRange: 3
   money: 0
---- !u!65 &5156852541630084667
+--- !u!65 &8870938403999839796
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5156852541630084664}
+  m_GameObject: {fileID: 4473022265204802332}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.4, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-7204536669217995428
+--- !u!54 &7057077589990344409
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5156852541630084664}
+  m_GameObject: {fileID: 4473022265204802332}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
