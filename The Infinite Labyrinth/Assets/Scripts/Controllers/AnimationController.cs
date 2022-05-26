@@ -5,33 +5,51 @@ using UnityEngine.UI;
 
 public class AnimationController : MonoBehaviour
 {
-    private Animator statsUIAnimator;
+    public Animator itemBoxUIAnimator;
+
+    public Animator attackDamageAnimator;
+    public Animator attackSpeedAnimator;
+    public Animator attackRangeAnimator;
+    public Animator movementSpeedAnimator;
+
+    public Transform background;
 
     public Queue<string> uiAnimationQueue = new Queue<string>();
     public Queue<Item> itemStatQueue = new Queue<Item>();
+    public Queue<string> statsAnimationQueue = new Queue<string>();
 
-    private void Start()
-    {
-        statsUIAnimator = GameObject.FindWithTag("ItemPickMessageBox").GetComponent<Animator>();
-    }
+    public CharacterStats characterStats;
 
     private void Update()
     {
-        if(!statsUIAnimator.GetCurrentAnimatorStateInfo(0).IsName("itemPickUp ShowAnimation") 
-            &&  !statsUIAnimator.GetCurrentAnimatorStateInfo(0).IsName("itemPickUp HideAnimation"))
+        if(itemBoxUIAnimator.GetCurrentAnimatorStateInfo(0).IsName("Empty"))
         {
             if (uiAnimationQueue.Count > 0)
             {
                 SetItemMessageBoxInfo(itemStatQueue.Dequeue());
-                statsUIAnimator.Play(uiAnimationQueue.Dequeue());
+                itemBoxUIAnimator.Play(uiAnimationQueue.Dequeue());
             }
+        }
+
+        if(attackDamageAnimator.GetCurrentAnimatorStateInfo(0).IsName("Empty") 
+            && attackSpeedAnimator.GetCurrentAnimatorStateInfo(0).IsName("Empty")
+            && attackRangeAnimator.GetCurrentAnimatorStateInfo(0).IsName("Empty")
+            && movementSpeedAnimator.GetCurrentAnimatorStateInfo(0).IsName("Empty"))
+        {
+            if (statsAnimationQueue.Count > 0)
+            {
+                attackDamageAnimator.Play(statsAnimationQueue.Dequeue());
+                attackSpeedAnimator.Play(statsAnimationQueue.Dequeue());
+                attackRangeAnimator.Play(statsAnimationQueue.Dequeue());
+                movementSpeedAnimator.Play(statsAnimationQueue.Dequeue());
+
+                characterStats.ActualiseStatsUI();
+            }           
         }
     }
 
     public void SetItemMessageBoxInfo(Item item)
     {
-        Transform background = GameObject.FindWithTag("ItemPickMessageBox").transform;
-
         foreach (Transform child in background)
         {
             if (child.name.Equals("Title"))
@@ -45,6 +63,25 @@ public class AnimationController : MonoBehaviour
             else if (child.name.Equals("Image"))
             {
                 child.GetComponent<Image>().sprite = item.texture;
+            }
+        }
+    }
+
+    public void QueueStatsAnimation(float[] diffrence)
+    {
+        foreach (float d in diffrence)
+        {
+            if (d > 0)
+            {
+                statsAnimationQueue.Enqueue("statsUp");
+            }
+            else if (d < 0)
+            {
+                statsAnimationQueue.Enqueue("statsDown");
+            }
+            else
+            {
+                statsAnimationQueue.Enqueue("Empty");
             }
         }
     }

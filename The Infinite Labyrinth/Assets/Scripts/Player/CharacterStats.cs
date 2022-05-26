@@ -38,12 +38,9 @@ public class CharacterStats : MonoBehaviour
     public Slider stamineSlider;
 
     [Header("Animators")]
-    public Animator attackDamageAnimator;
-    public Animator attackSpeedAnimator;
-    public Animator attackRangeAnimator;
-    public Animator movementSpeedAnimator;
-
     public Animator healthBarAnimator;
+
+    private AnimationController animationController;
 
     private float lastAttackDamage;
     private float lastAttackSpeed;
@@ -54,11 +51,15 @@ public class CharacterStats : MonoBehaviour
     private float currentHealth;
     private float currentStamine;
 
+    private float[] lastAndNewValueDiffrence = new float[4];
+
     private bool isStamineRegenerationActive = true;
     private bool isPlayerInvulnerable = false;
 
     private void Start()
     {
+        animationController = GameObject.FindGameObjectWithTag("AnimationController").GetComponent<AnimationController>();
+
         currentHealth = maxHealth;
         currentStamine = maxStamine;
         InvokeRepeating(nameof(RegenerateStamine), 0f , stamineRegenerationTime.GetValue());
@@ -67,6 +68,8 @@ public class CharacterStats : MonoBehaviour
         lastAttackSpeed = attackSpeed.GetValue();
         lastAttackRange = attackRange.GetValue();
         lastMovementSpeed = movementSpeed.GetValue();
+
+        ActualiseStatsUI();
     }
 
     private void Update()
@@ -74,10 +77,6 @@ public class CharacterStats : MonoBehaviour
         textStamine.text = currentStamine + " / " + maxStamine;
         textHealth.text = currentHealth + " / " + maxHealth;
 
-        textAttackDamage.text = attackDamage.GetValue().ToString("F2");
-        textAttackSpeed.text = attackSpeed.GetValue().ToString("F2");
-        textAttackRange.text = attackRange.GetValue().ToString("F2");
-        textMovementSpeed.text = movementSpeed.GetValue().ToString("F2");
         textMoney.text = money.GetValue().ToString();
 
         healhSlider.maxValue = maxHealth;
@@ -86,7 +85,17 @@ public class CharacterStats : MonoBehaviour
         healhSlider.value = Mathf.Lerp(healhSlider.value, currentHealth, Time.deltaTime * 10);
         stamineSlider.value = Mathf.Lerp(stamineSlider.value, currentStamine, Time.deltaTime * 10);
 
-        PlayAnimationOnChange();
+        lastAndNewValueDiffrence[0] = attackDamage.GetValue() - lastAttackDamage;
+        lastAndNewValueDiffrence[1] = attackSpeed.GetValue() - lastAttackSpeed;
+        lastAndNewValueDiffrence[2] = attackRange.GetValue() - lastAttackRange;
+        lastAndNewValueDiffrence[3] = movementSpeed.GetValue() - lastMovementSpeed;
+
+        animationController.QueueStatsAnimation(lastAndNewValueDiffrence);
+
+        lastAttackDamage = attackDamage.GetValue();
+        lastAttackSpeed = attackSpeed.GetValue();
+        lastAttackRange = attackRange.GetValue();
+        lastMovementSpeed = movementSpeed.GetValue();
 
         if (transform.position.y <= -5)
         {
@@ -231,19 +240,6 @@ public class CharacterStats : MonoBehaviour
         isPlayerInvulnerable = action;
     }
 
-    private void PlayAnimationOnChange()
-    {
-        attackDamageAnimator.SetFloat("valueChange", attackDamage.GetValue() - lastAttackDamage);
-        attackSpeedAnimator.SetFloat("valueChange", attackSpeed.GetValue() - lastAttackSpeed);
-        attackRangeAnimator.SetFloat("valueChange", attackRange.GetValue() - lastAttackRange);
-        movementSpeedAnimator.SetFloat("valueChange", movementSpeed.GetValue() - lastMovementSpeed);
-
-        lastAttackDamage = attackDamage.GetValue();
-        lastAttackSpeed = attackSpeed.GetValue();
-        lastAttackRange = attackRange.GetValue();
-        lastMovementSpeed = movementSpeed.GetValue();
-    }
-
     private void PlayHealthBarAnimation()
     {
         if (currentHealth < maxHealth / 3)
@@ -254,5 +250,13 @@ public class CharacterStats : MonoBehaviour
         {
             healthBarAnimator.SetBool("hasLowHealth", false);
         }
+    }
+
+    public void ActualiseStatsUI()
+    {
+        textAttackDamage.text = attackDamage.GetValue().ToString("F2");
+        textAttackSpeed.text = attackSpeed.GetValue().ToString("F2");
+        textAttackRange.text = attackRange.GetValue().ToString("F2");
+        textMovementSpeed.text = movementSpeed.GetValue().ToString("F2");
     }
 }
