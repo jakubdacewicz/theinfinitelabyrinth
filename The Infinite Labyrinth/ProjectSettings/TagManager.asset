@@ -11,6 +11,7 @@ TagManager:
   - Portal
   - PickUpUi
   - ItemPickMessageBox
+  - AnimationController
   layers:
   - Default
   - TransparentFX

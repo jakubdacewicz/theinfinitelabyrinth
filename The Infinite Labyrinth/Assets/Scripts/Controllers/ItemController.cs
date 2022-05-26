@@ -53,44 +53,17 @@ public abstract class ItemController : MonoBehaviour
             foreach (Transform child in transform)
             {
                 GameObject.Destroy(child.gameObject);
-            }
+            }          
 
-            Transform background = GameObject.FindWithTag("ItemPickMessageBox").transform;
+            AnimationController animationController = GameObject.FindGameObjectWithTag("AnimationController").GetComponent<AnimationController>();
 
-            foreach (Transform child in background)
-            {
-                if(child.name.Equals("Title"))
-                {
-                    child.GetComponent<Text>().text = item.name;
-                } else if(child.name.Equals("Message"))
-                {
-                    child.GetComponent<Text>().text = item.description;
-                } else if(child.name.Equals("Image"))
-                {
-                    child.GetComponent<Image>().sprite = item.texture;
-                }
-            }
+            animationController.itemStatQueue.Enqueue(item);
+            animationController.uiAnimationQueue.Enqueue("itemPickUp ShowAnimation");
 
-            StartCoroutine(nameof(ShowItemPickUpMessageAndDestroyItem));          
+            StartCoroutine(nameof(DestroyItemAfterTime));
 
             isTriggered = true;
         }      
-    }
-
-    public IEnumerator PlayAnimation(Animator animator, float value)
-    {
-        if (value > 0)
-        {
-            animator.SetFloat("valueChange", 1);
-        }
-        else if (value < 0)
-        {
-            animator.SetFloat("valueChange", -1);
-        }
-
-        yield return new WaitForSeconds(2);
-
-        animator.SetFloat("valueChange", 0);
     }
 
     private Vector3 CalculateUIItemPosition()
@@ -112,15 +85,9 @@ public abstract class ItemController : MonoBehaviour
         return new Vector3(x + 20 , 0 , 0);
     }
 
-    private IEnumerator ShowItemPickUpMessageAndDestroyItem()
+    private IEnumerator DestroyItemAfterTime()
     {
-        Animator itemMessage = GameObject.FindWithTag("ItemPickMessageBox").GetComponent<Animator>();
-
-        itemMessage.SetBool("playAnimation", true);
-
-        yield return new WaitForSeconds(0.5f);
-
-        itemMessage.SetBool("playAnimation", false);
+        yield return new WaitForSeconds(4f);
 
         Destroy(gameObject);
     }
