@@ -45,8 +45,6 @@ public abstract class ItemController : MonoBehaviour
             GameObject createImage = Instantiate(item.itemPrefabUI, CalculateUIItemPosition(), item.itemPrefabUI.transform.rotation);
             createImage.transform.SetParent(GameObject.FindGameObjectWithTag("PickUpUi").transform, false);
 
-            //Debug.Log("Podniesiono przedmiot: " + gameObject.name);
-
             GetComponent<BoxCollider>().enabled = false;
             GetComponent<StatsItem>().enabled = false;
 
@@ -54,11 +52,6 @@ public abstract class ItemController : MonoBehaviour
             {
                 GameObject.Destroy(child.gameObject);
             }          
-
-            AnimationController animationController = GameObject.FindGameObjectWithTag("AnimationController").GetComponent<AnimationController>();
-
-            animationController.itemStatQueue.Enqueue(item);
-            animationController.uiAnimationQueue.Enqueue("itemPickUp ShowAnimation");
 
             StartCoroutine(nameof(DestroyItemAfterTime));
 

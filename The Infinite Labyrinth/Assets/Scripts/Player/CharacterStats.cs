@@ -42,16 +42,9 @@ public class CharacterStats : MonoBehaviour
 
     private AnimationController animationController;
 
-    private float lastAttackDamage;
-    private float lastAttackSpeed;
-    private float lastAttackRange;
-    private float lastMovementSpeed;
-
     //private
     private float currentHealth;
     private float currentStamine;
-
-    private float[] lastAndNewValueDiffrence = new float[4];
 
     private bool isStamineRegenerationActive = true;
     private bool isPlayerInvulnerable = false;
@@ -64,38 +57,19 @@ public class CharacterStats : MonoBehaviour
         currentStamine = maxStamine;
         InvokeRepeating(nameof(RegenerateStamine), 0f , stamineRegenerationTime.GetValue());
 
-        lastAttackDamage = attackDamage.GetValue();
-        lastAttackSpeed = attackSpeed.GetValue();
-        lastAttackRange = attackRange.GetValue();
-        lastMovementSpeed = movementSpeed.GetValue();
-
         ActualiseStatsUI();
     }
 
     private void Update()
     {
         textStamine.text = currentStamine + " / " + maxStamine;
-        textHealth.text = currentHealth + " / " + maxHealth;
-
-        textMoney.text = money.GetValue().ToString();
+        textHealth.text = currentHealth + " / " + maxHealth;       
 
         healhSlider.maxValue = maxHealth;
         stamineSlider.maxValue = maxStamine;
 
         healhSlider.value = Mathf.Lerp(healhSlider.value, currentHealth, Time.deltaTime * 10);
         stamineSlider.value = Mathf.Lerp(stamineSlider.value, currentStamine, Time.deltaTime * 10);
-
-        lastAndNewValueDiffrence[0] = attackDamage.GetValue() - lastAttackDamage;
-        lastAndNewValueDiffrence[1] = attackSpeed.GetValue() - lastAttackSpeed;
-        lastAndNewValueDiffrence[2] = attackRange.GetValue() - lastAttackRange;
-        lastAndNewValueDiffrence[3] = movementSpeed.GetValue() - lastMovementSpeed;
-
-        animationController.QueueStatsAnimation(lastAndNewValueDiffrence);
-
-        lastAttackDamage = attackDamage.GetValue();
-        lastAttackSpeed = attackSpeed.GetValue();
-        lastAttackRange = attackRange.GetValue();
-        lastMovementSpeed = movementSpeed.GetValue();
 
         if (transform.position.y <= -5)
         {
@@ -258,5 +232,6 @@ public class CharacterStats : MonoBehaviour
         textAttackSpeed.text = attackSpeed.GetValue().ToString("F2");
         textAttackRange.text = attackRange.GetValue().ToString("F2");
         textMovementSpeed.text = movementSpeed.GetValue().ToString("F2");
+        textMoney.text = money.GetValue().ToString();
     }
 }
