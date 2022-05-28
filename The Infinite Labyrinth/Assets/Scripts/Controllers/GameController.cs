@@ -67,4 +67,14 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void LoadData(GameData data)
+    {
+       this.items = data.items;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.items = this.items;
+    }
+
 }

@@ -27,6 +27,9 @@ public class Buyable : Interactable
 
             childColldier.enabled = true;
 
+            ItemUnlockController itemUnlockController = GameObject.FindWithTag("ItemUnlockController").GetComponent<ItemUnlockController>();
+            itemUnlockController.itemsBought++;
+
             isBought = true;
         }       
     }

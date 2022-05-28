@@ -12,6 +12,8 @@ TagManager:
   - PickUpUi
   - ItemPickMessageBox
   - AnimationController
+  - ItemUnlockController
+  - Manager
   layers:
   - Default
   - TransparentFX
