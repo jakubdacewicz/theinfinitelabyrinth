@@ -26,7 +26,10 @@ public class AnimationController : MonoBehaviour
         {
             if (uiAnimationQueue.Count > 0)
             {
-                SetItemMessageBoxInfo(itemStatQueue.Dequeue());
+                if(itemStatQueue.Count > 0)
+                {
+                    SetItemMessageBoxInfo(itemStatQueue.Dequeue());
+                }               
                 itemBoxUIAnimator.Play(uiAnimationQueue.Dequeue());
             }
         }

@@ -6,6 +6,8 @@ public class ItemUnlockController : MonoBehaviour
 {
     public GameController gameController;
 
+    public AnimationController animationController;
+
     [Header("Item: Saturn")]
     public int itemsBought;
     public GameObject saturn;
@@ -16,10 +18,19 @@ public class ItemUnlockController : MonoBehaviour
     {
         if (itemsBought == 100 && !isUnlocked[0])
         {
-            isUnlocked[0] = true;
-            gameController.items.Add(saturn);
-            gameController.isItemSpawned.Add(false);
+            StartCoroutine(nameof(UnlockItemSaturn));
         }
+    }
+
+    private IEnumerator UnlockItemSaturn()
+    {
+        isUnlocked[0] = true;
+        gameController.items.Add(saturn);
+        gameController.isItemSpawned.Add(false);
+
+        yield return new WaitForSeconds(0.2f);
+
+        animationController.uiAnimationQueue.Enqueue("newItemUnlocked");
     }
 
     public void LoadData(GameData data)
