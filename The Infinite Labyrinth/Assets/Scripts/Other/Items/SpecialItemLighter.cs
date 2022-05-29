@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpecialItemLighter : MonoBehaviour
+public class SpecialItemLighter : ItemController
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float attackDamage;
 
-    // Update is called once per frame
-    void Update()
+    public override void AddEffectToPlayer()
     {
+        //podpalenie fx i dot
         
+        lastAndNewValueDiffrence[0] = attackDamage;
+
+        this.enabled = false;
     }
 }
