@@ -21,6 +21,14 @@ public class LevelComplete : Interactable
 
         SceneManager.LoadScene(dungeonGenerationData.nextWorldName + "Main");
 
+        foreach (Transform child in GameObject.FindWithTag("Player").transform)
+        {
+            if (child.name.Equals("Light") && child.gameObject.activeInHierarchy)
+            {
+                child.gameObject.SetActive(false);
+            }
+        }
+
         GameObject.FindWithTag("Player").gameObject.SetActive(false);
     }
 }

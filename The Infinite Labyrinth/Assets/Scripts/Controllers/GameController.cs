@@ -52,10 +52,8 @@ public class GameController : MonoBehaviour
         characterControll.BlockPlayerMovement(false);
 
         player.SetActive(true);
-        //Debug.Log("Player activated.");
 
         GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().enabled = true;
-        //Debug.Log("Camera unlocked.");
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

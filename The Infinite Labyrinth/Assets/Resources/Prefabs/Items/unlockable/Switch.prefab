@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6537303372574844797}
-  - component: {fileID: 3791197835316106722}
   - component: {fileID: 5784842014674235603}
   - component: {fileID: 2233414284959390797}
+  - component: {fileID: 1553886077510084015}
   m_Layer: 0
   m_Name: Switch
   m_TagString: Untagged
@@ -34,32 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3791197835316106722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7650129936655572623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1861552fd16d50b48929240d2972ffe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item:
-    name: Unlock 1
-    description: +230 maksymalnego zycia.
-    texture: {fileID: 21300000, guid: f69cee0920e0db1429edfd9e005d90c5, type: 3}
-    itemModel: {fileID: 4856525832075119327, guid: 8c5ac83468c9ae44d93cbf700dc09720, type: 3}
-    itemPrefabUI: {fileID: 3221320186161742854, guid: b563336d98335f048a29a95eeae001be, type: 3}
-  characterStats: {fileID: 0}
-  health: 0
-  maxHealth: 1
-  movementSpeed: 0
-  attackDamage: 1
-  attackSpeed: 1
-  attackRange: 2
-  money: 0
 --- !u!65 &5784842014674235603
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -89,3 +63,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1553886077510084015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7650129936655572623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17fc479bb36478449821ab6b393b8cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    name: Przelacznik
+    description: Czujesz zapadajacy mrok.
+    texture: {fileID: 21300000, guid: f69cee0920e0db1429edfd9e005d90c5, type: 3}
+    itemModel: {fileID: 4856525832075119327, guid: 8c5ac83468c9ae44d93cbf700dc09720, type: 3}
+    itemPrefabUI: {fileID: 3221320186161742854, guid: b563336d98335f048a29a95eeae001be, type: 3}
+  characterStats: {fileID: 0}
+  lastAndNewValueDiffrence:
+  - 0
+  - 0
+  - 0
+  - 0
+  movementSpeed: 0.2

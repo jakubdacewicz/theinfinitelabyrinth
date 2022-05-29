@@ -13,6 +13,7 @@ public class AnimationController : MonoBehaviour
     public Animator movementSpeedAnimator;
 
     public Transform background;
+    public Transform unlockUITransform;
 
     public Queue<string> uiAnimationQueue = new Queue<string>();
     public Queue<Item> itemStatQueue = new Queue<Item>();
@@ -64,6 +65,17 @@ public class AnimationController : MonoBehaviour
                 child.GetComponent<Text>().text = item.description;
             }
             else if (child.name.Equals("Image"))
+            {
+                child.GetComponent<Image>().sprite = item.texture;
+            }
+        }
+    }
+
+    public void SetUnlockUIInfo(Item item)
+    {
+        foreach (Transform child in unlockUITransform)
+        {
+            if (child.name.Equals("Image"))
             {
                 child.GetComponent<Image>().sprite = item.texture;
             }

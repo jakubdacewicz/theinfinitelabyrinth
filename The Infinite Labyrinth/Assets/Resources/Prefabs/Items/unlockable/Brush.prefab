@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2034974805334700886}
-  - component: {fileID: 2034974805334700889}
   - component: {fileID: 2034974805334700888}
   - component: {fileID: 2034974805334700891}
+  - component: {fileID: 6900106730202879608}
   m_Layer: 0
   m_Name: Brush
   m_TagString: Untagged
@@ -34,32 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2034974805334700889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2034974805334700890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1861552fd16d50b48929240d2972ffe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item:
-    name: Unlock 1
-    description: +230 maksymalnego zycia.
-    texture: {fileID: 21300000, guid: 9e708d3d81a9e2144b63f3f25a39b0bd, type: 3}
-    itemModel: {fileID: 1062939719858351555, guid: 14763d65215b21f4ab1283c47ffd0acf, type: 3}
-    itemPrefabUI: {fileID: 3583310610319590642, guid: 004489ce437cc014180178f9216edc06, type: 3}
-  characterStats: {fileID: 0}
-  health: 0
-  maxHealth: 1
-  movementSpeed: 0
-  attackDamage: 1
-  attackSpeed: 1
-  attackRange: 2
-  money: 0
 --- !u!65 &2034974805334700888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -89,3 +63,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6900106730202879608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034974805334700890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b188fbc07fe544ab5b8b9863b52f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    name: Pedzel
+    description: Pomaluj moj swiat.
+    texture: {fileID: 21300000, guid: 9e708d3d81a9e2144b63f3f25a39b0bd, type: 3}
+    itemModel: {fileID: 1062939719858351555, guid: 14763d65215b21f4ab1283c47ffd0acf, type: 3}
+    itemPrefabUI: {fileID: 3583310610319590642, guid: 004489ce437cc014180178f9216edc06, type: 3}
+  characterStats: {fileID: 0}
+  lastAndNewValueDiffrence:
+  - 0
+  - 0
+  - 0
+  - 0
+  speedAttack: 1.1

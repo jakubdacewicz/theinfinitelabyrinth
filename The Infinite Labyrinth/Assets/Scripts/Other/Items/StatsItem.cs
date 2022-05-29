@@ -12,8 +12,6 @@ public class StatsItem : ItemController
     public float attackRange;
     public float money;
 
-    private float[] lastAndNewValueDiffrence = new float[4];
-
     public override void AddEffectToPlayer()
     {
         characterStats.Heal(health);
@@ -24,16 +22,11 @@ public class StatsItem : ItemController
         characterStats.attackRange.AddValue(attackRange);
         characterStats.money.AddValue(money);
 
-        AnimationController animationController = GameObject.FindGameObjectWithTag("AnimationController").GetComponent<AnimationController>();
-
-        animationController.itemStatQueue.Enqueue(item);
-        animationController.uiAnimationQueue.Enqueue("itemPickUp ShowAnimation");
-
         lastAndNewValueDiffrence[0] = attackDamage;
         lastAndNewValueDiffrence[1] = attackSpeed;
         lastAndNewValueDiffrence[2] = attackRange;
         lastAndNewValueDiffrence[3] = movementSpeed;
 
-        animationController.QueueStatsAnimation(lastAndNewValueDiffrence);
+        this.enabled = false;
     }
 }

@@ -26,6 +26,8 @@ public abstract class ItemController : MonoBehaviour
 
     private bool isTriggered = false;
 
+    public float[] lastAndNewValueDiffrence = new float[4];
+
     private void Start()
     {
         GameObject model = Instantiate(item.itemModel, transform.position, transform.rotation);
@@ -42,11 +44,16 @@ public abstract class ItemController : MonoBehaviour
         {
             AddEffectToPlayer();
 
+            AnimationController animationController = GameObject.FindGameObjectWithTag("AnimationController").GetComponent<AnimationController>();
+
+            animationController.itemStatQueue.Enqueue(item);
+            animationController.uiAnimationQueue.Enqueue("itemPickUp ShowAnimation");
+            animationController.QueueStatsAnimation(lastAndNewValueDiffrence);
+
             GameObject createImage = Instantiate(item.itemPrefabUI, CalculateUIItemPosition(), item.itemPrefabUI.transform.rotation);
             createImage.transform.SetParent(GameObject.FindGameObjectWithTag("PickUpUi").transform, false);
 
             GetComponent<BoxCollider>().enabled = false;
-            GetComponent<StatsItem>().enabled = false;
 
             foreach (Transform child in transform)
             {

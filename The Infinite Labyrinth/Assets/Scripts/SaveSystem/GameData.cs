@@ -9,6 +9,8 @@ public class GameData
 
     public int itemsBought;
 
+    public int enemysKilled;
+
     public bool[] isUnlocked;
 
     public GameData(List<GameObject> startItemList)
@@ -17,8 +19,14 @@ public class GameData
 
         itemsBought = 0;
 
+        enemysKilled = 0;
+
         isUnlocked = new bool[]
         {
+            false,
+            false,
+            false,
+            false,
             false
         };
     }
