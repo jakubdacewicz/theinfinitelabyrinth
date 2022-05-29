@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 479420950357922746}
-  - component: {fileID: 7530896329690620197}
   - component: {fileID: 890014248029520916}
   - component: {fileID: 4819056531623782538}
+  - component: {fileID: -3608362734060338548}
   m_Layer: 0
   m_Name: Saturn
   m_TagString: Untagged
@@ -34,32 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7530896329690620197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3905936660081175112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1861552fd16d50b48929240d2972ffe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item:
-    name: Unlock 1
-    description: +230 maksymalnego zycia.
-    texture: {fileID: 21300000, guid: 4cd2d9df5f41a3e4eb6001593db86b2e, type: 3}
-    itemModel: {fileID: 616841939933752150, guid: f2937cf7c8750464c880d1b43a32980e, type: 3}
-    itemPrefabUI: {fileID: 1048200610537436192, guid: a44652c84e202de42876fc894c050293, type: 3}
-  characterStats: {fileID: 0}
-  health: 0
-  maxHealth: 1
-  movementSpeed: 0
-  attackDamage: 1
-  attackSpeed: 1
-  attackRange: 2
-  money: 0
 --- !u!65 &890014248029520916
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -89,3 +63,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-3608362734060338548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3905936660081175112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971e97f284a945f44b4cf91dbabb8a55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    name: Saturn
+    description: Czujesz zawirowania.
+    texture: {fileID: 21300000, guid: 4cd2d9df5f41a3e4eb6001593db86b2e, type: 3}
+    itemModel: {fileID: 616841939933752150, guid: f2937cf7c8750464c880d1b43a32980e, type: 3}
+    itemPrefabUI: {fileID: 1048200610537436192, guid: a44652c84e202de42876fc894c050293, type: 3}
+  characterStats: {fileID: 0}
+  lastAndNewValueDiffrence:
+  - 0
+  - 0
+  - 0
+  - 0

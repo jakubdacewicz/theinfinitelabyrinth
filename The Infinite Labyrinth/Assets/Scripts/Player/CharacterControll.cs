@@ -7,8 +7,10 @@ public class CharacterControll : MonoBehaviour
 
     //private
     private CharacterStats characterStats;
+
     private bool isMovementBlocked = true;
     private bool isRotationBlocked = false;
+    private bool hasRotatingDebuff = false;
 
     private void Start()
     {
@@ -40,6 +42,13 @@ public class CharacterControll : MonoBehaviour
             }
         }
 
+        if (hasRotatingDebuff)
+        {
+            transform.Rotate(Vector3.up * 150 * Time.deltaTime, Space.Self);
+
+            return;
+        }
+
         if (!isRotationBlocked)
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -58,7 +67,7 @@ public class CharacterControll : MonoBehaviour
             {
                 transform.eulerAngles = new Vector3(0, 90, 0);
             }
-        }
+        }       
     }
 
     public void BlockPlayerMovement(bool action)
@@ -91,6 +100,11 @@ public class CharacterControll : MonoBehaviour
     public void ResetPlayerPosition()
     {
         gameObject.transform.position = new Vector3(0, 1, 0);
+    }
+
+    public void MakePlayerRotateAroundItself()
+    {
+        hasRotatingDebuff = true;
     }
 
     /*

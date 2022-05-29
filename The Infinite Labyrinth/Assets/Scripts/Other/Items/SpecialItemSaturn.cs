@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpecialItemSaturn : MonoBehaviour
+public class SpecialItemSaturn : ItemController
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void AddEffectToPlayer()
     {
-        
-    }
+        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterControll>().MakePlayerRotateAroundItself();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        this.enabled = false;
     }
 }
