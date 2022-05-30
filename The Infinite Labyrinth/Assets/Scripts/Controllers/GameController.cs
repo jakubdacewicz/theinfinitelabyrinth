@@ -58,7 +58,7 @@ public class GameController : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name.Contains("Main") && isSceneChanged == true)
+        if (scene.name.Contains("Main") && isSceneChanged == true && !scene.name.Equals("ForrestMain"))
         {
            StartCoroutine(ActivatePlayerAndCamera());
            isSceneChanged = false;

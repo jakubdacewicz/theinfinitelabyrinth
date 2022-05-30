@@ -33,7 +33,7 @@ public abstract class ItemController : MonoBehaviour
         GameObject model = Instantiate(item.itemModel, transform.position, transform.rotation);
         model.transform.parent = transform;
 
-        characterStats = GameObject.FindWithTag("Player").GetComponent<CharacterStats>();
+        StartCoroutine(nameof(LoadCharacterStats));
     }
 
     public abstract void AddEffectToPlayer();
@@ -90,5 +90,12 @@ public abstract class ItemController : MonoBehaviour
         yield return new WaitForSeconds(4f);
 
         Destroy(gameObject);
+    }
+
+    private IEnumerator LoadCharacterStats()
+    {
+        yield return new WaitForSeconds(1);
+
+        characterStats = GameObject.FindWithTag("Player").GetComponent<CharacterStats>();
     }
 }

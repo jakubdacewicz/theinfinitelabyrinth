@@ -5,6 +5,8 @@ public class CharacterControll : MonoBehaviour
     //public
     public float interactSphereRadius;
 
+    public GameObject menu;
+
     //private
     private CharacterStats characterStats;
 
@@ -21,6 +23,19 @@ public class CharacterControll : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))        
             CheckInteraction();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(menu.activeSelf)
+            {
+                menu.SetActive(false);
+            }
+            else
+            {
+                menu.SetActive(true);
+            }
+        }
+            
 
         if (!isMovementBlocked)
         {

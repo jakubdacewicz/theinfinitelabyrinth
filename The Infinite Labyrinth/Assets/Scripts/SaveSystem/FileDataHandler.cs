@@ -8,12 +8,11 @@ public class FileDataHandler
 {
     private string dataDirPath = "";
 
-    private string dataFileName = "";
+    private string dataFileName = "data.json";
 
-    public FileDataHandler(string dataDirPath, string dataFileName)
+    public FileDataHandler(string dataDirPath)
     {
         this.dataDirPath = dataDirPath;
-        this.dataFileName = dataFileName;
     }
 
     public GameData Load()
@@ -68,5 +67,27 @@ public class FileDataHandler
         {
             Debug.LogError("Error occured while SAVING data to file!");
         }
+    }
+
+    public void Delete()
+    {
+        if(!DoesDataExists())
+        {
+            return;
+        }
+
+        try
+        {
+            File.Delete(Path.Combine(dataDirPath, dataFileName));
+        }
+        catch
+        {
+            Debug.LogError("Error occurred while DELETING data!");
+        }
+    }
+
+    public bool DoesDataExists()
+    {
+        return File.Exists(Path.Combine(dataDirPath, dataFileName));
     }
 }

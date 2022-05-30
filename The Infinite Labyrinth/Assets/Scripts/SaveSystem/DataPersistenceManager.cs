@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class DataPersistenceManager : MonoBehaviour
 {
-    [SerializeField] private string fileName;
-
     private GameData gameData;
 
     public List<GameObject> startItemList;
@@ -20,7 +18,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     private void Start()
     {
-        this.fileDataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
+        this.fileDataHandler = new FileDataHandler(Application.persistentDataPath);
         LoadGame();
     }
 
@@ -58,6 +56,8 @@ public class DataPersistenceManager : MonoBehaviour
         GameObject.FindWithTag("ItemUnlockController").GetComponent<ItemUnlockController>().SaveData(ref gameData);
 
         fileDataHandler.Save(gameData);
+
+        Debug.Log("Game saved!");
     }
 
     private void OnApplicationQuit()
