@@ -31,8 +31,13 @@ public class CameraController : MonoBehaviour
         tempCameraMoveSpeed = cameraMoveSpeed;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            tempCameraMoveSpeed += 2;
+        }
+
         if (isLocked)
         {
             return;
@@ -42,12 +47,7 @@ public class CameraController : MonoBehaviour
     }
 
     private void UpdatePosition()
-    {
-        if (currentRoom == null)
-        {
-            return;
-        }
-
+    {      
         if (Vector3.Distance(new Vector3(instance.transform.position.x, 0, instance.transform.position.z),
             new Vector3(player.transform.position.x, 0, player.transform.position.z)) < acceptedDistBetweenPlayerNCamera)
         {
@@ -56,6 +56,11 @@ public class CameraController : MonoBehaviour
         else
         {
             cameraMoveSpeed = tempCameraMoveSpeed + tempCameraSpeedBoost;
+        }
+
+        if (currentRoom == null)
+        {
+            cameraMoveSpeed = tempCameraMoveSpeed;
         }
 
         Vector3 targetPosition = GetCameraTargetPosition();

@@ -9,6 +9,8 @@ public class InGameMenu : MonoBehaviour
 
     public void GoBackToMainMenu()
     {
+        dataPersistenceManager.SaveGame();
+
         GameObject[] objects = new GameObject[]
         {
             GameObject.FindGameObjectWithTag("Player"),
@@ -22,9 +24,7 @@ public class InGameMenu : MonoBehaviour
         foreach (GameObject obj in objects)
         {
             SceneManager.MoveGameObjectToScene(obj, SceneManager.GetActiveScene());
-        }
-
-        dataPersistenceManager.SaveGame();
+        }      
 
         SceneManager.LoadScene(0);
     }

@@ -56,8 +56,6 @@ public class DataPersistenceManager : MonoBehaviour
         GameObject.FindWithTag("ItemUnlockController").GetComponent<ItemUnlockController>().SaveData(ref gameData);
 
         fileDataHandler.Save(gameData);
-
-        Debug.Log("Game saved!");
     }
 
     private void OnApplicationQuit()

@@ -9,12 +9,12 @@ public class NavMeshController : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine("BuildEnemyArea", 1.5f);
+        StartCoroutine("BuildEnemyArea");
     }
 
     public IEnumerator BuildEnemyArea()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.5f);
 
         navMeshSurface = GetComponent<NavMeshSurface>();
         navMeshSurface.enabled = true;

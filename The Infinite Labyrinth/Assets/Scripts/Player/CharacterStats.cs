@@ -68,6 +68,8 @@ public class CharacterStats : MonoBehaviour
         healhSlider.maxValue = maxHealth;
         stamineSlider.maxValue = maxStamine;
 
+        textMoney.text = money.GetValue().ToString();
+
         healhSlider.value = Mathf.Lerp(healhSlider.value, currentHealth, Time.deltaTime * 10);
         stamineSlider.value = Mathf.Lerp(stamineSlider.value, currentStamine, Time.deltaTime * 10);
 
@@ -231,7 +233,6 @@ public class CharacterStats : MonoBehaviour
         textAttackDamage.text = attackDamage.GetValue().ToString("F2");
         textAttackSpeed.text = attackSpeed.GetValue().ToString("F2");
         textAttackRange.text = attackRange.GetValue().ToString("F2");
-        textMovementSpeed.text = movementSpeed.GetValue().ToString("F2");
-        textMoney.text = money.GetValue().ToString();
+        textMovementSpeed.text = movementSpeed.GetValue().ToString("F2");       
     }
 }

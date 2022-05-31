@@ -30,7 +30,11 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        if(isSceneChanged)
+        {
+            StartCoroutine(ActivatePlayerAndCamera());
+            isSceneChanged = false;
+        }
 
         if (player.GetComponent<CharacterStats>().GetCurrentHealth() <= 0)
         {
@@ -54,15 +58,6 @@ public class GameController : MonoBehaviour
         player.SetActive(true);
 
         GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().enabled = true;
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name.Contains("Main") && isSceneChanged == true && !scene.name.Equals("ForrestMain"))
-        {
-           StartCoroutine(ActivatePlayerAndCamera());
-           isSceneChanged = false;
-        }
     }
 
     public void LoadData(GameData data)
