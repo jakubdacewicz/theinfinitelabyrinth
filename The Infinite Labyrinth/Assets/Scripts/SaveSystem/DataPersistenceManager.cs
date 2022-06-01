@@ -6,8 +6,6 @@ public class DataPersistenceManager : MonoBehaviour
 {
     private GameData gameData;
 
-    public List<GameObject> startItemList;
-
     private FileDataHandler fileDataHandler;
 
     public static DataPersistenceManager instance
@@ -33,7 +31,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void NewGame()
     {
-        this.gameData = new GameData(startItemList);
+        this.gameData = new GameData();
     }
 
     public void LoadGame()

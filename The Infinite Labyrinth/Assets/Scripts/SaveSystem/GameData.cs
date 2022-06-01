@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class GameData
 {
@@ -12,9 +13,9 @@ public class GameData
 
     public bool[] isUnlocked;
 
-    public GameData(List<GameObject> startItemList)
+    public GameData()
     {
-        items = startItemList;
+        items = Resources.LoadAll<GameObject>("Prefabs/Items/Default").ToList();
 
         itemsBought = 0;
 
