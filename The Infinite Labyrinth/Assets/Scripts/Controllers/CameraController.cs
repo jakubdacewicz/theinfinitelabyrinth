@@ -12,7 +12,9 @@ public class CameraController : MonoBehaviour
     private float tempCameraMoveSpeed;
     public float tempCameraSpeedBoost;
 
-    public float smoothing;
+    public float smoothTime;
+
+    private Vector3 velocity = Vector3.zero;
 
     public float acceptedDistBetweenPlayerNCamera;
 
@@ -31,13 +33,8 @@ public class CameraController : MonoBehaviour
         tempCameraMoveSpeed = cameraMoveSpeed;
     }
 
-    private void LateUpdate()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            tempCameraMoveSpeed += 2;
-        }
-
         if (isLocked)
         {
             return;
@@ -63,22 +60,17 @@ public class CameraController : MonoBehaviour
             cameraMoveSpeed = tempCameraMoveSpeed;
         }
 
-        Vector3 targetPosition = GetCameraTargetPosition();
-
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * cameraMoveSpeed);
-    }
-
-    private Vector3 GetCameraTargetPosition()
-    {
         if (GameObject.FindWithTag("Player") == null)
         {
-            return instance.transform.position;
+            transform.position = instance.transform.position;
+
+            return;
         }
 
-        Vector3 targetPosition = Vector3.Lerp(transform.position, GameObject.FindWithTag("Player").transform.position - new Vector3(0, 0, 0.21f), smoothing);
+        Vector3 targetPosition = Vector3.SmoothDamp(transform.position, player.transform.position - new Vector3(0, 0, 0.21f), ref velocity, smoothTime);
         targetPosition.y = 1.5f;
 
-        return targetPosition;
+        transform.position = targetPosition;
     }
 
     public void ShakeCamera()
