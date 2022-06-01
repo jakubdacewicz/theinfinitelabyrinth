@@ -8,6 +8,10 @@ public class MainMenu : MonoBehaviour
 {
     public Button deleteButton;
 
+    public AudioSource source;
+
+    public AudioClip gameStartClip;
+
     private void Awake()
     {
         FileDataHandler fileDataHandler = new FileDataHandler(Application.persistentDataPath);
@@ -20,6 +24,17 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        StartCoroutine(ChangeScene());
+    }
+
+    private IEnumerator ChangeScene()
+    {
+        float time = gameStartClip.length;
+
+        source.PlayOneShot(gameStartClip);
+        
+        yield return new WaitForSeconds(time);
+
         SceneManager.LoadScene(1);
     }
 
