@@ -87,7 +87,10 @@ public abstract class ItemController : MonoBehaviour
 
     private IEnumerator DestroyItemAfterTime()
     {
-        yield return new WaitForSeconds(4f);
+        AudioSource source = GetComponent<AudioSource>();
+        source.Play();
+
+        yield return new WaitForSeconds(source.clip.length);
 
         Destroy(gameObject);
     }

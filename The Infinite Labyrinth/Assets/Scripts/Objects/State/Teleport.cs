@@ -22,6 +22,11 @@ public class Teleport : Interactable
             return;
         }
 
+        StartCoroutine(TeleportToRoom());
+    }
+
+    private IEnumerator TeleportToRoom()
+    {
         RaycastHit hit;
 
         var directionOfTeleportCheck = new Dictionary<string, string>
@@ -36,12 +41,16 @@ public class Teleport : Interactable
 
         int layerMask = LayerMask.GetMask(acceptedDirectionOfPortal.Replace("Door", "") + "Portal");
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit , distanceOfNextTeleport, layerMask))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distanceOfNextTeleport, layerMask))
         {
-            Vector3 teleportedPosition = hit.transform.position + (hit.transform.forward * -1) * teleportedPositionShift;
-            TeleportToCoordinates(GameObject.FindWithTag("Player"), teleportedPosition.x, teleportedPosition.z);
+            AudioSource source = GetComponent<AudioSource>();
+            source.pitch = 1.5f;
+            source.Play();
 
-            //CameraController cameraControll = GameObject.FindWithTag("MainCamera").GetComponent<CameraController>();         
+            yield return new WaitForSeconds(0.4f);
+
+            Vector3 teleportedPosition = hit.transform.position + (hit.transform.forward * -1) * teleportedPositionShift;
+            TeleportToCoordinates(GameObject.FindWithTag("Player"), teleportedPosition.x, teleportedPosition.z);       
         }
     }
 
