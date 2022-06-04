@@ -644,9 +644,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 240767182}
-  - component: {fileID: 240767185}
-  - component: {fileID: 240767184}
-  - component: {fileID: 240767183}
   m_Layer: 9
   m_Name: RightDoor
   m_TagString: Portal
@@ -670,46 +667,6 @@ Transform:
   m_Father: {fileID: 1143522380}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &240767183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240767181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac35883ab87470a46a186a14787cfece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceOfNextTeleport: 3.5
-  teleportedPositionShift: 0.2
---- !u!114 &240767184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240767181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1d9d8bcc678b0a49984f693c738be29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 2
---- !u!65 &240767185
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240767181}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.44, y: 0.52, z: 0.53}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &326373137
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,9 +714,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 338718736}
-  - component: {fileID: 338718739}
-  - component: {fileID: 338718738}
-  - component: {fileID: 338718737}
   m_Layer: 6
   m_Name: TopDoor
   m_TagString: Portal
@@ -783,46 +737,6 @@ Transform:
   m_Father: {fileID: 1143522380}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &338718737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338718735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac35883ab87470a46a186a14787cfece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceOfNextTeleport: 3.5
-  teleportedPositionShift: 0.2
---- !u!114 &338718738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338718735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1d9d8bcc678b0a49984f693c738be29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
---- !u!65 &338718739
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 338718735}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.44, y: 0.52, z: 0.53}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &349304996
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,9 +746,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 349304997}
-  - component: {fileID: 349305000}
-  - component: {fileID: 349304999}
-  - component: {fileID: 349304998}
   m_Layer: 8
   m_Name: LeftDoor
   m_TagString: Portal
@@ -858,46 +769,6 @@ Transform:
   m_Father: {fileID: 1143522380}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &349304998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 349304996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac35883ab87470a46a186a14787cfece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceOfNextTeleport: 3.5
-  teleportedPositionShift: 0.2
---- !u!114 &349304999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 349304996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1d9d8bcc678b0a49984f693c738be29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 1
---- !u!65 &349305000
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 349304996}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.44, y: 0.52, z: 0.53}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &391740848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,7 +905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24d431908aa19645be1f9a3534f8ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deleteButton: {fileID: 463225976}
+  deleteButton: {fileID: 463225973}
   source: {fileID: 407805364}
   gameStartClip: {fileID: 8300000, guid: e8480d225ae1e4344b6b52ac373f7744, type: 3}
 --- !u!82 &407805364
@@ -1229,7 +1100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &463225974
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1249,7 +1120,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 120, y: 35}
+  m_SizeDelta: {x: 226.23, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &463225976
 MonoBehaviour:
@@ -1290,7 +1161,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1426381937}
   m_OnClick:
     m_PersistentCalls:
@@ -2194,7 +2065,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 35}
+  m_SizeDelta: {x: 226.23, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &706684912
 MonoBehaviour:
@@ -2576,7 +2447,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 70, y: 35}
+  m_SizeDelta: {x: 226.23, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &921494188
 MonoBehaviour:
@@ -2983,7 +2854,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -150}
-  m_SizeDelta: {x: 110, y: 35}
+  m_SizeDelta: {x: 226.23, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1036868614
 MonoBehaviour:
@@ -3402,24 +3273,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a75af2b56a70286458c9f55826e24640, type: 3}
   m_PrefabInstance: {fileID: 1172780906}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1172780908 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a75af2b56a70286458c9f55826e24640, type: 3}
-  m_PrefabInstance: {fileID: 1172780906}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1172780909
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172780908}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.0122628, y: 3.5292199, z: 0.00000084143136}
-  m_Center: {x: -0.18158416, y: 0.80521566, z: -0.00000019197833}
 --- !u!1 &1205242471
 GameObject:
   m_ObjectHideFlags: 0
@@ -3511,9 +3364,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1214653683}
-  - component: {fileID: 1214653686}
-  - component: {fileID: 1214653685}
-  - component: {fileID: 1214653684}
   m_Layer: 7
   m_Name: BottomDoor
   m_TagString: Portal
@@ -3537,46 +3387,6 @@ Transform:
   m_Father: {fileID: 1143522380}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &1214653684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214653682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac35883ab87470a46a186a14787cfece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceOfNextTeleport: 3.5
-  teleportedPositionShift: 0.2
---- !u!114 &1214653685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214653682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1d9d8bcc678b0a49984f693c738be29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 3
---- !u!65 &1214653686
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214653682}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.44, y: 0.52, z: 0.53}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1299870168
 GameObject:
   m_ObjectHideFlags: 0
@@ -4492,8 +4302,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -230}
-  m_SizeDelta: {x: 90, y: 35}
+  m_AnchoredPosition: {x: -0.0014725, y: -230}
+  m_SizeDelta: {x: 226.23, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1651227224
 MonoBehaviour:
@@ -4800,7 +4610,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: v. 0.6.2
+  m_Text: v. 0.6.4
 --- !u!222 &1692290454
 CanvasRenderer:
   m_ObjectHideFlags: 0

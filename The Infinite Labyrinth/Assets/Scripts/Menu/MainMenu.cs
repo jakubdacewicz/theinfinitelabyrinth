@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public Button deleteButton;
+    public GameObject deleteButton;
 
     public AudioSource source;
 
@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
 
         if(fileDataHandler.DoesDataExists())
         {
-            deleteButton.interactable = true;
+            deleteButton.SetActive(true);
         }
     }
 
@@ -43,7 +43,7 @@ public class MainMenu : MonoBehaviour
         FileDataHandler fileDataHandler = new FileDataHandler(Application.persistentDataPath);
         fileDataHandler.Delete();
 
-        deleteButton.interactable = false;
+        deleteButton.SetActive(false);
     }
 
     public void CloseGame()

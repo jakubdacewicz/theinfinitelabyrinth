@@ -21,16 +21,33 @@ public class AnimationController : MonoBehaviour
 
     public CharacterStats characterStats;
 
+    public AudioSource audioSource;
+
+    public AudioClip showInfoBoxSound;
+    public AudioClip paperSound;
+    public AudioClip itemUnlockSound;
+
     private void Update()
     {
         if(itemBoxUIAnimator.GetCurrentAnimatorStateInfo(0).IsName("Empty"))
         {
             if (uiAnimationQueue.Count > 0)
-            {
+            {                
                 if(itemStatQueue.Count > 0)
                 {
                     SetItemMessageBoxInfo(itemStatQueue.Dequeue());
-                }               
+                }      
+                
+                if(uiAnimationQueue.Peek() == "newItemUnlocked")
+                {
+                    audioSource.pitch = 1;
+                    audioSource.PlayOneShot(itemUnlockSound);
+                }
+                else
+                {
+                    StartCoroutine(PlayInfoBoxSound());
+                }
+
                 itemBoxUIAnimator.Play(uiAnimationQueue.Dequeue());
             }
         }
@@ -99,5 +116,28 @@ public class AnimationController : MonoBehaviour
                 statsAnimationQueue.Enqueue("Empty");
             }
         }
+    }
+
+    private IEnumerator PlayInfoBoxSound()
+    {
+        audioSource.pitch = 2.2f;
+
+        audioSource.PlayOneShot(showInfoBoxSound);
+
+        yield return new WaitForSeconds(0.8f);
+
+        audioSource.PlayOneShot(paperSound);
+
+        yield return new WaitForSeconds(0.2f);
+
+        audioSource.PlayOneShot(paperSound);
+
+        yield return new WaitForSeconds(0.2f);
+
+        audioSource.PlayOneShot(paperSound);
+
+        yield return new WaitForSeconds(paperSound.length + 3.8f);
+
+        audioSource.PlayOneShot(showInfoBoxSound);
     }
 }

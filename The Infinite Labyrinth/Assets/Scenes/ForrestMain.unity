@@ -4654,6 +4654,10 @@ MonoBehaviour:
   background: {fileID: 1214066262}
   unlockUITransform: {fileID: 650130282}
   characterStats: {fileID: 2087955011}
+  audioSource: {fileID: 787198035}
+  showInfoBoxSound: {fileID: 8300000, guid: 02096021ffad5f842b7ad873be63b981, type: 3}
+  paperSound: {fileID: 8300000, guid: 55cb934e9f6345f48ac0d8eede08a73b, type: 3}
+  itemUnlockSound: {fileID: 8300000, guid: 1e7e61935b3c5714abb75b2d081d3cbc, type: 3}
 --- !u!4 &1356987973
 Transform:
   m_ObjectHideFlags: 0
