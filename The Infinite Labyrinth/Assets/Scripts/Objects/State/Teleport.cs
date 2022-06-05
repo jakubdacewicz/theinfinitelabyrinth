@@ -47,7 +47,7 @@ public class Teleport : Interactable
             source.pitch = 1.5f;
             source.Play();
 
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(0.1f);
 
             Vector3 teleportedPosition = hit.transform.position + (hit.transform.forward * -1) * teleportedPositionShift;
             TeleportToCoordinates(GameObject.FindWithTag("Player"), teleportedPosition.x, teleportedPosition.z);       

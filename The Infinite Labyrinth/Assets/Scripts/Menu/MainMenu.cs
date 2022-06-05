@@ -7,10 +7,11 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public GameObject deleteButton;
+    public GameObject blackPanel;
 
     public AudioSource source;
 
-    public AudioClip gameStartClip;
+    public AudioClip gameStartClip;  
 
     private void Awake()
     {
@@ -22,13 +23,31 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        StartCoroutine(DisableBlackScreen());
+    }
+
+    private IEnumerator DisableBlackScreen()
+    {
+        blackPanel.SetActive(true);
+        blackPanel.GetComponent<Animator>().Play("blackPanelHide");
+
+        yield return new WaitForSeconds(2f);
+
+        blackPanel.SetActive(false);
+    }
+
     public void PlayGame()
     {
         StartCoroutine(ChangeScene());
     }
 
     private IEnumerator ChangeScene()
-    {
+    {       
+        blackPanel.SetActive(true);
+        blackPanel.GetComponent<Animator>().Play("blackPanelShow");
+
         float time = gameStartClip.length;
 
         source.PlayOneShot(gameStartClip);
