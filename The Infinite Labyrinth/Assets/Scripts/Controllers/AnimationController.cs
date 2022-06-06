@@ -136,7 +136,7 @@ public class AnimationController : MonoBehaviour
 
         audioSource.PlayOneShot(paperSound);
 
-        yield return new WaitForSeconds(paperSound.length + 3.8f);
+        yield return new WaitForSeconds(paperSound.length + 4.1f);
 
         audioSource.PlayOneShot(showInfoBoxSound);
     }

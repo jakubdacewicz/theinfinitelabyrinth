@@ -437,7 +437,7 @@ MonoBehaviour:
   currentRoom: {fileID: 0}
   cameraMoveSpeed: 1
   tempCameraSpeedBoost: 50
-  smoothTime: 0
+  smoothTime: 0.25
   acceptedDistBetweenPlayerNCamera: 0.4
 --- !u!81 &1180715242
 AudioListener:

@@ -34,7 +34,9 @@ public class LevelComplete : Interactable
 
     private IEnumerator LoadNextLevel()
     {
-        GameObject.FindGameObjectWithTag("BlackPanel").GetComponent<BlackPanel>().ShowBlackPanel();
+        GameObject blackPanel = GameObject.Find("Black Panel");
+        blackPanel.GetComponent<BlackPanel>().enabled = true;
+        blackPanel.GetComponent<BlackPanel>().ShowBlackPanel();
 
         yield return new WaitForSeconds(1.5f);
 
