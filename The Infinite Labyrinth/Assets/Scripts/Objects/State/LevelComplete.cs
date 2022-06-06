@@ -19,7 +19,7 @@ public class LevelComplete : Interactable
 
         GameObject.FindWithTag("GameController").GetComponent<GameController>().isSceneChanged = true;
 
-        SceneManager.LoadScene(dungeonGenerationData.nextWorldName + "Main");
+        StartCoroutine(LoadNextLevel());
 
         foreach (Transform child in GameObject.FindWithTag("Player").transform)
         {
@@ -30,5 +30,14 @@ public class LevelComplete : Interactable
         }
 
         GameObject.FindWithTag("Player").gameObject.SetActive(false);
+    }
+
+    private IEnumerator LoadNextLevel()
+    {
+        GameObject.FindGameObjectWithTag("BlackPanel").GetComponent<BlackPanel>().ShowBlackPanel();
+
+        yield return new WaitForSeconds(1.5f);
+
+        SceneManager.LoadScene(dungeonGenerationData.nextWorldName + "Main");
     }
 }

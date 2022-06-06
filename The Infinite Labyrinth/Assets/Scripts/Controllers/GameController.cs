@@ -49,7 +49,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator ActivatePlayerAndCamera()
     {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1.5f);
 
         CharacterControll characterControll = player.GetComponent<CharacterControll>();
         characterControll.ResetPlayerPosition();

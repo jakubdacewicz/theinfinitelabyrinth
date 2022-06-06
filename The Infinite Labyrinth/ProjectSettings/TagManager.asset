@@ -15,6 +15,7 @@ TagManager:
   - ItemUnlockController
   - Manager
   - SceneLight
+  - BlackPanel
   layers:
   - Default
   - TransparentFX

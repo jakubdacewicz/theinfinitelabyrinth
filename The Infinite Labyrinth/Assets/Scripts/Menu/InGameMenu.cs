@@ -9,6 +9,10 @@ public class InGameMenu : MonoBehaviour
 
     public void GoBackToMainMenu()
     {
+        //GameObject blackPanel = GameObject.FindGameObjectWithTag("BlackPanel");
+        //blackPanel..enabled = true;
+        //blackPanel.ShowBlackPanel();
+
         dataPersistenceManager.SaveGame();
 
         GameObject[] objects = new GameObject[]
@@ -24,13 +28,18 @@ public class InGameMenu : MonoBehaviour
         foreach (GameObject obj in objects)
         {
             SceneManager.MoveGameObjectToScene(obj, SceneManager.GetActiveScene());
-        }      
+        }
 
-        SceneManager.LoadScene(0);
+        Invoke(nameof(LoadMenu), 1.5f);
     }
 
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    private void LoadMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

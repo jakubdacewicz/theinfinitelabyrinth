@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public GameObject deleteButton;
-    public GameObject blackPanel;
+
+    public BlackPanel blackPanel;
 
     public AudioSource source;
 
@@ -23,21 +24,6 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        StartCoroutine(DisableBlackScreen());
-    }
-
-    private IEnumerator DisableBlackScreen()
-    {
-        blackPanel.SetActive(true);
-        blackPanel.GetComponent<Animator>().Play("blackPanelHide");
-
-        yield return new WaitForSeconds(2f);
-
-        blackPanel.SetActive(false);
-    }
-
     public void PlayGame()
     {
         StartCoroutine(ChangeScene());
@@ -45,8 +31,7 @@ public class MainMenu : MonoBehaviour
 
     private IEnumerator ChangeScene()
     {       
-        blackPanel.SetActive(true);
-        blackPanel.GetComponent<Animator>().Play("blackPanelShow");
+        blackPanel.ShowBlackPanel();
 
         float time = gameStartClip.length;
 
