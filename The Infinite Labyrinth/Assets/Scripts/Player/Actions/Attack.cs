@@ -5,6 +5,11 @@ public class Attack : MonoBehaviour
     //public
     public float attackRangePosition;
 
+    public AudioClip attackHit;
+    public AudioClip attackMiss;
+
+    public AudioSource attackSource;
+
     //private
     private CharacterStats characterStats;
     private float nextActionTime = 0;
@@ -47,16 +52,31 @@ public class Attack : MonoBehaviour
     {   
         Collider[] colliders = Physics.OverlapSphere(transform.position + transform.forward * attackRangePosition, characterStats.attackRange.GetValue());
 
+        int enemys = 0;
+
         if (colliders.Length > 0)
         {
             foreach (var collider in colliders)
             {
                 if (collider.CompareTag("Enemy"))
                 {
+                    enemys++;
                     collider.GetComponent<EnemyStats>().TakeDamage(characterStats.attackDamage.GetValue());
                     //Debug.Log(collider.name + " took damage.");
                 }
             }
+        }
+
+        if(enemys > 0)
+        {
+            attackSource.volume = 0.5f;
+            attackSource.PlayOneShot(attackHit);
+            
+        }
+        else
+        {
+            attackSource.volume = 0.7f;
+            attackSource.PlayOneShot(attackMiss);
         }
         nextActionTime = Time.time + characterStats.attackSpeed.GetValue();
     }

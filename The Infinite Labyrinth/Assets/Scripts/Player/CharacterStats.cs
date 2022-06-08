@@ -40,6 +40,14 @@ public class CharacterStats : MonoBehaviour
     [Header("Animators")]
     public Animator healthBarAnimator;
 
+    public AudioSource source;
+    public AudioSource characterSource;
+    public AudioSource uiSource;
+
+    public AudioClip takeDamageSound;
+    public AudioClip blockDamageSound;
+    public AudioClip gameOverSound;
+
     private AnimationController animationController;
 
     //private
@@ -146,6 +154,9 @@ public class CharacterStats : MonoBehaviour
     {
         if (isPlayerInvulnerable == false)
         {
+            characterSource.volume = 0.4f;
+            characterSource.PlayOneShot(takeDamageSound);
+
             value = Mathf.Abs(value);
 
             float lastAttack = Time.time + 1.5f;
@@ -166,12 +177,18 @@ public class CharacterStats : MonoBehaviour
             {
                 Die();
             }
-        }     
+        }
+        else
+        {
+            characterSource.volume = 1;
+            characterSource.PlayOneShot(blockDamageSound);
+        }
     }
 
     public void Die()
     {
-        Debug.LogWarning("Player died!");
+        uiSource.volume = 1;
+        uiSource.PlayOneShot(gameOverSound);
 
         GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject[] traps = GameObject.FindGameObjectsWithTag("Trap");
@@ -186,7 +203,10 @@ public class CharacterStats : MonoBehaviour
             trap.GetComponent<ShootingTrapController>().enabled = false;
         }
 
-        textHealth.text = currentHealth + "/" + maxHealth;
+        textHealth.text = 0 + "/" + maxHealth;
+
+        //animacja wylacz ui
+
 
         GameObject.FindWithTag("Player").SetActive(false);
     }
@@ -234,5 +254,10 @@ public class CharacterStats : MonoBehaviour
         textAttackSpeed.text = attackSpeed.GetValue().ToString("F2");
         textAttackRange.text = attackRange.GetValue().ToString("F2");
         textMovementSpeed.text = movementSpeed.GetValue().ToString("F2");       
+    }
+
+    public void PlayMoneyCollectSound()
+    {
+        source.Play();
     }
 }
