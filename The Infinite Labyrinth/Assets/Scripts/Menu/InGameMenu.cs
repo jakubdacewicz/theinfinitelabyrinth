@@ -7,7 +7,7 @@ public class InGameMenu : MonoBehaviour
 {
     public DataPersistenceManager dataPersistenceManager;
 
-    public void GoBackToMainMenu()
+    private void TrasitionBetweenScenes()
     {
         GameObject blackPanel = GameObject.Find("Black Panel");
         blackPanel.GetComponent<BlackPanel>().enabled = true;
@@ -29,6 +29,11 @@ public class InGameMenu : MonoBehaviour
         {
             SceneManager.MoveGameObjectToScene(obj, SceneManager.GetActiveScene());
         }
+    }
+
+    public void GoBackToMainMenu()
+    {
+        TrasitionBetweenScenes();
 
         Invoke(nameof(LoadMenu), 1.5f);
     }
@@ -38,8 +43,20 @@ public class InGameMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void PlayAgain()
+    {
+        TrasitionBetweenScenes();
+
+        Invoke(nameof(LoadStartGameScene), 1.5f);
+    }
+
     private void LoadMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    private void LoadStartGameScene()
+    {
+        SceneManager.LoadScene(1);
     }
 }

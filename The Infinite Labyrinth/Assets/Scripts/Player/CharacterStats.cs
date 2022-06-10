@@ -40,6 +40,8 @@ public class CharacterStats : MonoBehaviour
     [Header("Animators")]
     public Animator healthBarAnimator;
 
+    public GameObject gameOverBox;
+
     public AudioSource source;
     public AudioSource characterSource;
     public AudioSource uiSource;
@@ -189,6 +191,8 @@ public class CharacterStats : MonoBehaviour
     {
         uiSource.volume = 1;
         uiSource.PlayOneShot(gameOverSound);
+
+        gameOverBox.SetActive(true);
 
         GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject[] traps = GameObject.FindGameObjectsWithTag("Trap");
