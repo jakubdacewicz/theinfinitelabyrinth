@@ -72,6 +72,12 @@ public class CharacterStats : MonoBehaviour
 
     private void Update()
     {
+        //Test gameover
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            Die();
+        }
+
         textStamine.text = currentStamine + " / " + maxStamine;
         textHealth.text = currentHealth + " / " + maxHealth;       
 
@@ -212,7 +218,7 @@ public class CharacterStats : MonoBehaviour
         //animacja wylacz ui
 
 
-        GameObject.FindWithTag("Player").SetActive(false);
+        Destroy(GameObject.FindWithTag("Player"));
     }
 
     private void RegenerateStamine()

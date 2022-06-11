@@ -44,7 +44,14 @@ public class CameraController : MonoBehaviour
     }
 
     private void UpdatePosition()
-    {      
+    {
+        if (GameObject.FindWithTag("Player") == null)
+        {
+            transform.position = instance.transform.position;
+
+            return;
+        }
+
         if (Vector3.Distance(new Vector3(instance.transform.position.x, 0, instance.transform.position.z),
             new Vector3(player.transform.position.x, 0, player.transform.position.z)) < acceptedDistBetweenPlayerNCamera)
         {
@@ -58,14 +65,7 @@ public class CameraController : MonoBehaviour
         if (currentRoom == null)
         {
             cameraMoveSpeed = tempCameraMoveSpeed;
-        }
-
-        if (GameObject.FindWithTag("Player") == null)
-        {
-            transform.position = instance.transform.position;
-
-            return;
-        }
+        }      
 
         Vector3 targetPosition = Vector3.SmoothDamp(transform.position, player.transform.position - new Vector3(0, 0, 0.21f), ref velocity, smoothTime);
         targetPosition.y = 1.5f;

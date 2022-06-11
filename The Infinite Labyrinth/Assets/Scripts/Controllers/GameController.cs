@@ -36,6 +36,11 @@ public class GameController : MonoBehaviour
             isSceneChanged = false;
         }
 
+        if(player == null)
+        {
+            return;
+        }
+
         if (player.GetComponent<CharacterStats>().GetCurrentHealth() <= 0)
         {
             return;

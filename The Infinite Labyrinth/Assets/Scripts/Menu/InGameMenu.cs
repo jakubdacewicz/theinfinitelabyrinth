@@ -18,7 +18,6 @@ public class InGameMenu : MonoBehaviour
         GameObject[] objects = new GameObject[]
         {
             GameObject.FindGameObjectWithTag("Player"),
-            GameObject.FindGameObjectWithTag("Canvas"),
             GameObject.FindGameObjectWithTag("GameController"),
             GameObject.FindGameObjectWithTag("AnimationController"),
             GameObject.FindGameObjectWithTag("ItemUnlockController"),
@@ -27,7 +26,7 @@ public class InGameMenu : MonoBehaviour
 
         foreach (GameObject obj in objects)
         {
-            SceneManager.MoveGameObjectToScene(obj, SceneManager.GetActiveScene());
+            Destroy(obj);
         }
     }
 
@@ -52,11 +51,19 @@ public class InGameMenu : MonoBehaviour
 
     private void LoadMenu()
     {
+        GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
+
         SceneManager.LoadScene(0);
+
+        Destroy(canvas);
     }
 
     private void LoadStartGameScene()
     {
+        GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
+
         SceneManager.LoadScene(1);
+
+        Destroy(canvas);
     }
 }
