@@ -39,6 +39,9 @@ public class CharacterStats : MonoBehaviour
 
     [Header("Animators")]
     public Animator healthBarAnimator;
+    public Animator panelAnimator;
+    public Animator statsAnimator;
+    public Animator itemMessageBox;
 
     public GameObject gameOverBox;
 
@@ -198,6 +201,9 @@ public class CharacterStats : MonoBehaviour
         uiSource.volume = 1;
         uiSource.PlayOneShot(gameOverSound);
 
+        itemMessageBox.Play("itemBoxMinimalize");
+        panelAnimator.Play("panelChildsMinimalize");
+        statsAnimator.Play("statsMinimalize");
         gameOverBox.SetActive(true);
 
         GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
