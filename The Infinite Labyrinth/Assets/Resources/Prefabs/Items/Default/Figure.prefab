@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6092478188455793197}
-  - component: {fileID: 4914855514152809030}
   - component: {fileID: 7055246495667788580}
   - component: {fileID: 6149896704347781655}
   - component: {fileID: -7554911732248324988}
+  - component: {fileID: 5188998999243395031}
   m_Layer: 0
   m_Name: Figure
   m_TagString: Untagged
@@ -35,37 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4914855514152809030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7586229929853702581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1861552fd16d50b48929240d2972ffe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
-    texture: {fileID: 21300000, guid: 322dba5204062e24c8d9556042170f1d, type: 3}
-    itemModel: {fileID: 5691007735886968206, guid: c24940001391a2345948440d5f8f4460, type: 3}
-    itemPrefabUI: {fileID: 638255471025126524, guid: ef29a9be2f9f93e4c886ee8fa566864b, type: 3}
-  characterStats: {fileID: 0}
-  lastAndNewValueDiffrence:
-  - 0
-  - 0
-  - 0
-  - 0
-  health: 0
-  maxHealth: 1
-  movementSpeed: -0.1
-  attackDamage: -1
-  attackSpeed: 1
-  attackRange: -0.1
-  money: 0
 --- !u!65 &7055246495667788580
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -191,3 +160,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5188998999243395031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7586229929853702581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e36add6f8d9318e4faae0cc87b336e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    name: Dziwny ksztalt
+    description: Sam zysk.
+    texture: {fileID: 21300000, guid: 322dba5204062e24c8d9556042170f1d, type: 3}
+    itemModel: {fileID: 5691007735886968206, guid: c24940001391a2345948440d5f8f4460, type: 3}
+    itemPrefabUI: {fileID: 638255471025126524, guid: ef29a9be2f9f93e4c886ee8fa566864b, type: 3}
+  characterStats: {fileID: 0}
+  lastAndNewValueDiffrence:
+  - 0
+  - 0
+  - 0
+  - 0
+  health: 20
+  attackDamage: 2
+  movementSpeed: 0.1

@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7682964683328693382}
-  - component: {fileID: 664956456121030881}
   - component: {fileID: 4485603597107010158}
   - component: {fileID: 7680214853916303956}
   - component: {fileID: 6558128439778556437}
+  - component: {fileID: -4759027392315009178}
   m_Layer: 0
   m_Name: Dice
   m_TagString: Untagged
@@ -35,37 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &664956456121030881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4622183191118858393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1861552fd16d50b48929240d2972ffe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
-    texture: {fileID: 21300000, guid: 73ae2b7d73c43c34091eccc4ed5cc280, type: 3}
-    itemModel: {fileID: 5485802412024072735, guid: b92fb3a714c5080408cdd590e457413f, type: 3}
-    itemPrefabUI: {fileID: 638255471025126524, guid: 0992525749ae7a741aa070d33a9bf6a2, type: 3}
-  characterStats: {fileID: 0}
-  lastAndNewValueDiffrence:
-  - 0
-  - 0
-  - 0
-  - 0
-  health: 0
-  maxHealth: 1
-  movementSpeed: -0.1
-  attackDamage: -1
-  attackSpeed: 1
-  attackRange: -0.1
-  money: 0
 --- !u!65 &4485603597107010158
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -191,3 +160,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4759027392315009178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4622183191118858393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4fee1c73eb733449cd0bad7131904a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    name: Kosc
+    description: Sproboj szczescia.
+    texture: {fileID: 21300000, guid: 73ae2b7d73c43c34091eccc4ed5cc280, type: 3}
+    itemModel: {fileID: 5485802412024072735, guid: b92fb3a714c5080408cdd590e457413f, type: 3}
+    itemPrefabUI: {fileID: 638255471025126524, guid: 0992525749ae7a741aa070d33a9bf6a2, type: 3}
+  characterStats: {fileID: 0}
+  lastAndNewValueDiffrence:
+  - 0
+  - 0
+  - 0
+  - 0
+  money10TimesWin: 2
+  money15ValueWin: 100
+  money25ValueWin: 20
+  healthPercentageLosse: 0.5

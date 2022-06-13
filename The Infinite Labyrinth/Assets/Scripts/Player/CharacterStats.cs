@@ -170,15 +170,7 @@ public class CharacterStats : MonoBehaviour
 
             value = Mathf.Abs(value);
 
-            float lastAttack = Time.time + 1.5f;
-            float nextAttack = Time.time;
-
-            while (nextAttack <= lastAttack)
-            {
-                currentHealth -= 1;
-
-                nextAttack += (1 / value);
-            }
+            currentHealth -= value;
 
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().ShakeCamera();
 

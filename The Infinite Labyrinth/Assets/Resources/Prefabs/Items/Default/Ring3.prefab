@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8474384122350493148}
-  - component: {fileID: 8990457960812333166}
   - component: {fileID: 8034448077925101668}
   - component: {fileID: 4303429590927207240}
   - component: {fileID: 4018824076484967113}
+  - component: {fileID: 1500583701263908349}
   m_Layer: 0
   m_Name: Ring3
   m_TagString: Untagged
@@ -35,37 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8990457960812333166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7920406465974167010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1861552fd16d50b48929240d2972ffe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
-    texture: {fileID: 21300000, guid: f7c7cdf6a1a0f9f499164c46bb8caff3, type: 3}
-    itemModel: {fileID: 3267734620031502427, guid: 7e7b9d8ad8ccdf74f89886a57dfb9cc2, type: 3}
-    itemPrefabUI: {fileID: 638255471025126524, guid: 5a3f0659a66ca4a46a0d4e535db145b9, type: 3}
-  characterStats: {fileID: 0}
-  lastAndNewValueDiffrence:
-  - 0
-  - 0
-  - 0
-  - 0
-  health: 0
-  maxHealth: 1
-  movementSpeed: 0.1
-  attackDamage: 1
-  attackSpeed: -0.1
-  attackRange: -0.1
-  money: 0
 --- !u!65 &8034448077925101668
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -191,3 +160,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1500583701263908349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7920406465974167010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b24aca43dd18b347bf23484b649b367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    name: Pierscien z bursztynem
+    description: Prawie jak nad morzem.
+    texture: {fileID: 21300000, guid: f7c7cdf6a1a0f9f499164c46bb8caff3, type: 3}
+    itemModel: {fileID: 3267734620031502427, guid: 7e7b9d8ad8ccdf74f89886a57dfb9cc2, type: 3}
+    itemPrefabUI: {fileID: 638255471025126524, guid: 5a3f0659a66ca4a46a0d4e535db145b9, type: 3}
+  characterStats: {fileID: 0}
+  lastAndNewValueDiffrence:
+  - 0
+  - 0
+  - 0
+  - 0
+  damageChangeMultipler: 2

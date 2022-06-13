@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3133338767684150128}
-  - component: {fileID: 6959460390222748354}
   - component: {fileID: 6230367793096344162}
   - component: {fileID: 3466561020133644522}
   - component: {fileID: 4915419295690860676}
+  - component: {fileID: 2752130422358113066}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -35,37 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6959460390222748354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1566324448661455315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1861552fd16d50b48929240d2972ffe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
-    texture: {fileID: 21300000, guid: db0941c5596c2cf489a585bb62800cef, type: 3}
-    itemModel: {fileID: 2938720922706561237, guid: e39340efbe80c454d992e2551a74b791, type: 3}
-    itemPrefabUI: {fileID: 638255471025126524, guid: e7354deebf91cc54c9a91f8e10c1cf9a, type: 3}
-  characterStats: {fileID: 0}
-  lastAndNewValueDiffrence:
-  - 0
-  - 0
-  - 0
-  - 0
-  health: 0
-  maxHealth: 1
-  movementSpeed: -0.1
-  attackDamage: -1
-  attackSpeed: 1
-  attackRange: -0.1
-  money: 0
 --- !u!65 &6230367793096344162
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -191,3 +160,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2752130422358113066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566324448661455315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 971d75cec59995845a41742b6d026d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    name: Moneta
+    description: Zyskaj lub strac
+    texture: {fileID: 21300000, guid: db0941c5596c2cf489a585bb62800cef, type: 3}
+    itemModel: {fileID: 2938720922706561237, guid: e39340efbe80c454d992e2551a74b791, type: 3}
+    itemPrefabUI: {fileID: 638255471025126524, guid: e7354deebf91cc54c9a91f8e10c1cf9a, type: 3}
+  characterStats: {fileID: 0}
+  lastAndNewValueDiffrence:
+  - 0
+  - 0
+  - 0
+  - 0
+  money: 100
+  healthPercentage: 0.5

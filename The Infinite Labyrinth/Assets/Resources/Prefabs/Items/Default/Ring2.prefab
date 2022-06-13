@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3780513423656536124}
-  - component: {fileID: 2339575341411357184}
   - component: {fileID: 1318126785745658382}
   - component: {fileID: 8006880688076029473}
   - component: {fileID: -3184491865497603573}
+  - component: {fileID: 6833043065540072347}
   m_Layer: 0
   m_Name: Ring2
   m_TagString: Untagged
@@ -35,37 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2339575341411357184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2520038705275526704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1861552fd16d50b48929240d2972ffe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
-    texture: {fileID: 21300000, guid: b4da67b95326a0a418d878c324526662, type: 3}
-    itemModel: {fileID: 3639534616531653224, guid: eb43d946b3cb82741bdfaa38aeca6b85, type: 3}
-    itemPrefabUI: {fileID: 638255471025126524, guid: 371b212da20b55c4cb642b8254f43441, type: 3}
-  characterStats: {fileID: 0}
-  lastAndNewValueDiffrence:
-  - 0
-  - 0
-  - 0
-  - 0
-  health: 0
-  maxHealth: 1
-  movementSpeed: 0.1
-  attackDamage: 1
-  attackSpeed: -0.1
-  attackRange: -0.1
-  money: 0
 --- !u!65 &1318126785745658382
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -191,3 +160,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6833043065540072347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2520038705275526704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c642a46905a9e3d4baf09fa26656fa36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    name: Pierscien z topazem
+    description: Mowia ze ma lecznicze wlasciwosci.
+    texture: {fileID: 21300000, guid: b4da67b95326a0a418d878c324526662, type: 3}
+    itemModel: {fileID: 3639534616531653224, guid: eb43d946b3cb82741bdfaa38aeca6b85, type: 3}
+    itemPrefabUI: {fileID: 638255471025126524, guid: 371b212da20b55c4cb642b8254f43441, type: 3}
+  characterStats: {fileID: 0}
+  lastAndNewValueDiffrence:
+  - 0
+  - 0
+  - 0
+  - 0
+  healthPercentageLosse: 0.5
