@@ -9,6 +9,7 @@ public class Attack : MonoBehaviour
     public AudioClip attackMiss;
 
     public AudioSource attackSource;
+    public Animator playerAnimator;
 
     //private
     private CharacterStats characterStats;
@@ -49,7 +50,8 @@ public class Attack : MonoBehaviour
     }
 
     private void DoAttack()
-    {   
+    {
+        PlayAnimation();
         Collider[] colliders = Physics.OverlapSphere(transform.position + transform.forward * attackRangePosition, characterStats.attackRange.GetValue());
 
         int enemys = 0;
@@ -79,6 +81,11 @@ public class Attack : MonoBehaviour
             attackSource.PlayOneShot(attackMiss);
         }
         nextActionTime = Time.time + characterStats.attackSpeed.GetValue();
+    }
+
+    private void PlayAnimation()
+    {
+        playerAnimator.Play("Attack");
     }
 
     private void OnDrawGizmos()

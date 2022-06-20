@@ -7,6 +7,8 @@ public class CharacterControll : MonoBehaviour
 
     public GameObject menu;
 
+    public Animator playerAnimator;
+
     //private
     private CharacterStats characterStats;
 
@@ -42,18 +44,22 @@ public class CharacterControll : MonoBehaviour
             if (Input.GetKey(KeyCode.W))
             {
                 transform.position += Time.deltaTime * characterStats.movementSpeed.GetValue() * new Vector3(0, 0, 1);
+                playerAnimator.Play("Run");
             }
             else if (Input.GetKey(KeyCode.S))
             {
                 transform.position -= Time.deltaTime * characterStats.movementSpeed.GetValue() * new Vector3(0, 0, 1);
+                playerAnimator.Play("Run");
             }
             else if (Input.GetKey(KeyCode.A))
             {
                 transform.position -= Time.deltaTime * characterStats.movementSpeed.GetValue() * new Vector3(1, 0, 0);
+                playerAnimator.Play("Run");
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 transform.position += Time.deltaTime * characterStats.movementSpeed.GetValue() * new Vector3(1, 0, 0);
+                playerAnimator.Play("Run");
             }
         }
 
@@ -122,15 +128,5 @@ public class CharacterControll : MonoBehaviour
         hasRotatingDebuff = true;
     }
 
-    /*
-    void OnDrawGizmosSelected()
-    {
-        // Draw a yellow sphere at the transform's position
-        characterStats = GameObject.Find("Player").GetComponent<CharacterStats>();
-        Gizmos.color = Color.yellow;
-        float value = characterStats.attackRange.GetValue();
-        Gizmos.DrawWireSphere(transform.position + transform.forward * test, value);
-    }
-    */
 }
 

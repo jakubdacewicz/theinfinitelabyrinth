@@ -5,6 +5,8 @@ public class Block : MonoBehaviour
     //public
     public float playerSlowValue;
 
+    public Animator playerAnimator;
+
     //private
     private CharacterStats characterStats;
     private float currentMovementSpeed;
@@ -12,7 +14,8 @@ public class Block : MonoBehaviour
     private float startTime = 0;
 
     private void OnEnable()
-    {
+    {     
+
         characterStats = GameObject.Find("Player").GetComponent<CharacterStats>();
         if (characterStats.GetCurrentStamine() < Mathf.Abs(characterStats.parringStamineCost.GetValue()))
         {
@@ -21,7 +24,8 @@ public class Block : MonoBehaviour
         }
         else
         {
-            //dodac animacje blokowania
+            PlayAnimation();
+
             characterStats.RegenerationStamineSwitchMode(false);
             characterStats.MakePlayerInvulnerableTimeless(true);
             currentMovementSpeed = characterStats.movementSpeed.GetValue();
@@ -72,5 +76,10 @@ public class Block : MonoBehaviour
                 GetComponent<Idle>().enabled = true;
             }
         }       
+    }
+
+    private void PlayAnimation()
+    {
+        playerAnimator.Play("Block");
     }
 }
