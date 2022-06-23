@@ -8145,10 +8145,6 @@ GameObject:
   - component: {fileID: 2087955011}
   - component: {fileID: 2087955010}
   - component: {fileID: 2087955009}
-  - component: {fileID: 2087955008}
-  - component: {fileID: 2087955007}
-  - component: {fileID: 2087955006}
-  - component: {fileID: 2087955005}
   - component: {fileID: 2087955004}
   - component: {fileID: 2087955003}
   - component: {fileID: 2087955013}
@@ -8186,61 +8182,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.2251883, z: 0.1}
   m_Center: {x: 0, y: 0.06259415, z: 0}
---- !u!114 &2087955005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087955002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fed01c2cd19f3847a3e941e245c60ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2087955006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087955002}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57f3c4914ad3bdc42b74d646d3da26b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2087955007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087955002}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f165e571a84a039488081de9acc2d60a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSlowValue: 0.6
-  playerAnimator: {fileID: 2079593700}
---- !u!114 &2087955008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087955002}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29fc22b61c6f7924e835b8ac2dd91232, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackRangePosition: 0.43
-  attackHit: {fileID: 8300000, guid: 0d3d8da6b4342214995561b2fa4c5b4a, type: 3}
-  attackMiss: {fileID: 8300000, guid: d4d37214d47c2e04abfd0d209622ee8f, type: 3}
-  attackSource: {fileID: 2087955014}
-  playerAnimator: {fileID: 2079593700}
 --- !u!54 &2087955009
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8270,8 +8211,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactSphereRadius: 0.1
+  attackRangePosition: 0.5
+  playerSlowValue: 0.6
   menu: {fileID: 1003833463}
   playerAnimator: {fileID: 2079593700}
+  playerSource: {fileID: 2087955014}
+  attackHit: {fileID: 8300000, guid: 0d3d8da6b4342214995561b2fa4c5b4a, type: 3}
+  attackMiss: {fileID: 8300000, guid: d4d37214d47c2e04abfd0d209622ee8f, type: 3}
 --- !u!114 &2087955011
 MonoBehaviour:
   m_ObjectHideFlags: 0
