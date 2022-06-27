@@ -259,6 +259,8 @@ public class CharacterControll : MonoBehaviour
                 yield return null;
             }
         }
+        yield return new WaitForSeconds(0.3f);
+
         CheckIsStamineEmpty();
         isDoingAction = false;
     }
