@@ -15,6 +15,7 @@ public class CharacterControll : MonoBehaviour
 
     public AudioClip attackHit;
     public AudioClip attackMiss;
+    public AudioClip playerDash;
 
     //private
     private CharacterStats characterStats;
@@ -240,9 +241,12 @@ public class CharacterControll : MonoBehaviour
     {
         if(characterStats.GetCurrentStamine() >= Mathf.Abs(characterStats.dashStamineCost.GetValue()))
         {
-            //animacja
+            playerSource.PlayOneShot(playerDash);
+
+            playerAnimator.Play("Dash");
             characterStats.RegenerationStamineSwitchMode(false);
             characterStats.MakePlayerInvulnerableTimeless(true);
+
             BlockPlayerMovement(true);
             BlockPlayerRotation(true);
 
