@@ -6,7 +6,6 @@ public class CharacterControll : MonoBehaviour
     //public
     public float interactSphereRadius;
     public float attackRangePosition;
-    public float playerSlowValue;
 
     public GameObject menu;
 
@@ -26,13 +25,11 @@ public class CharacterControll : MonoBehaviour
     private bool isDoingAction = false;
     private bool isStamineEmpty = false;
 
-    private float currentMovementSpeed;
     private float startTime;
 
     private void Start()
     {
         characterStats = GameObject.Find("Player").GetComponent<CharacterStats>();
-        currentMovementSpeed = characterStats.movementSpeed.GetValue();
     }
 
     private void Update()
@@ -60,13 +57,21 @@ public class CharacterControll : MonoBehaviour
             }
         }
 
-        if(!isDoingAction && !isStamineEmpty)
+        if(isDoingAction)
+        {
+            return;
+        }
+
+        if(!isStamineEmpty)
         {
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) ||
                 Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
             {
-                isDoingAction = true;
-                StartCoroutine(Attack());
+                if(!isRotationBlocked)
+                {
+                    isDoingAction = true;
+                    StartCoroutine(Attack());
+                }              
             }
             else if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -89,12 +94,8 @@ public class CharacterControll : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 playerAnimator.SetBool("isBlocking", false);
-
-                characterStats.movementSpeed.SetValue(currentMovementSpeed + playerSlowValue);
-            }
-            if (Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                characterStats.movementSpeed.SetValue(currentMovementSpeed - playerSlowValue);
+                BlockPlayerMovement(false);
+                isRotationBlocked = false;
             }
         }       
 
@@ -103,22 +104,26 @@ public class CharacterControll : MonoBehaviour
             if (Input.GetKey(KeyCode.W))
             {
                 transform.position += Time.deltaTime * characterStats.movementSpeed.GetValue() * new Vector3(0, 0, 1);
-                playerAnimator.Play("Run");
+                Run(180);
             }
             else if (Input.GetKey(KeyCode.S))
             {
                 transform.position -= Time.deltaTime * characterStats.movementSpeed.GetValue() * new Vector3(0, 0, 1);
-                playerAnimator.Play("Run");
+                Run(0);
             }
             else if (Input.GetKey(KeyCode.A))
             {
                 transform.position -= Time.deltaTime * characterStats.movementSpeed.GetValue() * new Vector3(1, 0, 0);
-                playerAnimator.Play("Run");
+                Run(90);
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 transform.position += Time.deltaTime * characterStats.movementSpeed.GetValue() * new Vector3(1, 0, 0);
-                playerAnimator.Play("Run");
+                Run(270);
+            }
+            else
+            {
+                playerAnimator.SetBool("isRunning", false);
             }
         }
 
@@ -212,10 +217,33 @@ public class CharacterControll : MonoBehaviour
         isDoingAction = false;
     }
 
+    private void Run(int euler)
+    {
+        if (transform.eulerAngles.y == euler)
+        {
+            if (!playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("RunBackwards"))
+            {
+                playerAnimator.SetBool("isRunning", true);
+                playerAnimator.Play("RunBackwards");
+            }
+        }
+        else
+        {
+            if (!playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+            {
+                playerAnimator.SetBool("isRunning", true);
+                playerAnimator.Play("Run");
+            }
+        }
+    }
+
     private void Block()
     {
         if (characterStats.GetCurrentStamine() >= Mathf.Abs(characterStats.parringStamineCost.GetValue()))
         {
+            BlockPlayerMovement(true);
+            isRotationBlocked = true;
+
             if(Time.time >= startTime + characterStats.parringDelay.GetValue())
             {
                 if(!playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Block"))
@@ -226,8 +254,6 @@ public class CharacterControll : MonoBehaviour
 
                 characterStats.RegenerationStamineSwitchMode(false);
                 characterStats.MakePlayerInvulnerableTimeless(true);
-
-                currentMovementSpeed = characterStats.movementSpeed.GetValue();
 
                 characterStats.AdjustCurrentStamine(characterStats.parringStamineCost.GetValue());
 
@@ -275,8 +301,6 @@ public class CharacterControll : MonoBehaviour
             characterStats.MakePlayerInvulnerableTimeless(false);
             BlockPlayerMovement(false);
             BlockPlayerRotation(false);
-
-            characterStats.movementSpeed.SetValue(currentMovementSpeed + playerSlowValue);
 
             isStamineEmpty = true;
         }
