@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CharacterControll : MonoBehaviour
 {
@@ -26,10 +27,12 @@ public class CharacterControll : MonoBehaviour
     private bool isStamineEmpty = false;
 
     private float startTime;
+    private char directionFacing;
 
     private void Start()
     {
         characterStats = GameObject.Find("Player").GetComponent<CharacterStats>();
+        directionFacing = 'W';
     }
 
     private void Update()
@@ -57,12 +60,44 @@ public class CharacterControll : MonoBehaviour
             }
         }
 
-        if(isDoingAction)
+        if (hasRotatingDebuff)
         {
+            transform.Rotate(Vector3.up * 150 * Time.deltaTime, Space.Self);
+
             return;
         }
 
-        if(!isStamineEmpty)
+        if (!isRotationBlocked)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                directionFacing = 'W';
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+                directionFacing = 'S';
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                transform.eulerAngles = new Vector3(0, 270, 0);
+                directionFacing = 'A';
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                transform.eulerAngles = new Vector3(0, 90, 0);
+                directionFacing = 'D';
+            }
+        }
+
+        if (isDoingAction)
+        {
+            playerAnimator.SetBool("isRunning", false);
+            return;
+        }
+
+        if (!isStamineEmpty)
         {
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) ||
                 Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
@@ -70,6 +105,7 @@ public class CharacterControll : MonoBehaviour
                 if(!isRotationBlocked)
                 {
                     isDoingAction = true;
+                    isMovementBlocked = true;
                     StartCoroutine(Attack());
                 }              
             }
@@ -86,6 +122,8 @@ public class CharacterControll : MonoBehaviour
             {
                 characterStats.RegenerationStamineSwitchMode(true);
                 characterStats.MakePlayerInvulnerableTimeless(false);
+
+                isMovementBlocked = false;
 
                 BlockPlayerMovement(false);
                 BlockPlayerRotation(false);
@@ -104,55 +142,28 @@ public class CharacterControll : MonoBehaviour
             if (Input.GetKey(KeyCode.W))
             {
                 transform.position += Time.deltaTime * characterStats.movementSpeed.GetValue() * new Vector3(0, 0, 1);
-                Run(180);
+                Run('W');
             }
             else if (Input.GetKey(KeyCode.S))
             {
                 transform.position -= Time.deltaTime * characterStats.movementSpeed.GetValue() * new Vector3(0, 0, 1);
-                Run(0);
+                Run('S');
             }
             else if (Input.GetKey(KeyCode.A))
             {
                 transform.position -= Time.deltaTime * characterStats.movementSpeed.GetValue() * new Vector3(1, 0, 0);
-                Run(90);
+                Run('A');
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 transform.position += Time.deltaTime * characterStats.movementSpeed.GetValue() * new Vector3(1, 0, 0);
-                Run(270);
+                Run('D');
             }
             else
             {
                 playerAnimator.SetBool("isRunning", false);
             }
-        }
-
-        if (hasRotatingDebuff)
-        {
-            transform.Rotate(Vector3.up * 150 * Time.deltaTime, Space.Self);
-
-            return;
-        }
-
-        if (!isRotationBlocked)
-        {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-            }
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                transform.eulerAngles = new Vector3(0, 180, 0);
-            }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                transform.eulerAngles = new Vector3(0, 270, 0);
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                transform.eulerAngles = new Vector3(0, 90, 0);
-            }
-        }       
+        }      
     }
 
     public void BlockPlayerMovement(bool action)
@@ -217,9 +228,25 @@ public class CharacterControll : MonoBehaviour
         isDoingAction = false;
     }
 
-    private void Run(int euler)
+    private void Run(char button)
     {
-        if (transform.eulerAngles.y == euler)
+        Dictionary<char, char> direction = new Dictionary<char, char>()
+        {
+            {'W', 'S' },
+            {'S', 'W'},
+            {'A', 'D'},
+            {'D', 'A'}
+        };
+
+        if(directionFacing.Equals(button))
+        {
+            if (!playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+            {
+                playerAnimator.SetBool("isRunning", true);
+                playerAnimator.Play("Run");
+            }
+        } 
+        else if(button.Equals(direction[directionFacing])) 
         {
             if (!playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("RunBackwards"))
             {
@@ -229,10 +256,10 @@ public class CharacterControll : MonoBehaviour
         }
         else
         {
-            if (!playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+            if (!playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("RunToSide"))
             {
                 playerAnimator.SetBool("isRunning", true);
-                playerAnimator.Play("Run");
+                playerAnimator.Play("RunToSide");
             }
         }
     }
