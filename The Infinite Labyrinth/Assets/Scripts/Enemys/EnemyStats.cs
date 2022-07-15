@@ -42,6 +42,9 @@ public class EnemyStats : MonoBehaviour
         characterStats.money.AddValue(goldDroped.GetValue());
         characterStats.PlayMoneyCollectSound();
 
+        Animator animator = gameObject.GetComponentInChildren<Animator>();
+        animator.Play("Death");
+
         GameObject.FindGameObjectWithTag("ItemUnlockController").GetComponent<ItemUnlockController>().enemysKilled++;
 
         GetComponentInChildren<Collider>().enabled = false;
