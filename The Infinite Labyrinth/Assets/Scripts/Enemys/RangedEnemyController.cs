@@ -20,8 +20,15 @@ public class RangedEnemyController : EnemyController
         {
             isFollowing = false;
             isAttacking = true;
+            animator.SetBool("isRunning", false);
 
             return;
+        }
+
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+        {
+            animator.SetBool("isRunning", true);
+            animator.Play("Run");
         }
 
         agent.destination = player.transform.position;
@@ -43,6 +50,12 @@ public class RangedEnemyController : EnemyController
         agent.destination = currentDestination.GetPointPosition;
         agent.speed = startMovementSpeed + movementSpeedBoost;
 
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+        {
+            animator.SetBool("isRunning", true);
+            animator.Play("Run");
+        }
+
         if (IsEnemyAtPositionOfPoint())
         {            
             agent.speed -= movementSpeedBoost;
@@ -52,6 +65,8 @@ public class RangedEnemyController : EnemyController
             isRunAwayActionDone = true;
             isRunningAway = false;
             isWaiting = true;
+
+            animator.SetBool("isRunning", false);
         }
     }
 
@@ -75,6 +90,8 @@ public class RangedEnemyController : EnemyController
         {
             return;
         }
+
+        animator.Play("Attack");
 
         var shoot = Instantiate(bullet, shooter.position, transform.rotation);      
         shoot.SendMessage("SetAttackDamage", stats.attackDamage.GetValue());

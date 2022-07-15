@@ -28,6 +28,8 @@ public abstract class EnemyController : MonoBehaviour
     public WaitPoint currentDestination;
     private WaitPoint point;
 
+    public Animator animator;
+
     private void Start()
     {
         stats = gameObject.GetComponent<EnemyStats>();
@@ -35,6 +37,8 @@ public abstract class EnemyController : MonoBehaviour
         agent.speed = stats.movementSpeed.GetValue();
         agent.stoppingDistance = stats.attackRange.GetValue();
         startMovementSpeed = stats.movementSpeed.GetValue();
+
+        animator = gameObject.GetComponentInChildren<Animator>();
 
         StartCoroutine(LoadPlayerData());
     }

@@ -11,7 +11,15 @@ public class TankEnemyController : EnemyController
             isFollowing = false;
             isAttacking = true;
 
+            animator.SetBool("isRunning", false);
+
             return;
+        }
+
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+        {
+            animator.SetBool("isRunning", true);
+            animator.Play("Run");
         }
 
         transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
@@ -37,6 +45,8 @@ public class TankEnemyController : EnemyController
         }
 
         transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+
+        animator.Play("Attack");
 
         Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, stats.attackRange.GetValue());
 

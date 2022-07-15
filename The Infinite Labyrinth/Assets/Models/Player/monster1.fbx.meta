@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cd72001d7aa3f8543873ec3f3e46e13d
+guid: db81c03765341584f85cb62d46aaebdf
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
@@ -10,26 +10,14 @@ ModelImporter:
       74: 308734278038091503
     second: Szkielet|Attack
   - first:
-      74: -3528905038201703394
-    second: Szkielet|Block
-  - first:
-      74: 4682000273953883356
-    second: Szkielet|Dash
-  - first:
-      74: 5730966330355406087
-    second: Szkielet|Idle
+      74: 3312587249245352213
+    second: Szkielet|R
   - first:
       74: 8569967269124852214
     second: Szkielet|Run
   - first:
-      74: -2026129017375908584
-    second: Szkielet|RunAttacking
-  - first:
-      74: 4982568310999145451
-    second: Szkielet|RunningBackwards
-  - first:
-      74: -1025936637125926453
-    second: Szkielet|MoveToSide
+      74: 2936505214672696618
+    second: Szkielet|SzkieletAction
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -60,40 +48,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Szkielet|RunningBackwards
-      takeName: Szkielet|RunningBackwards
+      name: Szkielet|0TPose
+      takeName: Szkielet|0TPose
       internalID: 0
       firstFrame: 0
-      lastFrame: 19
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Szkielet|Attack
-      takeName: Szkielet|Attack
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 16
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -118,18 +77,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Szkielet|Block
-      takeName: Szkielet|Block
+      name: Szkielet|Attack
+      takeName: Szkielet|Attack
       internalID: 0
       firstFrame: 0
-      lastFrame: 7
+      lastFrame: 19
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -147,47 +106,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Szkielet|Dash
-      takeName: Szkielet|Dash
+      name: Szkielet|R
+      takeName: Szkielet|R
       internalID: 0
       firstFrame: 0
-      lastFrame: 20
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Szkielet|Idle
-      takeName: Szkielet|Idle
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 39
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -234,8 +164,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Szkielet|0TPose
-      takeName: Szkielet|0TPose
+      name: Szkielet|SzkieletAction
+      takeName: Szkielet|SzkieletAction
       internalID: 0
       firstFrame: 0
       lastFrame: 1
@@ -246,35 +176,6 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Szkielet|MoveToSide
-      takeName: Szkielet|MoveToSide
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 19
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
