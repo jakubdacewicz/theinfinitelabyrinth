@@ -11,7 +11,15 @@ public class RougeEnemy : EnemyController
             isFollowing = false;
             isAttacking = true;
 
+            animator.SetBool("isRunning", false);
+
             return;
+        }
+
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+        {
+            animator.SetBool("isRunning", true);
+            animator.Play("Run");
         }
 
         agent.destination = player.transform.position;
@@ -36,6 +44,12 @@ public class RougeEnemy : EnemyController
         agent.destination = currentDestination.GetPointPosition;
         agent.speed = startMovementSpeed + movementSpeedBoost;
 
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Run"))
+        {
+            animator.SetBool("isRunning", true);
+            animator.Play("Run");
+        }
+
         if (IsEnemyAtPositionOfPoint())
         {
             agent.stoppingDistance = stats.attackRange.GetValue();
@@ -45,6 +59,8 @@ public class RougeEnemy : EnemyController
 
             isRunningAway = false;
             isWaiting = true;
+
+            animator.SetBool("isRunning", false);
         }
     }
 
@@ -55,7 +71,14 @@ public class RougeEnemy : EnemyController
             return;
         }
 
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            return;
+        }
+
         transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
+
+        animator.Play("Attack");
 
         Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, stats.attackRange.GetValue());
 

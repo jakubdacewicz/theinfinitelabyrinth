@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6861248891789330726}
-  - component: {fileID: 4965729944635586833}
   - component: {fileID: 2832060028061875745}
   - component: {fileID: 4133970331752278166}
   - component: {fileID: 8034550685664168190}
+  - component: {fileID: -4749173294666169025}
   m_Layer: 0
   m_Name: Baseball
   m_TagString: Untagged
@@ -35,37 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4965729944635586833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4429564940575609708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1861552fd16d50b48929240d2972ffe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
-    texture: {fileID: 21300000, guid: a5e3db5f49f932d47ab3458d857d3638, type: 3}
-    itemModel: {fileID: 2666865770308923005, guid: 69b1f5f1e47f4d148af29702d99abed4, type: 3}
-    itemPrefabUI: {fileID: 638255471025126524, guid: 69ac473f652c2b44ea9b879af01928b8, type: 3}
-  characterStats: {fileID: 0}
-  lastAndNewValueDiffrence:
-  - 0
-  - 0
-  - 0
-  - 0
-  health: 0
-  maxHealth: 1
-  movementSpeed: 0
-  attackDamage: -1
-  attackSpeed: 1
-  attackRange: 2
-  money: 0
 --- !u!65 &2832060028061875745
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -191,3 +160,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4749173294666169025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4429564940575609708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c39bb2d05969846835e1487401adce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    name: Bat
+    description: test2
+    texture: {fileID: 21300000, guid: a5e3db5f49f932d47ab3458d857d3638, type: 3}
+    itemModel: {fileID: 2666865770308923005, guid: 69b1f5f1e47f4d148af29702d99abed4, type: 3}
+    itemPrefabUI: {fileID: 638255471025126524, guid: 69ac473f652c2b44ea9b879af01928b8, type: 3}
+  characterStats: {fileID: 0}
+  lastAndNewValueDiffrence:
+  - 0
+  - 0
+  - 0
+  - 0
+  attackSpeed: 0
+  attackDamage: 2
+  attackRange: -0.4
+  objectName: bat

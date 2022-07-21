@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7694981583844226545}
-  - component: {fileID: 355274630325553006}
+  - component: {fileID: -6070833423768093320}
   - component: {fileID: 6932404412175737439}
   - component: {fileID: 3354500340563431105}
   - component: {fileID: 4932653106215485617}
@@ -35,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &355274630325553006
+--- !u!114 &-6070833423768093320
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,12 +44,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6510378333246819331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1861552fd16d50b48929240d2972ffe1, type: 3}
+  m_Script: {fileID: 11500000, guid: 10c39bb2d05969846835e1487401adce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Topor
-    description: +230 maksymalnego zycia.
+    name: Axe
+    description: test
     texture: {fileID: 21300000, guid: a0c31113bef2c0b42bead9507ee62d88, type: 3}
     itemModel: {fileID: 7057165432438509270, guid: 3c10dae9aff68824e8bc59a2b1e4ffa0, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: 04143504bf53f34499968f0cc30a4ee2, type: 3}
@@ -59,13 +59,10 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  health: 0
-  maxHealth: 1
-  movementSpeed: 0
-  attackDamage: 1
   attackSpeed: 1
-  attackRange: 2
-  money: 0
+  attackDamage: 2
+  attackRange: 0.4
+  objectName: axe
 --- !u!65 &6932404412175737439
 BoxCollider:
   m_ObjectHideFlags: 0

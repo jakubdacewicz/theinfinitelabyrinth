@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2724542014917896152}
-  - component: {fileID: 6223093897363650798}
   - component: {fileID: 9074950424465341205}
   - component: {fileID: 4905098255293246779}
   - component: {fileID: 9196544192928798085}
+  - component: {fileID: -484688622924935746}
   m_Layer: 0
   m_Name: Broom
   m_TagString: Untagged
@@ -35,37 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6223093897363650798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6942611568851456152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1861552fd16d50b48929240d2972ffe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
-    texture: {fileID: 21300000, guid: 3b1877daca5abde4d8f9263fece2fe86, type: 3}
-    itemModel: {fileID: 1124642680776367625, guid: f59ec48c9e66fc7469640ba7dea4429d, type: 3}
-    itemPrefabUI: {fileID: 638255471025126524, guid: 3b5e2a9dde842db4db5936b31bd7f528, type: 3}
-  characterStats: {fileID: 0}
-  lastAndNewValueDiffrence:
-  - 0
-  - 0
-  - 0
-  - 0
-  health: 0
-  maxHealth: 1
-  movementSpeed: 0
-  attackDamage: -1
-  attackSpeed: 1
-  attackRange: 0
-  money: 0
 --- !u!65 &9074950424465341205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -191,3 +160,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-484688622924935746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6942611568851456152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c39bb2d05969846835e1487401adce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+    name: Broom
+    description: test3
+    texture: {fileID: 21300000, guid: 3b1877daca5abde4d8f9263fece2fe86, type: 3}
+    itemModel: {fileID: 1124642680776367625, guid: f59ec48c9e66fc7469640ba7dea4429d, type: 3}
+    itemPrefabUI: {fileID: 638255471025126524, guid: 3b5e2a9dde842db4db5936b31bd7f528, type: 3}
+  characterStats: {fileID: 0}
+  lastAndNewValueDiffrence:
+  - 0
+  - 0
+  - 0
+  - 0
+  attackSpeed: 0
+  attackDamage: -1
+  attackRange: 0.4
+  objectName: broom
