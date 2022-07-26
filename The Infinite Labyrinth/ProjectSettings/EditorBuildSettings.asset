@@ -53,4 +53,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Forrest3.unity
     guid: c0f0ce7e71c19a547b5b881b764c0683
+  - enabled: 1
+    path: Assets/Scenes/Forrest4.unity
+    guid: b96aab761f3a38146a9db0a42f2da4d3
+  - enabled: 1
+    path: Assets/Scenes/Desert4.unity
+    guid: 89f66aa355f04e346840c57097015bef
+  - enabled: 1
+    path: Assets/Scenes/Forrest5.unity
+    guid: 0cfdebcfb73319a4a915279106dc07fd
+  - enabled: 1
+    path: Assets/Scenes/Desert5.unity
+    guid: ad569ee1a5ad05c4097812a15cfabd76
+  - enabled: 1
+    path: Assets/Scenes/Desert6.unity
+    guid: 19f344aa674e73349b697f380eeff1e1
+  - enabled: 1
+    path: Assets/Scenes/Forrest6.unity
+    guid: 3d68f151815046e49b6e50d8b4221487
+  - enabled: 1
+    path: Assets/Scenes/Desert7.unity
+    guid: 8f4ea2855397d32499ed5be957ace7e4
+  - enabled: 1
+    path: Assets/Scenes/Forrest7.unity
+    guid: 0614b3c7214a1e54d9f11ee05c48457a
+  - enabled: 1
+    path: Assets/Scenes/Desert8.unity
+    guid: 97308f49aa1d2724ba0d1e97e017d092
+  - enabled: 1
+    path: Assets/Scenes/Forrest8.unity
+    guid: 69cb78348daed7c4387a1f58b3a296d3
   m_configObjects: {}
