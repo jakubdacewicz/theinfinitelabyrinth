@@ -95,4 +95,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Desert10.unity
     guid: 6e041303e653afc4698144942ed0cf34
+  - enabled: 1
+    path: Assets/Scenes/Arctic1.unity
+    guid: c904a0f7b75181440853b7dd3ac4cbba
   m_configObjects: {}
