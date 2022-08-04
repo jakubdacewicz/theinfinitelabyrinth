@@ -98,4 +98,43 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Arctic1.unity
     guid: c904a0f7b75181440853b7dd3ac4cbba
+  - enabled: 1
+    path: Assets/Scenes/Arctic2.unity
+    guid: ed7fee1808e11914bacbae2ab6f04b88
+  - enabled: 1
+    path: Assets/Scenes/Arctic3.unity
+    guid: 2917289fad00f79429aa3bc900442c30
+  - enabled: 1
+    path: Assets/Scenes/Arctic4.unity
+    guid: 01ad0a45de2ab6d4a9c7f36d2aeea84b
+  - enabled: 1
+    path: Assets/Scenes/Arctic5.unity
+    guid: 893958ff5899f3d45b10799c7467e05e
+  - enabled: 1
+    path: Assets/Scenes/Arctic6.unity
+    guid: 9d37d293992a11c49b47a1d301c82a42
+  - enabled: 1
+    path: Assets/Scenes/Arctic7.unity
+    guid: 6085a9cbbb748a247b890034c62bc3cb
+  - enabled: 1
+    path: Assets/Scenes/Arctic8.unity
+    guid: c261d99f3d956114c9bcec9ec4fbb87b
+  - enabled: 1
+    path: Assets/Scenes/Arctic9.unity
+    guid: 91c146406b6da9944b134b7976a55946
+  - enabled: 1
+    path: Assets/Scenes/Arctic10.unity
+    guid: 85dc43481dd26644e826982d2d0ec45b
+  - enabled: 1
+    path: Assets/Scenes/ArcticEnd.unity
+    guid: c873c228415caf3418095ceb301dba3b
+  - enabled: 1
+    path: Assets/Scenes/ArcticKey.unity
+    guid: 6b495b8dbedfeee408e4dabc92eadda1
+  - enabled: 1
+    path: Assets/Scenes/ArcticMain.unity
+    guid: 86ddf74be2e094b44a536d26a7cb73d7
+  - enabled: 1
+    path: Assets/Scenes/ArcticStart.unity
+    guid: db8dfb6637204d842948ba6701723bd3
   m_configObjects: {}
