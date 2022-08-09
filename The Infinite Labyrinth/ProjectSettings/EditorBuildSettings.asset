@@ -152,4 +152,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mine5.unity
     guid: 079efd5702f9b48429caf444e912c1f4
+  - enabled: 1
+    path: Assets/Scenes/Mine7.unity
+    guid: 227fca48c3ee62548bff94da53b5e472
+  - enabled: 1
+    path: Assets/Scenes/Mine8.unity
+    guid: 647b8e89bc249dc4f9818760fb1deded
+  - enabled: 1
+    path: Assets/Scenes/Mine9.unity
+    guid: 1b2b505fb505fc4498c3ebe9d50640d6
+  - enabled: 1
+    path: Assets/Scenes/Mine10.unity
+    guid: e34b9e222357cfd4090734c2ac33b6c0
+  - enabled: 1
+    path: Assets/Scenes/MineEnd.unity
+    guid: 2a56dabccbf0eae46b53e4f65df54508
+  - enabled: 1
+    path: Assets/Scenes/MineKey.unity
+    guid: eb4bbaef2ac60a942a2e05ee41fd1a02
+  - enabled: 1
+    path: Assets/Scenes/MineStart.unity
+    guid: 8a070a0e484b0a342af83dba000719b2
+  - enabled: 1
+    path: Assets/Scenes/MineMain.unity
+    guid: 5588e231a3864cb4f8d24997cca15d1b
+  - enabled: 1
+    path: Assets/Scenes/Mine3.unity
+    guid: 7032ba702a60d3e48a13a57845f3e06b
   m_configObjects: {}
