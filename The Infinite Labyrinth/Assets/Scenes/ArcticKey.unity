@@ -205,6 +205,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4697c999822ba444fbe4317478dc1d86, type: 3}
   m_PrefabInstance: {fileID: 118221206}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &118221208 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4697c999822ba444fbe4317478dc1d86, type: 3}
+  m_PrefabInstance: {fileID: 118221206}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &118221209
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118221208}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5505447, y: 2.5505445, z: 1.9999996}
+  m_Center: {x: 0.000000059604645, y: 0, z: 0.000000059604634}
 --- !u!1 &182771860
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +527,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: treewithsnow (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
 --- !u!4 &415913429 stripped
@@ -516,6 +538,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
   m_PrefabInstance: {fileID: 415913428}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &415913430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+  m_PrefabInstance: {fileID: 415913428}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &415913431
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415913430}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.272821, y: 4.689683, z: 6.4790697}
+  m_Center: {x: 0.015114546, y: 0.19044206, z: 1.205425}
 --- !u!1 &607968758
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,9 +831,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 842522164}
+  - component: {fileID: 842522166}
+  - component: {fileID: 842522165}
   m_Layer: 0
   m_Name: Key
-  m_TagString: Untagged
+  m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -814,6 +856,31 @@ Transform:
   m_Father: {fileID: 182771861}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &842522165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842522163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf65e7c4d12ec04b86bd4d96132a36e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &842522166
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842522163}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1001 &946028330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1241,6 +1308,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowballs (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e7b1e104654694e42aceea93b1a47903, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7b1e104654694e42aceea93b1a47903, type: 3}
 --- !u!4 &1099797849 stripped
@@ -1248,6 +1319,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e7b1e104654694e42aceea93b1a47903, type: 3}
   m_PrefabInstance: {fileID: 1099797848}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1099797850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e7b1e104654694e42aceea93b1a47903, type: 3}
+  m_PrefabInstance: {fileID: 1099797848}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1099797851
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099797850}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.30415174, y: 0.25631288, z: 0.18248262}
+  m_Center: {x: -0.00051274226, y: -0.07815625, z: 0.04046576}
 --- !u!1001 &1106397884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1912,6 +2001,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowman
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f758c91a4725918419c790b2d0eef923, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f758c91a4725918419c790b2d0eef923, type: 3}
 --- !u!4 &2131388801 stripped
@@ -1919,3 +2012,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f758c91a4725918419c790b2d0eef923, type: 3}
   m_PrefabInstance: {fileID: 2131388800}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2131388802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f758c91a4725918419c790b2d0eef923, type: 3}
+  m_PrefabInstance: {fileID: 2131388800}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2131388803
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131388802}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9147655, y: 0.9110751, z: 1.664749}
+  m_Center: {x: -0.00000014908414, y: 0.00184509, z: 0.70184356}

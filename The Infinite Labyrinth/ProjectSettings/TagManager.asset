@@ -17,6 +17,7 @@ TagManager:
   - SceneLight
   - BlackPanel
   - Hand
+  - Key
   layers:
   - Default
   - TransparentFX

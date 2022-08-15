@@ -15,6 +15,8 @@ public class LevelComplete : Interactable
     public override void Interact()
     {
         //jakies warunki ukonczenia
+        if (GameObject.FindWithTag("Key") != null) return;
+
         Debug.Log("Loading next world: " + dungeonGenerationData.nextWorldName);
 
         GameObject.FindWithTag("GameController").GetComponent<GameController>().isSceneChanged = true;

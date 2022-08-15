@@ -297,6 +297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: treewithsnow (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
 --- !u!4 &239630441 stripped
@@ -304,6 +308,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
   m_PrefabInstance: {fileID: 239630440}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &239630442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+  m_PrefabInstance: {fileID: 239630440}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &239630443
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239630442}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.272821, y: 4.689683, z: 6.479069}
+  m_Center: {x: 0.015117407, y: 0.19044156, z: 1.2054276}
 --- !u!1 &257555909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,6 +1058,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stone (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64047092d1a5e9d4e8cb0c64a4c02b2e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64047092d1a5e9d4e8cb0c64a4c02b2e, type: 3}
 --- !u!4 &974685737 stripped
@@ -1043,6 +1069,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 64047092d1a5e9d4e8cb0c64a4c02b2e, type: 3}
   m_PrefabInstance: {fileID: 974685736}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &974685738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 64047092d1a5e9d4e8cb0c64a4c02b2e, type: 3}
+  m_PrefabInstance: {fileID: 974685736}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &974685739
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974685738}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2617226, y: 2.0133557, z: 1.4477874}
+  m_Center: {x: 0.54151934, y: 0.7303274, z: 0.27772608}
 --- !u!1 &994979318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1450,6 +1494,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: treewithsnow
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
 --- !u!4 &1137625845 stripped
@@ -1457,6 +1505,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
   m_PrefabInstance: {fileID: 1137625844}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1137625846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+  m_PrefabInstance: {fileID: 1137625844}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1137625847
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137625846}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.2728214, y: 4.6896853, z: 6.479072}
+  m_Center: {x: 0.015118722, y: 0.19044146, z: 1.2054251}
 --- !u!1001 &1158774572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1524,6 +1590,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stone (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64047092d1a5e9d4e8cb0c64a4c02b2e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64047092d1a5e9d4e8cb0c64a4c02b2e, type: 3}
 --- !u!4 &1158774573 stripped
@@ -1531,6 +1601,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 64047092d1a5e9d4e8cb0c64a4c02b2e, type: 3}
   m_PrefabInstance: {fileID: 1158774572}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1158774574 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 64047092d1a5e9d4e8cb0c64a4c02b2e, type: 3}
+  m_PrefabInstance: {fileID: 1158774572}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1158774575
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158774574}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2617226, y: 2.0133557, z: 1.4477874}
+  m_Center: {x: 0.54152054, y: 0.7303274, z: 0.27772835}
 --- !u!1 &1192685061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,6 +1858,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: treewithsnow (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
 --- !u!4 &1222895689 stripped
@@ -1777,6 +1869,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
   m_PrefabInstance: {fileID: 1222895688}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1222895690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+  m_PrefabInstance: {fileID: 1222895688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1222895691
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222895690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.2728214, y: 4.689683, z: 6.4790697}
+  m_Center: {x: 0.015119316, y: 0.19044253, z: 1.2054248}
 --- !u!1001 &1313099653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1844,6 +1954,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: treewithsnow (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
 --- !u!4 &1313099654 stripped
@@ -1851,6 +1965,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
   m_PrefabInstance: {fileID: 1313099653}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1313099655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+  m_PrefabInstance: {fileID: 1313099653}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1313099656
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313099655}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.272821, y: 4.689684, z: 6.47907}
+  m_Center: {x: 0.0151155135, y: 0.19044249, z: 1.2054204}
 --- !u!1 &1496991035
 GameObject:
   m_ObjectHideFlags: 0

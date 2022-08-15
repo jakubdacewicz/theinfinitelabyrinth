@@ -297,6 +297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: treewithsnow (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
 --- !u!4 &239630441 stripped
@@ -304,6 +308,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
   m_PrefabInstance: {fileID: 239630440}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &239630442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+  m_PrefabInstance: {fileID: 239630440}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &239630443
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239630442}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.272821, y: 4.689683, z: 6.479069}
+  m_Center: {x: 0.0151154995, y: 0.19044204, z: 1.2054272}
 --- !u!1 &257555909
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +962,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowman
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f758c91a4725918419c790b2d0eef923, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f758c91a4725918419c790b2d0eef923, type: 3}
 --- !u!4 &790270198 stripped
@@ -947,6 +973,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f758c91a4725918419c790b2d0eef923, type: 3}
   m_PrefabInstance: {fileID: 790270197}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &790270199 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f758c91a4725918419c790b2d0eef923, type: 3}
+  m_PrefabInstance: {fileID: 790270197}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &790270200
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790270199}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1093141, y: 1.1772097, z: 1.6647487}
+  m_Center: {x: 0.012709573, y: -0.027239863, z: 0.701846}
 --- !u!1001 &946028330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1108,6 +1152,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: stone (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64047092d1a5e9d4e8cb0c64a4c02b2e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64047092d1a5e9d4e8cb0c64a4c02b2e, type: 3}
 --- !u!4 &974685737 stripped
@@ -1115,6 +1163,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 64047092d1a5e9d4e8cb0c64a4c02b2e, type: 3}
   m_PrefabInstance: {fileID: 974685736}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &974685738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 64047092d1a5e9d4e8cb0c64a4c02b2e, type: 3}
+  m_PrefabInstance: {fileID: 974685736}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &974685739
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974685738}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.261722, y: 2.0133555, z: 1.4477873}
+  m_Center: {x: 0.5415202, y: 0.7303275, z: 0.2777278}
 --- !u!1 &994979318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,6 +1514,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowballs (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e7b1e104654694e42aceea93b1a47903, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7b1e104654694e42aceea93b1a47903, type: 3}
 --- !u!4 &1099797849 stripped
@@ -1455,6 +1525,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e7b1e104654694e42aceea93b1a47903, type: 3}
   m_PrefabInstance: {fileID: 1099797848}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1099797850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e7b1e104654694e42aceea93b1a47903, type: 3}
+  m_PrefabInstance: {fileID: 1099797848}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1099797851
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099797850}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.30415174, y: 0.25631288, z: 0.18248262}
+  m_Center: {x: -0.00051250384, y: -0.078156784, z: 0.040465932}
 --- !u!1001 &1106397884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1596,6 +1684,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: treewithsnow
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
 --- !u!4 &1137625845 stripped
@@ -1603,6 +1695,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
   m_PrefabInstance: {fileID: 1137625844}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1137625846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+  m_PrefabInstance: {fileID: 1137625844}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1137625847
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137625846}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.817497, y: 5.2284393, z: 6.479072}
+  m_Center: {x: 0.07060052, y: 0.09622574, z: 1.2054263}
 --- !u!1 &1192685061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,6 +1952,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: treewithsnow (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
 --- !u!4 &1222895689 stripped
@@ -1849,6 +1963,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
   m_PrefabInstance: {fileID: 1222895688}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1222895690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+  m_PrefabInstance: {fileID: 1222895688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1222895691
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222895690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.2728214, y: 4.689683, z: 6.4790697}
+  m_Center: {x: 0.015119316, y: 0.19044349, z: 1.2054265}
 --- !u!1001 &1313099653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1916,6 +2048,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: treewithsnow (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
 --- !u!4 &1313099654 stripped
@@ -1923,6 +2059,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
   m_PrefabInstance: {fileID: 1313099653}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1313099655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 89e69d4826ce5084e8ee11dbd2f6c453, type: 3}
+  m_PrefabInstance: {fileID: 1313099653}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1313099656
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313099655}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.272821, y: 4.689684, z: 6.47907}
+  m_Center: {x: 0.01511599, y: 0.19044058, z: 1.2054217}
 --- !u!1 &1496991035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2162,6 +2316,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowballs (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e7b1e104654694e42aceea93b1a47903, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7b1e104654694e42aceea93b1a47903, type: 3}
 --- !u!4 &1550171985 stripped
@@ -2169,6 +2327,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e7b1e104654694e42aceea93b1a47903, type: 3}
   m_PrefabInstance: {fileID: 1550171984}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1550171986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e7b1e104654694e42aceea93b1a47903, type: 3}
+  m_PrefabInstance: {fileID: 1550171984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1550171987
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550171986}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.30415168, y: 0.2563129, z: 0.1824826}
+  m_Center: {x: -0.000512622, y: -0.07815644, z: 0.040465966}
 --- !u!1001 &2020378136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2236,6 +2412,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: snowballs
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e7b1e104654694e42aceea93b1a47903, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7b1e104654694e42aceea93b1a47903, type: 3}
 --- !u!4 &2020378137 stripped
@@ -2243,3 +2423,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e7b1e104654694e42aceea93b1a47903, type: 3}
   m_PrefabInstance: {fileID: 2020378136}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2020378138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e7b1e104654694e42aceea93b1a47903, type: 3}
+  m_PrefabInstance: {fileID: 2020378136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2020378139
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020378138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3041517, y: 0.25631288, z: 0.18248259}
+  m_Center: {x: -0.0005127415, y: -0.078156434, z: 0.04046596}
