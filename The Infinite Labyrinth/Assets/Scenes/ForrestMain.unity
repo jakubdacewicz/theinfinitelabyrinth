@@ -8455,6 +8455,7 @@ MonoBehaviour:
   attackHit: {fileID: 8300000, guid: 0d3d8da6b4342214995561b2fa4c5b4a, type: 3}
   attackMiss: {fileID: 8300000, guid: d4d37214d47c2e04abfd0d209622ee8f, type: 3}
   playerDash: {fileID: 8300000, guid: 1fb8009bd9170ce438607a603c29877e, type: 3}
+  playerRun: {fileID: 8300000, guid: 4843ec14528fba144b2054d79e4ca096, type: 3}
 --- !u!114 &2087955011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8566,8 +8567,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 4843ec14528fba144b2054d79e4ca096, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

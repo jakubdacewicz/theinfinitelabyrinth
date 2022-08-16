@@ -21,10 +21,8 @@ public class LevelComplete : Interactable
         //jakies warunki ukonczenia
         if (GameObject.FindWithTag("Key") != null)
         {
-            if (!audioSource.isPlaying)
-            {
-                audioSource.PlayOneShot(doorLocked);
-            }            
+            audioSource.PlayOneShot(doorLocked); 
+            
             return;
         } 
 

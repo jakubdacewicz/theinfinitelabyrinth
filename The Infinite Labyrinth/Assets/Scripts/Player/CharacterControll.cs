@@ -16,6 +16,7 @@ public class CharacterControll : MonoBehaviour
     public AudioClip attackHit;
     public AudioClip attackMiss;
     public AudioClip playerDash;
+    public AudioClip playerRun;
 
     //private
     private CharacterStats characterStats;
@@ -161,6 +162,7 @@ public class CharacterControll : MonoBehaviour
             }
             else
             {
+                playerSource.Stop();
                 playerAnimator.SetBool("isRunning", false);
             }
         }      
@@ -230,6 +232,12 @@ public class CharacterControll : MonoBehaviour
 
     private void Run(char button)
     {
+        if (!playerSource.isPlaying)
+        {
+            playerSource.clip = playerRun;
+            playerSource.Play();
+        }
+
         Dictionary<char, char> direction = new Dictionary<char, char>()
         {
             {'W', 'S' },
