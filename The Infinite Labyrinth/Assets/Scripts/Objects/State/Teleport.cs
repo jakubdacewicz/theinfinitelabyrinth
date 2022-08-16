@@ -5,7 +5,6 @@ using UnityEngine;
 public class Teleport : Interactable
 {
     public float distanceOfNextTeleport;
-    public float teleportedPositionShift = 0.2f;
 
     private RoomController roomController;
 
@@ -49,13 +48,13 @@ public class Teleport : Interactable
 
             yield return new WaitForSeconds(0.1f);
 
-            Vector3 teleportedPosition = hit.transform.position + (hit.transform.forward * -1) * teleportedPositionShift;
+            Vector3 teleportedPosition = hit.transform.position + (hit.transform.forward * -1) * 0.1f;
             TeleportToCoordinates(GameObject.FindWithTag("Player"), teleportedPosition.x, teleportedPosition.z);       
         }
     }
 
     public void TeleportToCoordinates(GameObject teleportedObject, float x, float z)
     {
-        teleportedObject.transform.position = new Vector3(x, 0.7f, z);
+        teleportedObject.transform.position = new Vector3(x, 0.2f, z);
     }
 }

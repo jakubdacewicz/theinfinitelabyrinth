@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class RougeEnemy : EnemyController
 {
+    public AudioSource audioSource;
+
+    public AudioClip attackSound;
+    public AudioClip runSound;
+
     public override void Follow()
     {
         if (Vector3.Distance(player.transform.position, gameObject.transform.position) <= stats.attackRange.GetValue())
@@ -20,6 +25,13 @@ public class RougeEnemy : EnemyController
         {
             animator.SetBool("isRunning", true);
             animator.Play("Run");
+        }
+        else
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(runSound);
+            }
         }
 
         agent.destination = player.transform.position;
@@ -50,6 +62,11 @@ public class RougeEnemy : EnemyController
             animator.Play("Run");
         }
 
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(runSound);
+        }
+
         if (IsEnemyAtPositionOfPoint())
         {
             agent.stoppingDistance = stats.attackRange.GetValue();
@@ -74,6 +91,11 @@ public class RougeEnemy : EnemyController
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
             return;
+        }
+
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(attackSound);
         }
 
         transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));

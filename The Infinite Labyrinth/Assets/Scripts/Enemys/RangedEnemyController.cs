@@ -12,6 +12,11 @@ public class RangedEnemyController : EnemyController
 
     public Transform shooter;
 
+    public AudioSource audioSource;
+
+    public AudioClip attackSound;
+    public AudioClip runSound;
+
     private bool isRunAwayActionDone = false;
 
     public override void Follow()
@@ -29,6 +34,13 @@ public class RangedEnemyController : EnemyController
         {
             animator.SetBool("isRunning", true);
             animator.Play("Run");
+        }
+        else
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(runSound);
+            }
         }
 
         agent.destination = player.transform.position;
@@ -54,7 +66,13 @@ public class RangedEnemyController : EnemyController
         {
             animator.SetBool("isRunning", true);
             animator.Play("Run");
-        }
+        } else
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(runSound);
+            }
+        }     
 
         if (IsEnemyAtPositionOfPoint())
         {            
@@ -92,6 +110,11 @@ public class RangedEnemyController : EnemyController
         }
 
         animator.Play("Attack");
+
+        if(!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(attackSound);
+        }
 
         var shoot = Instantiate(bullet, shooter.position, transform.rotation);      
         shoot.SendMessage("SetAttackDamage", stats.attackDamage.GetValue());

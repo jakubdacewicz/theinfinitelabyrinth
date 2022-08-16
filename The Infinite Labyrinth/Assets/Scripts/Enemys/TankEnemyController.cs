@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class TankEnemyController : EnemyController
 {
+    public AudioSource audioSource;
+
+    public AudioClip attackSound;
+    public AudioClip runSound;
+
     public override void Follow()
     {
         if (Vector3.Distance(player.transform.position, gameObject.transform.position) <= stats.attackRange.GetValue())
@@ -20,6 +25,13 @@ public class TankEnemyController : EnemyController
         {
             animator.SetBool("isRunning", true);
             animator.Play("Run");
+        }
+        else
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(runSound);
+            }
         }
 
         transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));
@@ -42,6 +54,11 @@ public class TankEnemyController : EnemyController
         if (currentAttackWaitTime > Time.time)
         {
             return;
+        }
+
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(attackSound);
         }
 
         transform.LookAt(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z));

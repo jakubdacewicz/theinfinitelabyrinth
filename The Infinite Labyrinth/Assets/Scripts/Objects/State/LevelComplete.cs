@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class LevelComplete : Interactable
 {
     private DungeonGenerationData dungeonGenerationData;
+    public AudioSource audioSource;
+
+    public AudioClip doorUnlocked;
+    public AudioClip doorLocked;
 
     private void Start()
     {
@@ -15,7 +19,16 @@ public class LevelComplete : Interactable
     public override void Interact()
     {
         //jakies warunki ukonczenia
-        if (GameObject.FindWithTag("Key") != null) return;
+        if (GameObject.FindWithTag("Key") != null)
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(doorLocked);
+            }            
+            return;
+        } 
+
+        audioSource.PlayOneShot(doorUnlocked);
 
         Debug.Log("Loading next world: " + dungeonGenerationData.nextWorldName);
 
