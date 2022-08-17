@@ -42,15 +42,8 @@ public class CharacterControll : MonoBehaviour
             CheckInteraction();
 
         if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(menu.activeSelf)
-            {
-                menu.SetActive(false);
-            }
-            else
-            {
-                menu.SetActive(true);
-            }
+        {          
+            menu.SetActive(!menu.activeSelf);
         }
 
         if(isStamineEmpty)
@@ -165,7 +158,7 @@ public class CharacterControll : MonoBehaviour
                 playerSource.Stop();
                 playerAnimator.SetBool("isRunning", false);
             }
-        }      
+        }
     }
 
     public void BlockPlayerMovement(bool action)
@@ -197,7 +190,10 @@ public class CharacterControll : MonoBehaviour
 
     private IEnumerator Attack()
     {
+        playerSource.Stop();
+
         playerAnimator.Play("Attack");
+
         Collider[] colliders = Physics.OverlapSphere(transform.position + transform.forward * attackRangePosition, characterStats.attackRange.GetValue());
 
         int enemys = 0;
@@ -300,6 +296,7 @@ public class CharacterControll : MonoBehaviour
     {
         if(characterStats.GetCurrentStamine() >= Mathf.Abs(characterStats.dashStamineCost.GetValue()))
         {
+            playerSource.Stop();
             playerSource.PlayOneShot(playerDash);
 
             playerAnimator.Play("Dash");
