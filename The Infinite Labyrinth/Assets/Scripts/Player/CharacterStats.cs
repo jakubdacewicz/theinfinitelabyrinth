@@ -165,7 +165,6 @@ public class CharacterStats : MonoBehaviour
     {
         if (isPlayerInvulnerable == false)
         {
-            characterSource.volume = 0.4f;
             characterSource.PlayOneShot(takeDamageSound);
 
             value = Mathf.Abs(value);
@@ -183,7 +182,6 @@ public class CharacterStats : MonoBehaviour
         }
         else
         {
-            characterSource.volume = 1;
             characterSource.PlayOneShot(blockDamageSound);
         }
     }

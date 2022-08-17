@@ -215,13 +215,11 @@ public class CharacterControll : MonoBehaviour
 
         if (enemys > 0)
         {
-            playerSource.volume = 0.5f;
             playerSource.PlayOneShot(attackHit);
 
         }
         else
         {
-            playerSource.volume = 0.7f;
             playerSource.PlayOneShot(attackMiss);
         }
 
