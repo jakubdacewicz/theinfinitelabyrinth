@@ -29,6 +29,7 @@ public class Buyable : Interactable
 
             ItemUnlockController itemUnlockController = GameObject.FindWithTag("ItemUnlockController").GetComponent<ItemUnlockController>();
             itemUnlockController.itemsBought++;
+            itemUnlockController.currentItemsBought++;
 
             isBought = true;
         }       

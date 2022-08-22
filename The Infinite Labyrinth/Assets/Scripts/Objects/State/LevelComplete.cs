@@ -18,7 +18,6 @@ public class LevelComplete : Interactable
 
     public override void Interact()
     {
-        //jakies warunki ukonczenia
         if (GameObject.FindWithTag("Key") != null)
         {
             audioSource.PlayOneShot(doorLocked); 

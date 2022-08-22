@@ -11,6 +11,9 @@ public class ItemUnlockController : MonoBehaviour
     public int itemsBought;
     public int enemysKilled;
 
+    public int currentItemsBought;
+    public int currentEnemysKilled;
+
     [Header("Item: Saturn")]   
     public GameObject saturn;
 

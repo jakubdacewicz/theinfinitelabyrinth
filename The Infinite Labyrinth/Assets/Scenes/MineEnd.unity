@@ -2171,8 +2171,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1986144372}
   - component: {fileID: 1986144374}
-  - component: {fileID: 1986144373}
   - component: {fileID: 1986144375}
+  - component: {fileID: 1986144376}
   m_Layer: 0
   m_Name: EndDoor
   m_TagString: Portal
@@ -2196,21 +2196,6 @@ Transform:
   m_Father: {fileID: 182771861}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1986144373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1986144371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d777839c43ac5940b07fe26ccc7cb11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 1986144375}
-  doorUnlocked: {fileID: 8300000, guid: 5f5c3e0f6d152924ea63f1773e61ad6b, type: 3}
-  doorLocked: {fileID: 8300000, guid: 240e76d1e44d9864ea810e9c2fb66d63, type: 3}
 --- !u!65 &1986144374
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2320,3 +2305,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1986144376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986144371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be517835a003b874cbff726cb8df33c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1986144375}
+  doorUnlocked: {fileID: 8300000, guid: 5f5c3e0f6d152924ea63f1773e61ad6b, type: 3}
+  doorLocked: {fileID: 8300000, guid: 240e76d1e44d9864ea810e9c2fb66d63, type: 3}

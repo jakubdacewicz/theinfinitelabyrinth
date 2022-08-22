@@ -179,4 +179,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mine3.unity
     guid: 7032ba702a60d3e48a13a57845f3e06b
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: 43e71350863526c468d8721afe627bf5
   m_configObjects: {}

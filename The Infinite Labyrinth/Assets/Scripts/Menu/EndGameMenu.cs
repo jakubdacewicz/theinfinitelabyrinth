@@ -1,15 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
-public class InGameMenu : MonoBehaviour
+public class EndGameMenu : MonoBehaviour
 {
-    private DataPersistenceManager dataPersistenceManager;
+    public TextMeshProUGUI timerText;
+
+    [Header("Last game stats")]
+    public TextMeshProUGUI currentMonstersCountText;
+    public TextMeshProUGUI currentItemsCollectedCountText;
+
+    [Header("Global stats")]
+    public TextMeshProUGUI monstersCountText;
+    public TextMeshProUGUI itemsCollectedCountText;
+
+    private GameController gameController;
+    private ItemUnlockController itemUnlockController;
 
     private void Start()
     {
-        dataPersistenceManager = GameObject.FindWithTag("Manager").GetComponentInChildren<DataPersistenceManager>();
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+        itemUnlockController = GameObject.FindWithTag("ItemUnlockController").GetComponent<ItemUnlockController>();
+
+        currentMonstersCountText.text = itemUnlockController.currentEnemysKilled.ToString();
+        currentItemsCollectedCountText.text = itemUnlockController.currentItemsBought.ToString();
+
+        monstersCountText.text = itemUnlockController.enemysKilled.ToString();
+        itemsCollectedCountText.text = itemUnlockController.itemsBought.ToString();
+
+        timerText.text = String.Format("{0:00}", (int)gameController.timer / 3600) + ":" + String.Format("{0:00}", (int)(gameController.timer % 3600) / 60) + ":" + String.Format("{0:00}", (int)gameController.timer % 60);
     }
 
     private void TrasitionBetweenScenes()
@@ -17,8 +39,6 @@ public class InGameMenu : MonoBehaviour
         GameObject blackPanel = GameObject.Find("Black Panel");
         blackPanel.GetComponent<BlackPanel>().enabled = true;
         blackPanel.GetComponent<BlackPanel>().ShowBlackPanel();
-
-        dataPersistenceManager.SaveGame();
 
         GameObject[] objects = new GameObject[]
         {

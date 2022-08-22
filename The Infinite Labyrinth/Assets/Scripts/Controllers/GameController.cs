@@ -7,8 +7,6 @@ using System;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject player;
-
     public bool isSceneChanged = false;
 
     public Text gameTime;
@@ -16,10 +14,16 @@ public class GameController : MonoBehaviour
     public List<GameObject> items;
     public List<bool> isItemSpawned;
 
-    private float timer = 0f;
+    private GameObject player;
+
+    public float timer = 0f;
 
     private void Start()
     {
+        player = GameObject.FindWithTag("Player");
+
+        if (player == null) return;
+
         StartCoroutine(ActivatePlayerAndCamera());
 
         for (int i  = 0; i < items.Count; i++)
@@ -30,26 +34,20 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if(isSceneChanged)
+        if (player == null) return;
+
+        if (isSceneChanged)
         {
             StartCoroutine(ActivatePlayerAndCamera());
             isSceneChanged = false;
-        }
+        }       
 
-        if(player == null)
-        {
-            return;
-        }
-
-        if (player.GetComponent<CharacterStats>().GetCurrentHealth() <= 0)
-        {
-            return;
-        }
-        /*
+        if (player.GetComponent<CharacterStats>().GetCurrentHealth() <= 0) return;
+        
         timer += Time.deltaTime;
 
-        gameTime.text = String.Format("{0:00}", (int)timer / 60) + ":" + String.Format("{0:00}", (int)timer % 60);
-        */
+        //gameTime.text = String.Format("{0:00}", (int)timer / 60) + ":" + String.Format("{0:00}", (int)timer % 60);
+        
     }
 
     private IEnumerator ActivatePlayerAndCamera()
