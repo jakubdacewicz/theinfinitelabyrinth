@@ -27,7 +27,10 @@ public class GameComplete : Interactable
 
         audioSource.PlayOneShot(doorUnlocked);
 
-        GameObject.FindWithTag("GameController").GetComponent<GameController>().isSceneChanged = true;
+        GameController gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+
+        gameController.isTimerActive = false;
+        gameController.isSceneChanged = true;      
 
         StartCoroutine(LoadEndScreen());
     }

@@ -8,8 +8,9 @@ using System;
 public class GameController : MonoBehaviour
 {
     public bool isSceneChanged = false;
+    public bool isTimerActive;
 
-    public Text gameTime;
+    public Text timerText;
 
     public List<GameObject> items;
     public List<bool> isItemSpawned;
@@ -39,15 +40,17 @@ public class GameController : MonoBehaviour
         if (isSceneChanged)
         {
             StartCoroutine(ActivatePlayerAndCamera());
-            isSceneChanged = false;
+            isSceneChanged = false;         
         }       
 
         if (player.GetComponent<CharacterStats>().GetCurrentHealth() <= 0) return;
-        
+
+        if (!isTimerActive) return;
+
         timer += Time.deltaTime;
 
-        //gameTime.text = String.Format("{0:00}", (int)timer / 60) + ":" + String.Format("{0:00}", (int)timer % 60);
-        
+        timerText.text = String.Format("{0:00}", (int)timer / 3600) + ":" + String.Format("{0:00}", (int)(timer % 3600) / 60) + ":" + String.Format("{0:00}", (int)timer % 60);
+
     }
 
     private IEnumerator ActivatePlayerAndCamera()
@@ -58,7 +61,7 @@ public class GameController : MonoBehaviour
         characterControll.ResetPlayerPosition();
         characterControll.BlockPlayerMovement(false);
 
-        player.SetActive(true);
+        player.SetActive(true);     
 
         GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().enabled = true;
     }
