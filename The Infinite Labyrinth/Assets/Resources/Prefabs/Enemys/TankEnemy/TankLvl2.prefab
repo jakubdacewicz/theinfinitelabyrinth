@@ -56,7 +56,7 @@ MonoBehaviour:
   attackRange:
     baseValue: 0.25
   attackDamage:
-    baseValue: 1
+    baseValue: 5
   attackCooldown:
     baseValue: 1
   goldDroped:

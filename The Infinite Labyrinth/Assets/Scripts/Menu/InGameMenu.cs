@@ -5,12 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class InGameMenu : MonoBehaviour
 {
-    private DataPersistenceManager dataPersistenceManager;
-
-    private void Start()
-    {
-        dataPersistenceManager = GameObject.FindWithTag("Manager").GetComponentInChildren<DataPersistenceManager>();
-    }
+    public DataPersistenceManager dataPersistenceManager;
 
     private void TrasitionBetweenScenes()
     {
