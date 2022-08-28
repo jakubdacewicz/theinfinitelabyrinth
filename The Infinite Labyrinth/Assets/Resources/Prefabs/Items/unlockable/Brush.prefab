@@ -77,8 +77,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Pedzel
-    description: Pomaluj moj swiat.
+    name: "P\u0119dzel"
+    description: "Pomaluj m\xF3j swiat."
     texture: {fileID: 21300000, guid: 9e708d3d81a9e2144b63f3f25a39b0bd, type: 3}
     itemModel: {fileID: 1062939719858351555, guid: 14763d65215b21f4ab1283c47ffd0acf, type: 3}
     itemPrefabUI: {fileID: 3583310610319590642, guid: 004489ce437cc014180178f9216edc06, type: 3}

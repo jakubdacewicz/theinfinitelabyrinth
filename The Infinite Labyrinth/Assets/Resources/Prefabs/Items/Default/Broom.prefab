@@ -173,8 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Broom
-    description: test3
+    name: Szczotka
+    description: "Zawsze jaka\u015B bro\u0144."
     texture: {fileID: 21300000, guid: 3b1877daca5abde4d8f9263fece2fe86, type: 3}
     itemModel: {fileID: 1124642680776367625, guid: f59ec48c9e66fc7469640ba7dea4429d, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: 3b5e2a9dde842db4db5936b31bd7f528, type: 3}

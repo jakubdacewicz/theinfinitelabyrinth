@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
+    name: Narkotyk
+    description: Czy warto?
     texture: {fileID: 21300000, guid: ca622ff51c613d1438c29b3587380edd, type: 3}
     itemModel: {fileID: 1231800519193856740, guid: 3c25935570eff22418e0c630cac93da8, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: a781149c54debe84b82bd1c078884021, type: 3}

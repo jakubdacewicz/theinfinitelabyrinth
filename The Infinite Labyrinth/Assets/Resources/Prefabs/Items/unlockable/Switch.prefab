@@ -77,8 +77,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Przelacznik
-    description: Czujesz zapadajacy mrok.
+    name: "Prze\u0142\u0105cznik"
+    description: Mrok ci nie straszny.
     texture: {fileID: 21300000, guid: f69cee0920e0db1429edfd9e005d90c5, type: 3}
     itemModel: {fileID: 4856525832075119327, guid: 8c5ac83468c9ae44d93cbf700dc09720, type: 3}
     itemPrefabUI: {fileID: 3221320186161742854, guid: b563336d98335f048a29a95eeae001be, type: 3}
@@ -88,7 +88,6 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  source: {fileID: 0}
   movementSpeed: 0.2
 --- !u!82 &979363947120862741
 AudioSource:

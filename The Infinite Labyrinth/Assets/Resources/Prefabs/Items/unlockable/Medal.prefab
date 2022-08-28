@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Unlock 1
-    description: +230 maksymalnego zycia.
+    name: Medal
+    description: "Zwyci\u0119zca jest tylko jeden."
     texture: {fileID: 21300000, guid: 0abede3b94a786e4982f36930a6ec792, type: 3}
     itemModel: {fileID: 1868073761787015561, guid: d1e6f358fccf2ef4694251936389271c, type: 3}
     itemPrefabUI: {fileID: 1499964674722774763, guid: 3c15a10790d7fa942a111b0724c1d045, type: 3}

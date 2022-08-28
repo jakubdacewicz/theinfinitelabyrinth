@@ -173,8 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Bat
-    description: test2
+    name: Kij baseballowy
+    description: Czas na gre.
     texture: {fileID: 21300000, guid: a5e3db5f49f932d47ab3458d857d3638, type: 3}
     itemModel: {fileID: 2666865770308923005, guid: 69b1f5f1e47f4d148af29702d99abed4, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: 69ac473f652c2b44ea9b879af01928b8, type: 3}

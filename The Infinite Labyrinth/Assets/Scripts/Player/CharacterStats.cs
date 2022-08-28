@@ -4,7 +4,6 @@ using System.Collections;
 
 public class CharacterStats : MonoBehaviour
 {
-    //public
     public float maxHealth;
     public float maxStamine;
 
@@ -55,7 +54,6 @@ public class CharacterStats : MonoBehaviour
 
     private AnimationController animationController;
 
-    //private
     private float currentHealth;
     private float currentStamine;
 
@@ -75,12 +73,6 @@ public class CharacterStats : MonoBehaviour
 
     private void Update()
     {
-        //Test gameover
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            Die();
-        }
-
         textStamine.text = currentStamine + " / " + maxStamine;
         textHealth.text = currentHealth + " / " + maxHealth;       
 
@@ -210,9 +202,6 @@ public class CharacterStats : MonoBehaviour
         }
 
         textHealth.text = 0 + "/" + maxHealth;
-
-        //animacja wylacz ui
-
 
         Destroy(GameObject.FindWithTag("Player"));
     }

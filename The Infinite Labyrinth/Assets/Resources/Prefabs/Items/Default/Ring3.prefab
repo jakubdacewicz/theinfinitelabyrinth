@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
     name: Pierscien z bursztynem
-    description: Prawie jak nad morzem.
+    description: "Znajdujesz dziwny pierscie\u0144."
     texture: {fileID: 21300000, guid: f7c7cdf6a1a0f9f499164c46bb8caff3, type: 3}
     itemModel: {fileID: 3267734620031502427, guid: 7e7b9d8ad8ccdf74f89886a57dfb9cc2, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: 5a3f0659a66ca4a46a0d4e535db145b9, type: 3}

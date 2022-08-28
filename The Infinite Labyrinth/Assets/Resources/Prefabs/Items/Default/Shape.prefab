@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
+    name: "Dziwny kszta\u0142t"
+    description: "Czujesz si\u0119 dziwnie."
     texture: {fileID: 21300000, guid: bdf8a8b2a388350468dffff96adceed4, type: 3}
     itemModel: {fileID: 5009238014634571027, guid: ded7410d19a7a6c409fc5205b76055d5, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: ca4cd398bf4c3b3478b4f2bfb8306958, type: 3}

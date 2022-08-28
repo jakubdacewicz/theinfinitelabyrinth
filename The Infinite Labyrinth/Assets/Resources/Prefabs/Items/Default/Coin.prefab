@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
     name: Moneta
-    description: Zyskaj lub strac
+    description: Zysk lub strata.
     texture: {fileID: 21300000, guid: db0941c5596c2cf489a585bb62800cef, type: 3}
     itemModel: {fileID: 2938720922706561237, guid: e39340efbe80c454d992e2551a74b791, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: e7354deebf91cc54c9a91f8e10c1cf9a, type: 3}

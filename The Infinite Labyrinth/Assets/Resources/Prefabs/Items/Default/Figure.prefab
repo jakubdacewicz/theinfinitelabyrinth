@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Dziwny ksztalt
+    name: "Dziwny kszta\u0142t"
     description: Sam zysk.
     texture: {fileID: 21300000, guid: 322dba5204062e24c8d9556042170f1d, type: 3}
     itemModel: {fileID: 5691007735886968206, guid: c24940001391a2345948440d5f8f4460, type: 3}

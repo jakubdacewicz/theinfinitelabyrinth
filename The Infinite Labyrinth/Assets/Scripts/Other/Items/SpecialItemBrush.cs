@@ -10,7 +10,7 @@ public class SpecialItemBrush : ItemController
     {
         GameObject.FindWithTag("Player").GetComponent<Animator>().enabled = true;
 
-        lastAndNewValueDiffrence[1] = speedAttack;
+        lastAndNewValueDiffrence[1] = -speedAttack;
 
         this.enabled = false;
     }

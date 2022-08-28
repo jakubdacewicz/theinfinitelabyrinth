@@ -27,7 +27,7 @@ public class WeaponItem : ItemController
         }
 
         lastAndNewValueDiffrence[0] = attackDamage;
-        lastAndNewValueDiffrence[1] = attackSpeed;
+        lastAndNewValueDiffrence[1] = -attackSpeed;
         lastAndNewValueDiffrence[2] = attackRange;
 
         characterStats.attackDamage.AddValue(attackDamage);       

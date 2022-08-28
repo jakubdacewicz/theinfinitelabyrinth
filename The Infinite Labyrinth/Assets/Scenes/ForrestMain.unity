@@ -8643,13 +8643,13 @@ MonoBehaviour:
   attackDamage:
     baseValue: 25
   attackSpeed:
-    baseValue: 0.5
+    baseValue: 1
   attackRange:
     baseValue: 0.4
   money:
     baseValue: 50
   movementSpeed:
-    baseValue: 1
+    baseValue: 0.7
   rotationSpeed:
     baseValue: 5
   parringDelay:

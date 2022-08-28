@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
+    name: But
+    description: "Twoje nogi staj\u0105 si\u0119 l\u017Cejsze."
     texture: {fileID: 21300000, guid: ee03781e17baad44cbabe6cb2fbea4df, type: 3}
     itemModel: {fileID: 2226946480335600806, guid: 91069aaf8c2fac749b36eed2071f8487, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: 2fab69b806a5c3d428996f0cc03e64aa, type: 3}

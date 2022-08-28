@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
+    name: Narkotyk
+    description: Nic za darmo.
     texture: {fileID: 21300000, guid: 8282b447b746a734a95a684a7d7ae7b0, type: 3}
     itemModel: {fileID: 9143364364548418030, guid: ff7e6a3d6e649ef46abffcda19cafffd, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: 8928c1d11c8ae64488cafd8edbceec59, type: 3}

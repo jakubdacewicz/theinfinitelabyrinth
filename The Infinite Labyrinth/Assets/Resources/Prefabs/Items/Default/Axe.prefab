@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Axe
-    description: test
+    name: "Top\xF3r wojenny"
+    description: "Znajdujesz pradawn\u0105 bro\u0144."
     texture: {fileID: 21300000, guid: a0c31113bef2c0b42bead9507ee62d88, type: 3}
     itemModel: {fileID: 7057165432438509270, guid: 3c10dae9aff68824e8bc59a2b1e4ffa0, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: 04143504bf53f34499968f0cc30a4ee2, type: 3}

@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
+    name: "Pier\u015Bcie\u0144 z rubinem"
+    description: "Znajdujesz dziwny pierscie\u0144."
     texture: {fileID: 21300000, guid: b95cc692ccb021842901aefbdd1ea6de, type: 3}
     itemModel: {fileID: 2983197825136658987, guid: 244d1208f50035f47840bfd1567b168f, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: 0186b25df7ba90d43b2c8ff252893578, type: 3}

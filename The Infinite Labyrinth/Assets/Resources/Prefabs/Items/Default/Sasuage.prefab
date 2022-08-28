@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
+    name: "Kie\u0142baska"
+    description: Czas na przerwe.
     texture: {fileID: 21300000, guid: 948e68fd8687a9745bea9bd06a2c12ef, type: 3}
     itemModel: {fileID: 1501272729848850747, guid: 042da027783052348860695bda5b06ca, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: eabd9f898522a3e478b6bee991b0403b, type: 3}

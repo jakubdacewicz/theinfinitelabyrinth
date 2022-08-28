@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
+    name: Naszyjnik
+    description: "Otacza ci\u0119 energia."
     texture: {fileID: 21300000, guid: 24d0c51c155329946930fcb1f51d6359, type: 3}
     itemModel: {fileID: 7142412397945273289, guid: b229659995290324b8f1d5f63698d5f0, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: 29aea93f09c255a49a2eec8cf1f95561, type: 3}

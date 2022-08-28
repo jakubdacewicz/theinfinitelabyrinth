@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
+    name: Suplementy
+    description: "Zyskaj wi\u0119cej si\u0142y."
     texture: {fileID: 21300000, guid: 77b2e8e4d693d4b40950fde0b17cebc5, type: 3}
     itemModel: {fileID: 9196518732838534914, guid: 8407a05aab1960748b5ea9ef7b6790f5, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: 97911a36c5f3f5d4bb79752c3cbe32d7, type: 3}

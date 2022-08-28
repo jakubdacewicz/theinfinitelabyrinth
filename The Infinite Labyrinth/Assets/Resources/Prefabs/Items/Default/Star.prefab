@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
+    name: Gwiazdka
+    description: "Spe\u0142nij \u017Cyczenie."
     texture: {fileID: 21300000, guid: e04af1721ca96b84e81b3a71afa4d6d1, type: 3}
     itemModel: {fileID: 6583679116190850926, guid: 33ce6eb2fece74b4f96a26dd76eb625b, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: 55f1acf655fda5d49a52490e6195ac78, type: 3}

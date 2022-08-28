@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
+    name: Napiwek
+    description: "Troch\u0119 kasy."
     texture: {fileID: 21300000, guid: 107c6d5d12060d548a9ca65baaf6b278, type: 3}
     itemModel: {fileID: 3842513515729651413, guid: e40e1f0a120bf9e44a31a8623de69576, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: 4e17ece2a892ed44e94b591efca90a06, type: 3}

@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
     name: Pierscien z topazem
-    description: Mowia ze ma lecznicze wlasciwosci.
+    description: "Znajdujesz dziwny pierscie\u0144."
     texture: {fileID: 21300000, guid: b4da67b95326a0a418d878c324526662, type: 3}
     itemModel: {fileID: 3639534616531653224, guid: eb43d946b3cb82741bdfaa38aeca6b85, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: 371b212da20b55c4cb642b8254f43441, type: 3}

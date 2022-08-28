@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
+    name: Tabletki
+    description: "Powr\xF3t do zdrowia."
     texture: {fileID: 21300000, guid: fa17759dd15656b40ae90adadf32e3a0, type: 3}
     itemModel: {fileID: 3851932858927780621, guid: 111d5edbe12098944a802eef56bab0d4, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: a75e26a9984a8f842b89bbc71ea4e4d4, type: 3}

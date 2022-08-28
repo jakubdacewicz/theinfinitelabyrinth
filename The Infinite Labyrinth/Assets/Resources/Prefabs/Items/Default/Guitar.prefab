@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
+    name: Gitara
+    description: Wyluzuj przy gitarze.
     texture: {fileID: 21300000, guid: 337ace2e8be3a8e4c873e17ab6e168ab, type: 3}
     itemModel: {fileID: 344608599009027873, guid: 39c0441386ba4fe4f8394e51139c93cc, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: d73eefa989d9f724b8c86fbe56867e3c, type: 3}

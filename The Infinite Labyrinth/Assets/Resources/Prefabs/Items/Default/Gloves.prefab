@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
+    name: "R\u0119kawice"
+    description: "Twoja pi\u0119\u015B\u0107 staje si\u0119 l\u017Cejsza."
     texture: {fileID: 21300000, guid: de0abe4b9ed615247bd46a51d028d112, type: 3}
     itemModel: {fileID: 3012493615182397464, guid: 2cc41ba47cc64fb4980f9f248517690e, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: dc87824f50b2dc74d89e5ed350c6fa3b, type: 3}

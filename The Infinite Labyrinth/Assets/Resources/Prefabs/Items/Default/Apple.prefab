@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Jablko
-    description: +230 maksymalnego zycia.
+    name: "Jab\u0142ko"
+    description: "Czujesz powracaj\u0105ce si\u0142y."
     texture: {fileID: 21300000, guid: 1b02e6c51c310484caf5a398aae6376a, type: 3}
     itemModel: {fileID: 6894417625818552248, guid: 0c0731f44e11e5047a362857892e6861, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: 07f35b2a9b830c44085d5f563e0eb20c, type: 3}

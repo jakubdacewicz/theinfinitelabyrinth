@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
+    name: Chmurka
+    description: "Czujesz b\u0142ogi spok\xF3j."
     texture: {fileID: 21300000, guid: 7f7ebe804214f6047a7f695d6ec2ab9e, type: 3}
     itemModel: {fileID: 4526826422848070701, guid: 33d09bb41ca113e47a1a9cb02467303a, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: 7947b8abf7e314b49a52d70530effe79, type: 3}

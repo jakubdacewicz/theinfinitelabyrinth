@@ -23,7 +23,7 @@ public class StatsItem : ItemController
         characterStats.money.AddValue(money);
 
         lastAndNewValueDiffrence[0] = attackDamage;
-        lastAndNewValueDiffrence[1] = attackSpeed;
+        lastAndNewValueDiffrence[1] = -attackSpeed;
         lastAndNewValueDiffrence[2] = attackRange;
         lastAndNewValueDiffrence[3] = movementSpeed;
 

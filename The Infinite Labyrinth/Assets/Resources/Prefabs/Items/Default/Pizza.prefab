@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item:
-    name: Naszyjnik 1
-    description: +230 maksymalnego zycia.
+    name: Pizza
+    description: "Zdrowie kosztem szcz\u0119\u015Bcia."
     texture: {fileID: 21300000, guid: 107f6f267b89a344995c399d834bd020, type: 3}
     itemModel: {fileID: 5582258204862632063, guid: e22916621fb724e48be5254243485d86, type: 3}
     itemPrefabUI: {fileID: 638255471025126524, guid: 108ec5b0e7c6bba4c8dffeac8c29d11b, type: 3}
