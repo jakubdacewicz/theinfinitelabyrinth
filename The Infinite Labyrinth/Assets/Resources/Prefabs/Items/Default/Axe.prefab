@@ -59,8 +59,8 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  attackSpeed: 1
-  attackDamage: 2
+  attackSpeed: 0.4
+  attackDamage: 25
   attackRange: 0.4
   objectName: axe
 --- !u!65 &6932404412175737439

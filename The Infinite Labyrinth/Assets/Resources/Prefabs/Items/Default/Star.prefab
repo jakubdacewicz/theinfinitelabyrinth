@@ -60,11 +60,11 @@ MonoBehaviour:
   - 0
   - 0
   health: 0
-  maxHealth: 1
-  movementSpeed: 0
-  attackDamage: 1
+  maxHealth: 50
+  movementSpeed: 0.1
+  attackDamage: 0
   attackSpeed: -0.1
-  attackRange: 3
+  attackRange: 0
   money: 0
 --- !u!65 &6638445860212160768
 BoxCollider:

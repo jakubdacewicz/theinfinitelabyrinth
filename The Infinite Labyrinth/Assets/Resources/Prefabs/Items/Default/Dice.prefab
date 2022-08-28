@@ -187,4 +187,4 @@ MonoBehaviour:
   money10TimesWin: 2
   money15ValueWin: 100
   money25ValueWin: 20
-  healthPercentageLosse: 0.5
+  healthPercentageLosse: 0.4

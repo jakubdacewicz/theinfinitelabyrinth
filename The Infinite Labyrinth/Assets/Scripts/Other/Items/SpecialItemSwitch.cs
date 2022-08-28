@@ -22,6 +22,8 @@ public class SpecialItemSwitch : ItemController
             }
         }
 
+        characterStats.movementSpeed.AddValue(movementSpeed);
+
         lastAndNewValueDiffrence[3] = movementSpeed;
 
         this.enabled = false;
