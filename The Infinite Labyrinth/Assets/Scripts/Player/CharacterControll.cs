@@ -219,7 +219,10 @@ public class CharacterControll : MonoBehaviour
             playerSource.PlayOneShot(attackMiss);
         }
 
-        yield return new WaitForSeconds(characterStats.attackSpeed.GetValue());
+        while(playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            yield return null;
+        }       
 
         isDoingAction = false;
     }

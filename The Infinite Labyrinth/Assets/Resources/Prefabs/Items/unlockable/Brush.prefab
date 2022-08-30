@@ -88,7 +88,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  speedAttack: -0.2
+  speedAttack: 0.2
 --- !u!82 &8192408997355641048
 AudioSource:
   m_ObjectHideFlags: 0

@@ -62,6 +62,11 @@ public class CharacterStats : MonoBehaviour
 
     private void Start()
     {
+        Animator playerAnimator = gameObject.transform.Find("Model").GetComponent<Animator>();
+
+        playerAnimator.SetFloat("atackSpeed", attackSpeed.GetValue());
+        playerAnimator.SetFloat("runSpeed", movementSpeed.GetValue());
+
         animationController = GameObject.FindGameObjectWithTag("AnimationController").GetComponent<AnimationController>();
 
         currentHealth = maxHealth;

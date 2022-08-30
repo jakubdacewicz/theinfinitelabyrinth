@@ -33,6 +33,10 @@ public class FigureItem : ItemController
                 lastAndNewValueDiffrence[3] = movementSpeed;
 
                 characterStats.movementSpeed.AddValue(movementSpeed);
+
+                GameObject player = GameObject.FindWithTag("Player");
+
+                player.transform.Find("Model").GetComponent<Animator>().SetFloat("runSpeed", characterStats.movementSpeed.GetValue());
                 break;
         }
 

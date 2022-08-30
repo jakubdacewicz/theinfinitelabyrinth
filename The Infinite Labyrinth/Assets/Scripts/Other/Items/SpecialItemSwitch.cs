@@ -24,6 +24,10 @@ public class SpecialItemSwitch : ItemController
 
         characterStats.movementSpeed.AddValue(movementSpeed);
 
+        GameObject player = GameObject.FindWithTag("Player");
+
+        player.transform.Find("Model").GetComponent<Animator>().SetFloat("runSpeed", characterStats.movementSpeed.GetValue());
+
         lastAndNewValueDiffrence[3] = movementSpeed;
 
         this.enabled = false;

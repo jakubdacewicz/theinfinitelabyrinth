@@ -88,7 +88,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  movementSpeed: 0.2
+  movementSpeed: 0.1
 --- !u!82 &979363947120862741
 AudioSource:
   m_ObjectHideFlags: 0

@@ -63,7 +63,7 @@ MonoBehaviour:
   maxHealth: 0
   movementSpeed: 0
   attackDamage: 0
-  attackSpeed: -0.3
+  attackSpeed: 0.3
   attackRange: 0
   money: 0
 --- !u!65 &5423335778574726777

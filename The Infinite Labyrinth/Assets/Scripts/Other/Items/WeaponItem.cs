@@ -27,12 +27,17 @@ public class WeaponItem : ItemController
         }
 
         lastAndNewValueDiffrence[0] = attackDamage;
-        lastAndNewValueDiffrence[1] = -attackSpeed;
+        lastAndNewValueDiffrence[1] = attackSpeed;
         lastAndNewValueDiffrence[2] = attackRange;
 
         characterStats.attackDamage.AddValue(attackDamage);       
         characterStats.attackSpeed.AddValue(attackSpeed);
         characterStats.attackRange.AddValue(attackRange);
+
+        GameObject player = GameObject.FindWithTag("Player");
+
+
+        player.transform.Find("Model").GetComponent<Animator>().SetFloat("atackSpeed", characterStats.attackSpeed.GetValue());
 
         this.enabled = false;
     }

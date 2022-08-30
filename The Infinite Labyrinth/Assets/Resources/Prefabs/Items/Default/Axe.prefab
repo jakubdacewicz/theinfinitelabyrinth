@@ -59,7 +59,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  attackSpeed: 0.4
+  attackSpeed: -0.4
   attackDamage: 25
   attackRange: 0.4
   objectName: axe

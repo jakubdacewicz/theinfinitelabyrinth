@@ -22,8 +22,14 @@ public class StatsItem : ItemController
         characterStats.attackRange.AddValue(attackRange);
         characterStats.money.AddValue(money);
 
+        GameObject player = GameObject.FindWithTag("Player");
+        Animator animator = player.transform.Find("Model").GetComponent<Animator>();
+
+        animator.SetFloat("atackSpeed", characterStats.attackSpeed.GetValue());
+        animator.SetFloat("runSpeed", characterStats.movementSpeed.GetValue());
+
         lastAndNewValueDiffrence[0] = attackDamage;
-        lastAndNewValueDiffrence[1] = -attackSpeed;
+        lastAndNewValueDiffrence[1] = attackSpeed;
         lastAndNewValueDiffrence[2] = attackRange;
         lastAndNewValueDiffrence[3] = movementSpeed;
 

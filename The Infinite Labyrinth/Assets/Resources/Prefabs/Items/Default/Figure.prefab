@@ -186,4 +186,4 @@ MonoBehaviour:
   - 0
   health: 20
   attackDamage: 20
-  movementSpeed: 0.2
+  movementSpeed: 0.05

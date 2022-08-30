@@ -8,9 +8,14 @@ public class SpecialItemBrush : ItemController
 
     public override void AddEffectToPlayer()
     {
-        GameObject.FindWithTag("Player").GetComponent<Animator>().enabled = true;
+        characterStats.attackSpeed.AddValue(speedAttack);
 
-        lastAndNewValueDiffrence[1] = -speedAttack;
+        GameObject player = GameObject.FindWithTag("Player");
+
+        player.GetComponent<Animator>().enabled = true;
+        player.transform.Find("Model").GetComponent<Animator>().SetFloat("atackSpeed", characterStats.attackSpeed.GetValue());
+
+        lastAndNewValueDiffrence[1] = speedAttack;
 
         this.enabled = false;
     }
