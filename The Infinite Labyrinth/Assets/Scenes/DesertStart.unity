@@ -553,7 +553,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceOfNextTeleport: 3.5
-  teleportedPositionShift: 0.2
 --- !u!65 &345369089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -862,6 +861,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 97237806b2bc5be4199e53ecaef9b531, type: 3}
   m_PrefabInstance: {fileID: 510597932}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &510597934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 97237806b2bc5be4199e53ecaef9b531, type: 3}
+  m_PrefabInstance: {fileID: 510597932}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &510597935
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510597934}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4605126, y: 2.0000007, z: 2.1952503}
+  m_Center: {x: 0.001655996, y: 0.000000009798459, z: 0.09762514}
 --- !u!1001 &723254587
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -952,6 +969,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 97237806b2bc5be4199e53ecaef9b531, type: 3}
   m_PrefabInstance: {fileID: 723254587}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &723254589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 97237806b2bc5be4199e53ecaef9b531, type: 3}
+  m_PrefabInstance: {fileID: 723254587}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &723254590
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723254589}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4605129, y: 2.0000012, z: 2.1952503}
+  m_Center: {x: 0.0016559962, y: 0.000000009798342, z: 0.09762514}
 --- !u!1001 &753530973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1042,6 +1077,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 97237806b2bc5be4199e53ecaef9b531, type: 3}
   m_PrefabInstance: {fileID: 753530973}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &753530975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 97237806b2bc5be4199e53ecaef9b531, type: 3}
+  m_PrefabInstance: {fileID: 753530973}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &753530976
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753530975}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4605126, y: 2.0000007, z: 2.1952503}
+  m_Center: {x: 0.001655996, y: 0.000000009798459, z: 0.09762514}
 --- !u!1 &772154640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,7 +1250,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceOfNextTeleport: 3.5
-  teleportedPositionShift: 0.2
 --- !u!65 &909311414
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1581,6 +1633,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 97237806b2bc5be4199e53ecaef9b531, type: 3}
   m_PrefabInstance: {fileID: 1481608341}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1481608343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 97237806b2bc5be4199e53ecaef9b531, type: 3}
+  m_PrefabInstance: {fileID: 1481608341}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1481608344
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481608343}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4605129, y: 2.0000012, z: 2.1952503}
+  m_Center: {x: 0.0016559962, y: 0.000000009798342, z: 0.09762514}
 --- !u!1001 &1513886586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1936,7 +2006,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceOfNextTeleport: 3.5
-  teleportedPositionShift: 0.2
 --- !u!65 &1954719913
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2108,7 +2177,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceOfNextTeleport: 3.5
-  teleportedPositionShift: 0.2
 --- !u!65 &2077866056
 BoxCollider:
   m_ObjectHideFlags: 0
