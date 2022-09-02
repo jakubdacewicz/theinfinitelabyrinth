@@ -7,6 +7,8 @@ public class CharacterStats : MonoBehaviour
     public float maxHealth;
     public float maxStamine;
 
+    public float attackRangePosition;
+
     [Header("Stats")]
     public Stat stamineRegenerationValuePart;
     public Stat stamineRegenerationTime;
@@ -53,6 +55,7 @@ public class CharacterStats : MonoBehaviour
     public AudioClip gameOverSound;
 
     private AnimationController animationController;
+    private Animator playerAnimator;
 
     private float currentHealth;
     private float currentStamine;
@@ -62,10 +65,7 @@ public class CharacterStats : MonoBehaviour
 
     private void Start()
     {
-        Animator playerAnimator = gameObject.transform.Find("Model").GetComponent<Animator>();
-
-        playerAnimator.SetFloat("atackSpeed", attackSpeed.GetValue());
-        playerAnimator.SetFloat("runSpeed", movementSpeed.GetValue());
+        playerAnimator = gameObject.transform.Find("Model").GetComponent<Animator>();
 
         animationController = GameObject.FindGameObjectWithTag("AnimationController").GetComponent<AnimationController>();
 
@@ -78,6 +78,9 @@ public class CharacterStats : MonoBehaviour
 
     private void Update()
     {
+        playerAnimator.SetFloat("atackSpeed", attackSpeed.GetValue());
+        playerAnimator.SetFloat("runSpeed", movementSpeed.GetValue());
+
         textStamine.text = currentStamine + " / " + maxStamine;
         textHealth.text = currentHealth + " / " + maxHealth;       
 
@@ -259,5 +262,13 @@ public class CharacterStats : MonoBehaviour
     public void PlayMoneyCollectSound()
     {
         source.Play();
+    }
+
+    //usunac po testach
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        float value = attackRange.GetValue();
+        Gizmos.DrawWireSphere(transform.position + transform.forward * attackRangePosition, value);
     }
 }

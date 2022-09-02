@@ -1402,6 +1402,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: portal end
       objectReference: {fileID: 0}
+    - target: {fileID: 7055229355275693364, guid: 29469fae1d508234f82469cf2180425c, type: 3}
+      propertyPath: m_TagString
+      value: EndDoor
+      objectReference: {fileID: 0}
     - target: {fileID: 7683955820264814478, guid: 29469fae1d508234f82469cf2180425c, type: 3}
       propertyPath: m_RootOrder
       value: 0

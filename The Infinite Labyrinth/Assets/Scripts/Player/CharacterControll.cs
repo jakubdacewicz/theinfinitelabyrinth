@@ -4,9 +4,7 @@ using System.Collections.Generic;
 
 public class CharacterControll : MonoBehaviour
 {
-    //public
     public float interactSphereRadius;
-    public float attackRangePosition;
 
     public GameObject menu;
 
@@ -18,7 +16,6 @@ public class CharacterControll : MonoBehaviour
     public AudioClip playerDash;
     public AudioClip playerRun;
 
-    //private
     private CharacterStats characterStats;
 
     private bool isMovementBlocked = true;
@@ -194,7 +191,7 @@ public class CharacterControll : MonoBehaviour
 
         playerAnimator.Play("Attack");
 
-        Collider[] colliders = Physics.OverlapSphere(transform.position + transform.forward * attackRangePosition, characterStats.attackRange.GetValue());
+        Collider[] colliders = Physics.OverlapSphere(transform.position + transform.forward * characterStats.attackRangePosition, characterStats.attackRange.GetValue());
 
         int enemys = 0;
         if (colliders.Length > 0)
@@ -235,7 +232,7 @@ public class CharacterControll : MonoBehaviour
             playerSource.Play();
         }
 
-        Dictionary<char, char> direction = new Dictionary<char, char>()
+        Dictionary<char, char> direction = new()
         {
             {'W', 'S' },
             {'S', 'W'},
@@ -318,7 +315,10 @@ public class CharacterControll : MonoBehaviour
                 yield return null;
             }
         }
-        yield return new WaitForSeconds(0.3f);
+        while (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Dash"))
+        {
+            yield return null;
+        }
 
         CheckIsStamineEmpty();
         isDoingAction = false;
@@ -347,14 +347,6 @@ public class CharacterControll : MonoBehaviour
     public void MakePlayerRotateAroundItself()
     {
         hasRotatingDebuff = true;
-    }
-
-    private void OnDrawGizmos()
-    {
-        characterStats = GameObject.Find("Player").GetComponent<CharacterStats>();
-        Gizmos.color = Color.yellow;
-        float value = characterStats.attackRange.GetValue();
-        Gizmos.DrawWireSphere(transform.position + transform.forward * attackRangePosition, value);
     }
 }
 

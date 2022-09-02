@@ -60,8 +60,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fccfb59e6181636449a2f62598a9bafd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingRate: 0.6
-  shootingSpeed: 0.3
+  shootingRate: 0.8
+  shootingSpeed: 0.8
   bulletSpeed: 100
   bulletDamage: 5
   bullet: {fileID: 2576038489624178430, guid: a3770c57a96bf2048b7cd9ab1369046f, type: 3}

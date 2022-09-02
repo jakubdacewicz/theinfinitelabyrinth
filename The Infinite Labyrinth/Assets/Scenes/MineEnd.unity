@@ -266,6 +266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: finish
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 41385c5131387c94da332d3716917857, type: 3}
+      propertyPath: m_TagString
+      value: EndDoor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41385c5131387c94da332d3716917857, type: 3}
 --- !u!4 &199832399 stripped

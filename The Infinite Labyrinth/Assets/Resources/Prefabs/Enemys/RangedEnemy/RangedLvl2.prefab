@@ -82,15 +82,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth:
-    baseValue: 100
+    baseValue: 80
   movementSpeed:
     baseValue: 0.4
   attackRange:
-    baseValue: 1
+    baseValue: 0.6
   attackDamage:
     baseValue: 5
   attackCooldown:
-    baseValue: 1
+    baseValue: 2
   goldDroped:
     baseValue: 10
 --- !u!65 &7503165457003313411

@@ -18,6 +18,7 @@ TagManager:
   - BlackPanel
   - Hand
   - Key
+  - EndDoor
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,8 @@ public class WeaponItem : ItemController
 
     public string objectName;
 
+    public float attackRangePostionOffset;
+
     public override void AddEffectToPlayer()
     {
         Transform hand = GameObject.FindWithTag("Hand").transform;
@@ -32,7 +34,13 @@ public class WeaponItem : ItemController
 
         characterStats.attackDamage.AddValue(attackDamage);       
         characterStats.attackSpeed.AddValue(attackSpeed);
-        characterStats.attackRange.AddValue(attackRange);
+        characterStats.attackRangePosition = attackRange;
+
+        if(characterStats.attackRange.GetValue() != attackRange)
+        {
+            characterStats.attackRange.SetValue(attackRange);
+            
+        }        
 
         GameObject player = GameObject.FindWithTag("Player");
 

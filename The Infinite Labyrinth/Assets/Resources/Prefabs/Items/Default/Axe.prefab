@@ -61,8 +61,9 @@ MonoBehaviour:
   - 0
   attackSpeed: -0.4
   attackDamage: 25
-  attackRange: 0.4
+  attackRange: 0.3
   objectName: axe
+  attackRangePostionOffset: 0.3
 --- !u!65 &6932404412175737439
 BoxCollider:
   m_ObjectHideFlags: 0

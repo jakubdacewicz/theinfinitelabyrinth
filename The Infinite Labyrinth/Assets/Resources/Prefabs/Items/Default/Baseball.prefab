@@ -186,5 +186,6 @@ MonoBehaviour:
   - 0
   attackSpeed: 0
   attackDamage: 10
-  attackRange: -0.4
+  attackRange: 0.15
   objectName: bat
+  attackRangePostionOffset: 0.15
