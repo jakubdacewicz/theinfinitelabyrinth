@@ -60,7 +60,7 @@ MonoBehaviour:
   attackCooldown:
     baseValue: 2
   goldDroped:
-    baseValue: 0
+    baseValue: 10
 --- !u!65 &2706668755602012275
 BoxCollider:
   m_ObjectHideFlags: 0

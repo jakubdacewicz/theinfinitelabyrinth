@@ -89,6 +89,7 @@ public class Room : MonoBehaviour
             }
         }
 
+        /*
         if (enemysAmmount > 0)
         {
             SetDoorsActive(false);
@@ -97,6 +98,7 @@ public class Room : MonoBehaviour
         {
             SetDoorsActive(true);
         }
+        */
     }
 
     public IEnumerator RemoveUnconectedDoors()
@@ -224,10 +226,5 @@ public class Room : MonoBehaviour
      public void DecreaseEnemyAmmount()
     {
         enemysAmmount--;
-    }
-
-    public int GetEnemysAmmount()
-    {
-        return enemysAmmount;
     }
 }

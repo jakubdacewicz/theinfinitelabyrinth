@@ -8776,7 +8776,7 @@ MonoBehaviour:
   attackRange:
     baseValue: 0.2
   money:
-    baseValue: 50
+    baseValue: 100
   movementSpeed:
     baseValue: 0.7
   rotationSpeed:
@@ -8786,13 +8786,13 @@ MonoBehaviour:
   parringStamineCost:
     baseValue: -1
   dashTime:
-    baseValue: 0.5
+    baseValue: 0.6
   dashSpeed:
     baseValue: 10
   dashStamineCost:
     baseValue: -40
   dashInvulnerableTime:
-    baseValue: 0.3
+    baseValue: 0.5
   textStamine: {fileID: 309115129}
   textHealth: {fileID: 1244275973}
   textAttackDamage: {fileID: 1073223335}

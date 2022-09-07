@@ -6,7 +6,16 @@ public class Teleport : Interactable
 {
     public float distanceOfNextTeleport;
 
-    private RoomController roomController;
+    public AudioClip lockedDoor;
+
+    public RoomController roomController;
+    private AudioSource audioSource;
+
+    private void Start()
+    {      
+        audioSource = GetComponent<AudioSource>();
+        audioSource.pitch = 1.5f;
+    }
 
     private void Update()
     {
@@ -16,12 +25,14 @@ public class Teleport : Interactable
 
     public override void Interact()
     {
-        if (roomController.currentRoom.GetEnemysAmmount() > 0)
+        if (roomController.currentRoom.enemysAmmount > 0)
         {
-            return;
-        }
-
-        StartCoroutine(TeleportToRoom());
+            audioSource.PlayOneShot(lockedDoor);   
+        } 
+        else
+        {
+            StartCoroutine(TeleportToRoom());
+        }       
     }
 
     private IEnumerator TeleportToRoom()
@@ -41,10 +52,8 @@ public class Teleport : Interactable
         int layerMask = LayerMask.GetMask(acceptedDirectionOfPortal.Replace("Door", "") + "Portal");
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distanceOfNextTeleport, layerMask))
-        {
-            AudioSource source = GetComponent<AudioSource>();
-            source.pitch = 1.5f;
-            source.Play();
+        {          
+            audioSource.Play();
 
             yield return new WaitForSeconds(0.1f);
 
