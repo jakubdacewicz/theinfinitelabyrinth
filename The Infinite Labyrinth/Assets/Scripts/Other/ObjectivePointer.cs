@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ObjectivePointer : MonoBehaviour
 {
-    public float waitTime;
     public float rotationSpeed;
 
     private GameObject keyObject;
@@ -12,17 +11,13 @@ public class ObjectivePointer : MonoBehaviour
 
     private Vector3 targetPosition;
 
-    private bool isArrowLocked = true;
-
     private void Start()
     {
-        StartCoroutine(FindObjectives());
+        InvokeRepeating(nameof(FindObjectives), 0, 3.0f);
     }
 
     private void Update()
     {
-        if (isArrowLocked) return;
-
         if (keyObject != null)
         {
             targetPosition = Camera.main.transform.InverseTransformPoint(keyObject.transform.position);
@@ -36,13 +31,9 @@ public class ObjectivePointer : MonoBehaviour
         transform.eulerAngles = new Vector3(0, 0, targetAngle);
     }       
        
-    private IEnumerator FindObjectives()
+    private void FindObjectives()
     {
-        yield return new WaitForSeconds(waitTime);
-
         keyObject = GameObject.FindGameObjectWithTag("Key");
         endDoorObject = GameObject.FindGameObjectWithTag("EndDoor");
-
-        isArrowLocked = false;
     }
 }

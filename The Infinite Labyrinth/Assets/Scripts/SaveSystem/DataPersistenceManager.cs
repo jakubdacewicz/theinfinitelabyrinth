@@ -8,6 +8,8 @@ public class DataPersistenceManager : MonoBehaviour
 
     private FileDataHandler fileDataHandler;
 
+    public string fileName;
+
     public static DataPersistenceManager instance
     {
         get;
@@ -16,7 +18,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     private void Start()
     {
-        this.fileDataHandler = new FileDataHandler(Application.persistentDataPath);
+        this.fileDataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         LoadGame();
     }
 
