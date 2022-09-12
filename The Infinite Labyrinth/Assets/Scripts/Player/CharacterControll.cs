@@ -41,6 +41,18 @@ public class CharacterControll : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {          
             menu.SetActive(!menu.activeSelf);
+
+            Cursor.visible = !Cursor.visible;
+
+            if (Cursor.visible)
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            
         }
 
         if(isStamineEmpty)

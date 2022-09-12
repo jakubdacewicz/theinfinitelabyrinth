@@ -12,13 +12,6 @@ public class SettingsDataManager : MonoBehaviour
 
     public string fileName;
 
-    private void Update()
-    {
-        AudioListener.volume = settingsData.gameVolume;
-        canvas.scaleFactor = settingsData.uiSize;
-        Screen.fullScreen = settingsData.isFullscreen;
-    }
-
     public static SettingsDataManager instance
     {
         get;
@@ -68,5 +61,13 @@ public class SettingsDataManager : MonoBehaviour
         }
 
         fileDataHandler.SaveSettings(settingsData);
+    }
+
+    public void UpdateSettings()
+    {
+        AudioListener.volume = settingsData.gameVolume;
+        canvas.scaleFactor = settingsData.uiSize;
+        Screen.SetResolution(settingsData.resolutionWidth, settingsData.resolutionHeight,
+            settingsData.isFullscreen, settingsData.resolutionRefreshrate);
     }
 }

@@ -31,15 +31,15 @@ public class MainMenu : MonoBehaviour
         }
 
         resolutions = Screen.resolutions;
+        
         Dropdown.OptionData newData;
 
         resolutionsDropdown.ClearOptions();
         for(int i = 0; i < resolutions.Length; i++)
         {
             newData = new Dropdown.OptionData();
-            newData.text = resolutions[i].width + " x " + resolutions[i].height;
-            //newData.
-            resolutionsDropdown.options.Add(newData);
+            newData.text = resolutions[i].width + " x " + resolutions[i].height + " | " + resolutions[i].refreshRate;
+            resolutionsDropdown.options.Add(newData);        
         }
     }
 
@@ -80,6 +80,10 @@ public class MainMenu : MonoBehaviour
         data.gameVolume = gameVolume.value;
         data.uiSize = uiSize.value;
         data.isFullscreen = isFullscreen.isOn;
+
+        data.resolutionHeight = resolutions[resolutionsDropdown.value].height;
+        data.resolutionWidth = resolutions[resolutionsDropdown.value].width;
+        data.resolutionRefreshrate = resolutions[resolutionsDropdown.value].refreshRate;
     }
 
     public void LoadData(SettingsData data)
@@ -87,6 +91,15 @@ public class MainMenu : MonoBehaviour
         gameVolume.value = data.gameVolume;
         uiSize.value = data.uiSize;
         isFullscreen.isOn = data.isFullscreen;
+
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            if (resolutions[i].height == data.resolutionHeight && resolutions[i].width == data.resolutionWidth
+                && resolutions[i].refreshRate == data.resolutionRefreshrate)
+            {
+                resolutionsDropdown.value = i;
+            }
+        }
     }
 
     public void CloseGame()
