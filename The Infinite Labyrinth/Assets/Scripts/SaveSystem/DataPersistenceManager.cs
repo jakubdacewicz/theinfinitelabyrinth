@@ -47,19 +47,25 @@ public class DataPersistenceManager : MonoBehaviour
         }
 
         GameObject.FindWithTag("GameController").GetComponent<GameController>().LoadData(gameData);
-        GameObject.FindWithTag("ItemUnlockController").GetComponent<ItemUnlockController>().LoadData(gameData);      
+        GameObject.FindWithTag("ItemUnlockController").GetComponent<ItemUnlockController>().LoadData(gameData);
+    }
+
+    public void LoadRecords()
+    {
+        GameObject endDoor = GameObject.Find("EndGameDoor");
+        if (endDoor != null)
+        {
+            Debug.Log("Data loaded");
+            endDoor.GetComponent<GameComplete>().LoadData(gameData);
+        }
     }
 
     public void SaveGame()
     {
         GameObject.FindWithTag("GameController").GetComponent<GameController>().SaveData(ref gameData);
         GameObject.FindWithTag("ItemUnlockController").GetComponent<ItemUnlockController>().SaveData(ref gameData);
+        GameObject.Find("EndGameDoor").GetComponent<GameComplete>().SaveData(ref gameData);
 
         fileDataHandler.Save(gameData);
-    }
-
-    private void OnApplicationQuit()
-    {
-        SaveGame();
     }
 }

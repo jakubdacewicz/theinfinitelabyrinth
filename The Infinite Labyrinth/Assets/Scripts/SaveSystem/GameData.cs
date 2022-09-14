@@ -13,6 +13,8 @@ public class GameData
 
     public bool[] isUnlocked;
 
+    public float[] timeRecords;
+
     public GameData()
     {
         items = Resources.LoadAll<GameObject>("Prefabs/Items/Default").ToList();
@@ -29,6 +31,8 @@ public class GameData
             false,
             false
         };
+
+        timeRecords = new float[6];
     }
 
 }

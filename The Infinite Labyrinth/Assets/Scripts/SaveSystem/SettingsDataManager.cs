@@ -23,6 +23,7 @@ public class SettingsDataManager : MonoBehaviour
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
         fileDataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         LoadSettingsData();
+        UpdateSettings();
     }
 
     private void Awake()
