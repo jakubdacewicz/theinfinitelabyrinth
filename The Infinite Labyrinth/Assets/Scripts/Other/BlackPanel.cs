@@ -22,7 +22,7 @@ public class BlackPanel : MonoBehaviour
 
         yield return new WaitForSeconds(1.3f);
 
-        GetComponent<Image>().enabled = false;
+        GetComponent<Image>().enabled = false;      
     }
 
     public void ShowBlackPanel()

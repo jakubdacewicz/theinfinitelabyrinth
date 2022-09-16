@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using System;
 
 public class EndGameMenu : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
+    public TextMeshProUGUI timerMessage;
 
     [Header("Last game stats")]
     public TextMeshProUGUI currentMonstersCountText;
@@ -16,6 +18,9 @@ public class EndGameMenu : MonoBehaviour
     [Header("Global stats")]
     public TextMeshProUGUI monstersCountText;
     public TextMeshProUGUI itemsCollectedCountText;
+
+    [Header("Record time texts")]
+    public Text[] recordTexts;
 
     private GameController gameController;
     private ItemUnlockController itemUnlockController;
@@ -32,6 +37,30 @@ public class EndGameMenu : MonoBehaviour
         itemsCollectedCountText.text = itemUnlockController.itemsBought.ToString();
 
         timerText.text = String.Format("{0:00}", (int)gameController.timer / 3600) + ":" + String.Format("{0:00}", (int)(gameController.timer % 3600) / 60) + ":" + String.Format("{0:00}", (int)gameController.timer % 60);
+
+        float[] tempRecordsArray = gameController.GetRecordsArray();
+
+        int i = 0;
+        int j = 0;
+        while(i < tempRecordsArray.Length)
+        {
+            if(tempRecordsArray[i] != 0)
+            {
+                recordTexts[j].text = (j+1) + ". " + String.Format("{0:00}", (int)tempRecordsArray[i] / 3600) + ":" + String.Format("{0:00}", (int)(tempRecordsArray[i] % 3600) / 60) + ":" + String.Format("{0:00}", (int)tempRecordsArray[i] % 60);
+                if(tempRecordsArray[i] == gameController.timer)
+                {
+                    recordTexts[j].GetComponentInParent<Animator>().Play("timeFinishedAtList");
+                }
+                j++;
+            }
+            i++;
+        }
+
+        if (gameController.IsCurrentTimeRecord())
+        {
+            timerText.GetComponentInParent<Animator>().Play("newRecord");
+            timerMessage.text = "NOWY REKORD:";
+        }
     }
 
     private void TrasitionBetweenScenes()

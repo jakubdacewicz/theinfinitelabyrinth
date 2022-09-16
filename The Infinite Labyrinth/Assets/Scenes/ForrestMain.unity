@@ -4358,7 +4358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSceneChanged: 1
-  isTimerActive: 1
+  isTimerActive: 0
   timerText: {fileID: 562652358}
   items: []
   isItemSpawned: 

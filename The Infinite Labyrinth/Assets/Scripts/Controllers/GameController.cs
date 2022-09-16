@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Linq;
 
 public class GameController : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class GameController : MonoBehaviour
     private GameObject player;
 
     public float timer = 0f;
+
+    private float[] records;
 
     private void Start()
     {
@@ -64,16 +67,47 @@ public class GameController : MonoBehaviour
         player.SetActive(true);     
 
         GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().enabled = true;
+
+        isTimerActive = true;
     }
 
     public void LoadData(GameData data)
     {
-       this.items = data.items;
+       items = data.items;
+       records = data.timeRecords;
+
     }
 
     public void SaveData(ref GameData data)
     {
-        data.items = this.items;
+        data.items = items;
+
+        records = records.Where(val => val != 0).ToArray();
+        List<float> temp = records.ToList();
+
+        temp.Add(timer);
+        temp.Sort();
+
+        if(temp.Count > 6)
+        {
+            records = temp.GetRange(0, 6).ToArray();
+        }
+        else
+        {
+            records = temp.ToArray();
+        }
+
+        data.timeRecords = records;
+    }
+
+    public float[] GetRecordsArray()
+    {
+        return records;
+    }
+    
+    public bool IsCurrentTimeRecord()
+    {
+        return timer == records[0];
     }
 
 }

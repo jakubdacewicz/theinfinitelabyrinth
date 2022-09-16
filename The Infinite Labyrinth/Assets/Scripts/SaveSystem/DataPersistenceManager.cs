@@ -52,11 +52,11 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void LoadRecords()
     {
-        GameObject endDoor = GameObject.Find("EndGameDoor");
-        if (endDoor != null)
+        GameController gm = GameObject.Find("GameController").GetComponent<GameController>();
+        if (gm != null)
         {
             Debug.Log("Data loaded");
-            endDoor.GetComponent<GameComplete>().LoadData(gameData);
+            gm.LoadData(gameData);
         }
     }
 
@@ -64,7 +64,6 @@ public class DataPersistenceManager : MonoBehaviour
     {
         GameObject.FindWithTag("GameController").GetComponent<GameController>().SaveData(ref gameData);
         GameObject.FindWithTag("ItemUnlockController").GetComponent<ItemUnlockController>().SaveData(ref gameData);
-        GameObject.Find("EndGameDoor").GetComponent<GameComplete>().SaveData(ref gameData);
 
         fileDataHandler.Save(gameData);
     }

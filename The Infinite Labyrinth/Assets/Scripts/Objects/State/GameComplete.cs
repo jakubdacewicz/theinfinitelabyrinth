@@ -12,8 +12,6 @@ public class GameComplete : Interactable
     public AudioClip doorUnlocked;
     public AudioClip doorLocked;
 
-    private float[] records;
-
     private void Start()
     {
         dataPersistenceManager = GameObject.Find("DataPersistanceManager").GetComponentInChildren<DataPersistenceManager>();
@@ -68,25 +66,5 @@ public class GameComplete : Interactable
         Debug.Log("Loading End Screen.");
 
         SceneManager.LoadScene("EndScreen");
-    }
-
-    public void LoadData(GameData data)
-    {
-        records = data.timeRecords;
-    }
-
-    public void SaveData(ref GameData data)
-    {
-        List<float> temp = records.ToList();
-
-        GameController gm = GameObject.Find("GameController").GetComponent<GameController>();
-
-        temp.Add(gm.timer);
-        temp.Sort();
-        temp.Remove(0);
-
-        records = temp.GetRange(0, 6).ToArray();
-
-        data.timeRecords = records;
     }
 }
