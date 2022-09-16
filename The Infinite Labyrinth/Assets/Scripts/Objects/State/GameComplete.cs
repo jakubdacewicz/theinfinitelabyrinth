@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -39,7 +37,6 @@ public class GameComplete : Interactable
 
     private IEnumerator LoadEndScreen()
     {
-        Debug.Log("Saving game.");
         dataPersistenceManager.SaveGame();
 
         GameObject blackPanel = GameObject.Find("Black Panel");
@@ -62,8 +59,6 @@ public class GameComplete : Interactable
         }
 
         yield return new WaitForSeconds(0.5f);
-
-        Debug.Log("Loading End Screen.");
 
         SceneManager.LoadScene("EndScreen");
     }

@@ -16,14 +16,6 @@ public class Room : MonoBehaviour
 
     private bool updatedDoors;
 
-    /*
-    public Room(int X, int Z)
-    {
-        this.X = X;
-        this.Z = Z;
-    }
-    */
-
     public Door leftDoor;
     public Door rightDoor;
     public Door topDoor;
@@ -46,7 +38,6 @@ public class Room : MonoBehaviour
     {
         if (RoomController.instance == null)
         {
-            Debug.Log("You pressed play in the wrong scene!");
             return;
         }
 
@@ -88,17 +79,6 @@ public class Room : MonoBehaviour
                 updatedDoors = true;
             }
         }
-
-        /*
-        if (enemysAmmount > 0)
-        {
-            SetDoorsActive(false);
-        }
-        else
-        {
-            SetDoorsActive(true);
-        }
-        */
     }
 
     public IEnumerator RemoveUnconectedDoors()

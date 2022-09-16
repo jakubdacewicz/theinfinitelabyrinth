@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class BlueRingItem : ItemController
 {
     public float healthPercentageLosse;

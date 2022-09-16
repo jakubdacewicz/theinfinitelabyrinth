@@ -264,7 +264,6 @@ public class CharacterStats : MonoBehaviour
         source.Play();
     }
 
-    //usunac po testach
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;

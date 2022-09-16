@@ -4388,7 +4388,6 @@ GameObject:
   - component: {fileID: 952666254}
   - component: {fileID: 952666253}
   - component: {fileID: 952666252}
-  - component: {fileID: 952666251}
   - component: {fileID: 952666256}
   - component: {fileID: 952666257}
   m_Layer: 0
@@ -4398,20 +4397,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &952666251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952666250}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d939edc51ed46ca4da9e9afd32201153, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SobelResolution: 2
-  outlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &952666252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4614,7 +4599,6 @@ MonoBehaviour:
   currentEnemysKilled: 0
   saturn: {fileID: 3905936660081175112, guid: 8e7062ba45a499c4da9bab071655afdd, type: 3}
   brush: {fileID: 2034974805334700890, guid: 5033c1414e16dab4ea6dfd9ac9df9b6b, type: 3}
-  lighter: {fileID: 2120733575563157008, guid: 5f114ac0507ddda4983baace480e1289, type: 3}
   switchPrefab: {fileID: 7650129936655572623, guid: 24836ce76971e4c44bf704afb09c8433, type: 3}
   medal: {fileID: 8651958078095838029, guid: 74884de99f00e83478b28d326f716fde, type: 3}
   isUnlocked: 00

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpecialItemBrush : ItemController
@@ -12,7 +10,6 @@ public class SpecialItemBrush : ItemController
 
         GameObject player = GameObject.FindWithTag("Player");
 
-        player.GetComponent<Animator>().enabled = true;
         player.transform.Find("Model").GetComponent<Animator>().SetFloat("atackSpeed", characterStats.attackSpeed.GetValue());
 
         lastAndNewValueDiffrence[1] = speedAttack;

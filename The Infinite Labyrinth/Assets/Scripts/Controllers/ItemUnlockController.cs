@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemUnlockController : MonoBehaviour
@@ -19,9 +18,6 @@ public class ItemUnlockController : MonoBehaviour
 
     [Header("Item: Brush")]
     public GameObject brush;
-
-    [Header("Item: Lighter")]
-    public GameObject lighter;
 
     [Header("Item: Switch")]
     public GameObject switchPrefab;
@@ -43,19 +39,14 @@ public class ItemUnlockController : MonoBehaviour
             StartCoroutine(UnlockItem(1, brush));
         }
 
-        if(enemysKilled == 100 && !isUnlocked[2])
+        if (enemysKilled == 200 && !isUnlocked[2])
         {
-            StartCoroutine(UnlockItem(2, lighter));
+            StartCoroutine(UnlockItem(2, switchPrefab));
         }
 
-        if (enemysKilled == 200 && !isUnlocked[3])
+        if (enemysKilled == 400 && !isUnlocked[3])
         {
-            StartCoroutine(UnlockItem(3, switchPrefab));
-        }
-
-        if (enemysKilled == 400 && !isUnlocked[4])
-        {
-            StartCoroutine(UnlockItem(4, medal));
+            StartCoroutine(UnlockItem(3, medal));
         }
     }
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -30,7 +28,6 @@ public class EnemyStats : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Debug.LogWarning(gameObject.name +  " killed.");
             Die();           
         }
     }

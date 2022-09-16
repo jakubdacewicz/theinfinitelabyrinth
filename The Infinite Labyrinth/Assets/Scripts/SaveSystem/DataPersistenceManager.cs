@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DataPersistenceManager : MonoBehaviour
@@ -23,11 +21,7 @@ public class DataPersistenceManager : MonoBehaviour
     }
 
     private void Awake()
-    {
-        if(instance != null)
-        {
-            Debug.LogWarning("DataPersistenceManager currently exists in scene.");
-        }        
+    {       
         instance = this;
     }
 
@@ -42,7 +36,6 @@ public class DataPersistenceManager : MonoBehaviour
 
         if(this.gameData == null)
         {
-            Debug.Log("No game data found! Creating new data.");
             NewGame();
         }
 
@@ -55,7 +48,6 @@ public class DataPersistenceManager : MonoBehaviour
         GameController gm = GameObject.Find("GameController").GetComponent<GameController>();
         if (gm != null)
         {
-            Debug.Log("Data loaded");
             gm.LoadData(gameData);
         }
     }

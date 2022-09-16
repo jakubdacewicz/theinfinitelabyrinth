@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,8 +25,6 @@ public class LevelComplete : Interactable
         } 
 
         audioSource.PlayOneShot(doorUnlocked);
-
-        Debug.Log("Loading next world: " + dungeonGenerationData.nextWorldName);
 
         GameObject.FindWithTag("GameController").GetComponent<GameController>().isSceneChanged = true;
 

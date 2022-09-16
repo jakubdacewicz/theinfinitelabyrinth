@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
