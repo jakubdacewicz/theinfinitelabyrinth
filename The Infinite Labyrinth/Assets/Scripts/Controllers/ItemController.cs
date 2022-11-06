@@ -95,7 +95,7 @@ public abstract class ItemController : MonoBehaviour
 
     private IEnumerator LoadCharacterStats()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.3f);
 
         characterStats = GameObject.FindWithTag("Player").GetComponent<CharacterStats>();
     }

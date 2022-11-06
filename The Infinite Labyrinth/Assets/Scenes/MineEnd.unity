@@ -2258,7 +2258,7 @@ GameObject:
   - component: {fileID: 1986144375}
   - component: {fileID: 1986144376}
   m_Layer: 0
-  m_Name: EndGameDoor
+  m_Name: EndDoor
   m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -51,17 +51,17 @@ public class InGameMenu : MonoBehaviour
     {
         GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
 
-        SceneManager.LoadScene(0);
-
         Destroy(canvas);
+
+        SceneManager.LoadScene(0);
     }
 
     private void LoadStartGameScene()
     {
         GameObject canvas = GameObject.FindGameObjectWithTag("Canvas");
 
-        SceneManager.LoadScene(1);
-
         Destroy(canvas);
+
+        SceneManager.LoadScene(1);
     }
 }

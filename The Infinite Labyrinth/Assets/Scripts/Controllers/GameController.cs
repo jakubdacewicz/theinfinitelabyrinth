@@ -7,7 +7,6 @@ using System.Linq;
 
 public class GameController : MonoBehaviour
 {
-    public bool isSceneChanged = false;
     public bool isTimerActive;
 
     public Text timerText;
@@ -27,8 +26,6 @@ public class GameController : MonoBehaviour
 
         if (player == null) return;
 
-        StartCoroutine(ActivatePlayerAndCamera());
-
         for (int i  = 0; i < items.Count; i++)
         {
             isItemSpawned.Add(false);
@@ -37,13 +34,7 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if (player == null) return;
-
-        if (isSceneChanged)
-        {
-            StartCoroutine(ActivatePlayerAndCamera());
-            isSceneChanged = false;         
-        }       
+        if (player == null) return;      
 
         if (player.GetComponent<CharacterStats>().GetCurrentHealth() <= 0) return;
 
@@ -53,21 +44,6 @@ public class GameController : MonoBehaviour
 
         timerText.text = String.Format("{0:00}", (int)timer / 3600) + ":" + String.Format("{0:00}", (int)(timer % 3600) / 60) + ":" + String.Format("{0:00}", (int)timer % 60);
 
-    }
-
-    private IEnumerator ActivatePlayerAndCamera()
-    {
-        yield return new WaitForSeconds(1.5f);
-
-        CharacterControll characterControll = player.GetComponent<CharacterControll>();
-        characterControll.ResetPlayerPosition();
-        characterControll.BlockPlayerMovement(false);
-
-        player.SetActive(true);     
-
-        GameObject.FindWithTag("MainCamera").GetComponent<CameraController>().enabled = true;
-
-        isTimerActive = true;
     }
 
     public void LoadData(GameData data)

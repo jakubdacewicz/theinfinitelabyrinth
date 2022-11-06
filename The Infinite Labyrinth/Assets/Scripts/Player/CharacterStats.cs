@@ -95,6 +95,8 @@ public class CharacterStats : MonoBehaviour
         if (transform.position.y <= -5)
         {
             TakeDamage(maxHealth);
+            Cursor.visible = Cursor.visible;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 

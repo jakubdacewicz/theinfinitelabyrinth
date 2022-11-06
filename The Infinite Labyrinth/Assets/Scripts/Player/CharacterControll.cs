@@ -186,15 +186,31 @@ public class CharacterControll : MonoBehaviour
 
         if (colliders.Length > 0)
         {
+            if (isEndTeleportInRange(colliders))
+            {
+                return;
+            }
+
             foreach(var collider in colliders)
             {
                 if (collider.transform.GetComponent<Interactable>())
                 {
                     collider.transform.GetComponent<Interactable>().Interact();
-  //                  return;
                 }
             }
         }
+    }
+
+    private bool isEndTeleportInRange(Collider[] colliders)
+    {
+        foreach (var collider in colliders)
+        {
+            if (collider.transform.name.Equals("EndDoor")) {
+                collider.transform.GetComponent<Interactable>().Interact();
+                return true;
+            }
+        }
+        return false;
     }
 
     private IEnumerator Attack()

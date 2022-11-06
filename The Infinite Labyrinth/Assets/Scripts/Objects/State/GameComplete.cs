@@ -29,8 +29,7 @@ public class GameComplete : Interactable
 
         GameController gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
 
-        gameController.isTimerActive = false;
-        gameController.isSceneChanged = true;      
+        gameController.isTimerActive = false;    
 
         StartCoroutine(LoadEndScreen());
     }

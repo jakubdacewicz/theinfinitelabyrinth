@@ -173,6 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceOfNextTeleport: 3.5
   lockedDoor: {fileID: 8300000, guid: 85eda22911cb63843a29e2e0cfdd1613, type: 3}
+  roomController: {fileID: 0}
 --- !u!114 &10617975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceOfNextTeleport: 3.5
   lockedDoor: {fileID: 8300000, guid: 85eda22911cb63843a29e2e0cfdd1613, type: 3}
+  roomController: {fileID: 0}
 --- !u!114 &53155111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -673,6 +675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceOfNextTeleport: 3.5
   lockedDoor: {fileID: 8300000, guid: 85eda22911cb63843a29e2e0cfdd1613, type: 3}
+  roomController: {fileID: 0}
 --- !u!114 &338643226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1048,6 +1051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceOfNextTeleport: 3.5
   lockedDoor: {fileID: 8300000, guid: 85eda22911cb63843a29e2e0cfdd1613, type: 3}
+  roomController: {fileID: 0}
 --- !u!114 &1252573646
 MonoBehaviour:
   m_ObjectHideFlags: 0

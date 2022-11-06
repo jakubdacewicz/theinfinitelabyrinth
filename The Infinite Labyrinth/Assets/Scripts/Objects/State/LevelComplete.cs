@@ -26,11 +26,11 @@ public class LevelComplete : Interactable
 
         audioSource.PlayOneShot(doorUnlocked);
 
-        GameObject.FindWithTag("GameController").GetComponent<GameController>().isSceneChanged = true;
-
         StartCoroutine(LoadNextLevel());
 
-        foreach (Transform child in GameObject.FindWithTag("Player").transform)
+        GameObject player = GameObject.Find("Player");
+
+        foreach (Transform child in player.transform)
         {
             if (child.name.Equals("Light") && child.gameObject.activeInHierarchy)
             {
@@ -38,7 +38,9 @@ public class LevelComplete : Interactable
             }
         }
 
-        GameObject.FindWithTag("Player").gameObject.SetActive(false);
+        player.GetComponent<CharacterControll>().enabled = false;
+        player.GetComponent<Rigidbody>().useGravity = false;
+        player.GetComponent<BoxCollider>().enabled = false;
     }
 
     private IEnumerator LoadNextLevel()

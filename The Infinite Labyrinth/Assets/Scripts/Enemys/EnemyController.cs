@@ -45,7 +45,7 @@ public abstract class EnemyController : MonoBehaviour
 
     private IEnumerator LoadPlayerData()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.2f);
 
         player = GameObject.FindWithTag("Player");
 

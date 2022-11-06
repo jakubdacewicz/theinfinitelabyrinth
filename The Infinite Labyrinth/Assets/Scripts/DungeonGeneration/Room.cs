@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.AI;
 
 public class Room : MonoBehaviour
 {
@@ -164,10 +165,21 @@ public class Room : MonoBehaviour
 
             foreach (Transform child in transform)
             {
-                if (child.CompareTag("Enemy") && child.GetComponent<EnemyController>().enabled == true)
+                if (child.CompareTag("Enemy"))
                 {
-                    child.gameObject.SetActive(true);
-                    enemysAmmount++;
+                    child.gameObject.SetActive(true);                                                     
+                    child.GetComponent<NavMeshAgent>().enabled = true;
+
+                    if (child.GetComponent<RangedEnemyController>() != null)
+                        child.GetComponent<RangedEnemyController>().enabled = true;
+
+                    else if (child.GetComponent<TankEnemyController>() != null)
+                        child.GetComponent<TankEnemyController>().enabled = true;
+
+                    else if (child.GetComponent<RougeEnemy>() != null)
+                        child.GetComponent<RougeEnemy>().enabled = true;
+                    
+                   enemysAmmount++;
                 }
 
                 if (child.CompareTag("Trap"))
@@ -184,7 +196,15 @@ public class Room : MonoBehaviour
         {
             foreach (Transform child in transform)
             {
-                if (child.CompareTag("Enemy") || child.CompareTag("Trap"))
+                if (child.CompareTag("Enemy"))
+                {
+                    if(child.GetComponent<EnemyStats>().GetCurrentHealth() < 1)
+                    {
+                        Destroy(child.gameObject);
+                    }
+                    child.gameObject.SetActive(false);
+                }
+                else if (child.CompareTag("Trap"))
                 {
                     child.gameObject.SetActive(false);
                 }

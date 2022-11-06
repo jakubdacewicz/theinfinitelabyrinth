@@ -1,5 +1,6 @@
 using System.Collections;
 using Unity.AI.Navigation;
+using UnityEngine.AI;
 using UnityEngine;
 
 public class NavMeshController : MonoBehaviour
