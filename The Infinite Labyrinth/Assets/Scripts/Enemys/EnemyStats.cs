@@ -42,7 +42,6 @@ public class EnemyStats : MonoBehaviour
         Animator animator = gameObject.GetComponentInChildren<Animator>();
         animator.Play("Death");
 
-        GameObject.FindGameObjectWithTag("ItemUnlockController").GetComponent<ItemUnlockController>().enemysKilled++;
         GameObject.FindGameObjectWithTag("ItemUnlockController").GetComponent<ItemUnlockController>().currentEnemysKilled++;
 
         GetComponentInChildren<Collider>().enabled = false;

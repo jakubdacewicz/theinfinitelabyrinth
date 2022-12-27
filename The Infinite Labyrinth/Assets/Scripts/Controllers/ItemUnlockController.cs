@@ -71,8 +71,8 @@ public class ItemUnlockController : MonoBehaviour
 
     public void SaveData(ref GameData data)
     {
-        data.itemsBought = this.itemsBought;
+        data.itemsBought = data.itemsBought + currentItemsBought;
         data.isUnlocked = this.isUnlocked;
-        data.enemysKilled = this.enemysKilled;
+        data.enemysKilled = data.enemysKilled + currentEnemysKilled;
     }
 }

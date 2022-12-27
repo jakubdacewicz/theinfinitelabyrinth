@@ -37,6 +37,7 @@ public class GameComplete : Interactable
     private IEnumerator LoadEndScreen()
     {
         dataPersistenceManager.SaveGame();
+        dataPersistenceManager.LoadGame();
 
         GameObject blackPanel = GameObject.Find("Black Panel");
         blackPanel.GetComponent<BlackPanel>().enabled = true;

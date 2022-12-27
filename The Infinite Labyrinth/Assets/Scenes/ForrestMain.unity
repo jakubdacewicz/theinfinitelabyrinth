@@ -8691,7 +8691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac142c1ece8ee844b33ded42d229a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 1000
   maxStamine: 100
   attackRangePosition: 0.2
   stamineRegenerationValuePart:
